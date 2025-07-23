@@ -1,0 +1,166 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Welcome to Friendsoft",
+    "subtitle": "Technology solutions at your fingertips"
+  },
+  "projects": {
+    "title": "Our Projects",
+    "subtitle": "Discover the projects we have worked on",
+    "categories": {
+      "technology": "Technology",
+      "development": "Development",
+      "solution": "Solution",
+      "design": "Design",
+      "ideas": "Ideas"
+    },
+    "items": {
+      "project1": {
+        "title": "Cloud migration saves money & protect",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      "project2": {
+        "title": "Perfect solution that your business demands",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      "project3": {
+        "title": "Trusted by The world's best organizations",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      "project4": {
+        "title": "It has survived not only five but also the leap",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      "project5": {
+        "title": "Take a look at our round up of the best",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      },
+      "project6": {
+        "title": "Lorem Ipsum has been standard dummy",
+        "description": "When an unknown printer took a galley of type and scrambled it to make a type specimen book."
+      }
+    },
+    "viewProject": "View our project"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Solutions tailored to your needs",
+    "manage_it": {
+      "title": "Manage IT services",
+      "description": "We manage and optimize your technology infrastructure to ensure maximum performance and availability."
+    },
+    "cyber_security": {
+      "title": "Cyber security",
+      "description": "We protect your information and systems with the best digital security practices and continuous monitoring."
+    },
+    "digital_experience": {
+      "title": "Digital experience",
+      "description": "We create exceptional digital experiences that connect with your users and boost your business."
+    },
+    "section2": {
+      "title": "What we're offering",
+      "subtitle": "Services we're providing to our customers",
+      "description": "We offer comprehensive technology solutions designed to boost your business and optimize your daily operations.",
+      "product_development": {
+        "title": "Product development",
+        "description": "We create custom software solutions that solve specific problems for your business."
+      },
+      "ui_ux": {
+        "title": "UI/UX designing",
+        "description": "We design intuitive interfaces and user experiences that captivate and retain your customers."
+      },
+      "digital_marketing": {
+        "title": "Digital marketing",
+        "description": "Effective digital marketing strategies to increase your visibility and attract new customers."
+      },
+      "content_management": {
+        "title": "Content management",
+        "description": "We manage and optimize your digital content to maximize its impact and reach."
+      },
+      "data_analysis": {
+        "title": "Data analysis",
+        "description": "We turn data into actionable insights to make smarter business decisions."
+      }
+    },
+    "section3": {
+      "subtitle": "Stay protected",
+      "title": "Tech services for your business ideas",
+      "description": "At mi mauris vestibulum eu tellus tristique sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod vel neque convallis pretium non nec justo.",
+      "feature1": {
+        "title": "We deliver perfect solutions",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "feature2": {
+        "title": "We work with global brands",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "button": "Learn more"
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help you",
+    "form": {
+      "sendEmail": "Send us email",
+      "feelFreeToWrite": "Feel free to write",
+      "getInTouch": "Get in touch with us",
+      "description": "Lorem ipsum dolor sit amet, consectetur notted adipis not iciinglit sed do eiusmod tempor incididunt.",
+      "fields": {
+        "name": "Your name*",
+        "email": "Email address*",
+        "phone": "Phone number*",
+        "subject": "Subject*",
+        "message": "Write us some lines"
+      },
+      "placeholders": {
+        "name": "Enter your name",
+        "email": "Enter your email",
+        "phone": "Enter your phone",
+        "subject": "Enter subject",
+        "message": "Write your message here..."
+      },
+      "button": "Send a message",
+      "required": "This field is required.",
+      "invalidEmail": "Please enter a valid email address.",
+      "success": "Message sent successfully! We will get back to you soon.",
+      "error": "Failed to send message. Please try again."
+    },
+    "info": {
+      "phone": {
+        "label": "Have any question?",
+        "number": "+57 (300)-351 9363"
+      },
+      "email": {
+        "label": "Write an email",
+        "address": "hello@friendsoft.com"
+      },
+      "address": {
+        "label": "Visit anytime",
+        "location": "Trans 44 # 100 – 82, Colombia"
+      }
+    },
+    "map": {
+      "popup": {
+        "description": "Our main office in Colombia"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "social": "Social"
+  },
+  "language": {
+    "en": "English US",
+    "es": "Spanish",
+    "select": "Select language"
+  },
+  "contact_info": {
+    "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
+    "email": "hello@friendsoft.co"
+  }
+}

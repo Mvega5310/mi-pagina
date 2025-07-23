@@ -1,0 +1,166 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Bienvenido a Friendsoft",
+    "subtitle": "Soluciones tecnológicas a tu alcance"
+  },
+  "projects": {
+    "title": "Nuestros Proyectos",
+    "subtitle": "Conoce los proyectos en los que hemos trabajado",
+    "categories": {
+      "technology": "Tecnología",
+      "development": "Desarrollo",
+      "solution": "Solución",
+      "design": "Diseño",
+      "ideas": "Ideas"
+    },
+    "items": {
+      "project1": {
+        "title": "Migración a la nube ahorra dinero y protege",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project2": {
+        "title": "Solución perfecta que demanda tu negocio",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project3": {
+        "title": "Confiado por las mejores organizaciones del mundo",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project4": {
+        "title": "Ha sobrevivido no solo cinco sino también el salto",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project5": {
+        "title": "Echa un vistazo a nuestro resumen de lo mejor",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project6": {
+        "title": "Lorem Ipsum ha sido el estándar ficticio",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      }
+    },
+    "viewProject": "Ver nuestro proyecto"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones adaptadas a tus necesidades",
+    "manage_it": {
+      "title": "Gestión de servicios TI",
+      "description": "Administramos y optimizamos tu infraestructura tecnológica para garantizar el máximo rendimiento y disponibilidad."
+    },
+    "cyber_security": {
+      "title": "Ciberseguridad",
+      "description": "Protegemos tu información y sistemas con las mejores prácticas de seguridad digital y monitoreo continuo."
+    },
+    "digital_experience": {
+      "title": "Experiencia digital",
+      "description": "Creamos experiencias digitales excepcionales que conectan con tus usuarios y potencian tu negocio."
+    },
+    "section2": {
+      "title": "Qué ofrecemos",
+      "subtitle": "Servicios que proporcionamos a nuestros clientes",
+      "description": "Ofrecemos soluciones tecnológicas integrales diseñadas para impulsar tu negocio y optimizar tus operaciones diarias.",
+      "product_development": {
+        "title": "Desarrollo de productos",
+        "description": "Creamos soluciones de software a medida que resuelven problemas específicos de tu negocio."
+      },
+      "ui_ux": {
+        "title": "Diseño UI/UX",
+        "description": "Diseñamos interfaces intuitivas y experiencias de usuario que cautivan y retienen a tus clientes."
+      },
+      "digital_marketing": {
+        "title": "Marketing digital",
+        "description": "Estrategias de marketing digital efectivas para aumentar tu visibilidad y atraer nuevos clientes."
+      },
+      "content_management": {
+        "title": "Gestión de contenido",
+        "description": "Administramos y optimizamos tu contenido digital para maximizar su impacto y alcance."
+      },
+      "data_analysis": {
+        "title": "Análisis de datos",
+        "description": "Convertimos datos en insights accionables para tomar decisiones de negocio más inteligentes."
+      }
+    },
+    "section3": {
+      "subtitle": "Mantente protegido",
+      "title": "Servicios tecnológicos para tus ideas de negocio",
+      "description": "Donec suscipit ante ipsum. Donec convallis quam at tortor hendrerit, ut elementum augue suscipit. Morbi tincidunt risus vel neque convallis pretium non nec justo.",
+      "feature1": {
+        "title": "Entregamos soluciones perfectas",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "feature2": {
+        "title": "Trabajamos con marcas globales",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "button": "Saber más"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte",
+    "form": {
+      "sendEmail": "Envíanos un email",
+      "feelFreeToWrite": "Siéntete libre de escribir",
+      "getInTouch": "Ponte en contacto con nosotros",
+      "description": "Lorem ipsum dolor sit amet, consectetur notted adipis not iciinglit sed do eiusmod tempor incididunt.",
+      "fields": {
+        "name": "Tu nombre*",
+        "email": "Dirección de email*",
+        "phone": "Número de teléfono*",
+        "subject": "Asunto*",
+        "message": "Escríbenos algunas líneas"
+      },
+      "placeholders": {
+        "name": "Ingresa tu nombre",
+        "email": "Ingresa tu email",
+        "phone": "Ingresa tu teléfono",
+        "subject": "Ingresa el asunto",
+        "message": "Escribe tu mensaje aquí..."
+      },
+      "button": "Enviar un mensaje",
+      "required": "Este campo es obligatorio.",
+      "invalidEmail": "Por favor ingresa un email válido.",
+      "success": "¡Mensaje enviado exitosamente! Te contactaremos pronto.",
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "phone": {
+        "label": "¿Tienes alguna pregunta?",
+        "number": "+57 (300)-351 9363"
+      },
+      "email": {
+        "label": "Escribe un email",
+        "address": "hello@friendsoft.com"
+      },
+      "address": {
+        "label": "Visítanos en cualquier momento",
+        "location": "Trans 44 # 100 – 82, Colombia"
+      }
+    },
+    "map": {
+      "popup": {
+        "description": "Nuestra oficina principal en Colombia"
+      }
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "social": "Social"
+  },
+  "language": {
+    "en": "Inglés US",
+    "es": "Español",
+    "select": "Seleccionar idioma"
+  },
+  "contact_info": {
+    "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
+    "email": "hello@friendsoft.co"
+  }
+}
