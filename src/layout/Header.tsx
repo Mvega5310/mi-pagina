@@ -1,10 +1,13 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useState } from 'react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import TopHeader from '../components/TopHeader'
 
 const Header = () => {
   const { t } = useTranslation()
   const location = useLocation()
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const isHomePage = location.pathname === '/'
   const isSpecialPage = ['/services', '/projects', '/contact'].includes(location.pathname)
 
@@ -36,6 +39,19 @@ const Header = () => {
     }
   }
 
+  // Close mobile menu when clicking on a link
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+  }
+
+  // Navigation items
+  const navigationItems = [
+    { path: '/', label: t('nav.home') },
+    { path: '/services', label: t('nav.services') },
+    { path: '/projects', label: t('nav.projects') },
+    { path: '/contact', label: t('nav.contact') },
+  ]
+
   return (
     <>
       {/* Top Header - Common across all pages */}
@@ -44,111 +60,135 @@ const Header = () => {
       {/* Main Header - Different for home vs other pages */}
       {isHomePage ? (
         // Home page header with gradient background
-        <header className="fixed top-[45px] left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white">
-          <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+        <header className="fixed top-[36px] md:top-[45px] left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white">
+          <div className="container mx-auto px-4 py-4 lg:py-6 flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2">
-              <img src="src\assets\logo-white.svg" alt="LOGO" />
+              <img src="src\assets\logo-white.svg" alt="LOGO" className="h-8 lg:h-10" />
             </Link>
             
-            <nav className="hidden md:flex space-x-8">
-              <Link 
-                to="/" 
-                className={`relative pb-2 transition-colors ${location.pathname === '/' ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
-              >
-                {t('nav.home')}
-                {location.pathname === '/' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
-                )}
-              </Link>
-              <Link 
-                to="/services" 
-                className={`relative pb-2 transition-colors ${location.pathname === '/services' ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
-              >
-                {t('nav.services')}
-                {location.pathname === '/services' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
-                )}
-              </Link>
-              <Link 
-                to="/projects" 
-                className={`relative pb-2 transition-colors ${location.pathname === '/projects' ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
-              >
-                {t('nav.projects')}
-                {location.pathname === '/projects' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
-                )}
-              </Link>
-              <Link 
-                to="/contact" 
-                className={`relative pb-2 transition-colors ${location.pathname === '/contact' ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
-              >
-                {t('nav.contact')}
-                {location.pathname === '/contact' && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
-                )}
-              </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex space-x-6 lg:space-x-8">
+              {navigationItems.map((item) => (
+                <Link 
+                  key={item.path}
+                  to={item.path} 
+                  className={`relative pb-2 transition-colors ${location.pathname === item.path ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
+                >
+                  {item.label}
+                  {location.pathname === item.path && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
+                  )}
+                </Link>
+              ))}
             </nav>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 rounded-md text-white hover:bg-white/10 transition-colors"
+              aria-label="Toggle mobile menu"
+            >
+              {isMobileMenuOpen ? (
+                <XMarkIcon className="h-6 w-6" />
+              ) : (
+                <Bars3Icon className="h-6 w-6" />
+              )}
+            </button>
           </div>
+
+          {/* Mobile Navigation Menu */}
+          {isMobileMenuOpen && (
+            <div className="md:hidden bg-gradient-to-r from-blue-700 via-purple-700 to-blue-900 border-t border-white/20">
+              <nav className="container mx-auto px-4 py-4 space-y-2">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.path}
+                    to={item.path}
+                    onClick={closeMobileMenu}
+                    className={`block py-3 px-4 rounded-md transition-colors ${
+                      location.pathname === item.path 
+                        ? 'bg-white/20 text-white font-medium' 
+                        : 'text-white hover:bg-white/10'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
         </header>
       ) : (
         <>
           {/* Second Header - White background with navigation */}
-          <header className="fixed top-[45px] left-0 right-0 z-40 bg-white border-b border-gray-200">
-            <div className="container mx-auto px-4 py-6 flex justify-between items-center">
+          <header className="fixed top-[36px] md:top-[45px] left-0 right-0 z-40 bg-white border-b border-gray-200">
+            <div className="container mx-auto px-4 py-4 lg:py-6 flex justify-between items-center">
               <Link to="/" className="flex items-center space-x-2">
-                <img src="src\assets\logo.svg" alt="LOGO" />
+                <img src="src\assets\logo.svg" alt="LOGO" className="h-8 lg:h-10" />
               </Link>
               
-              <nav className="hidden md:flex space-x-8">
-                <Link 
-                  to="/" 
-                  className={`relative pb-2 transition-colors ${location.pathname === '/' ? 'text-blue-600 font-medium' : 'text-gray-700 hover:text-blue-600'}`}
-                >
-                  {t('nav.home')}
-                  {location.pathname === '/' && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"></div>
-                  )}
-                </Link>
-                <Link 
-                  to="/services" 
-                  className={`relative pb-2 transition-colors ${location.pathname === '/services' ? 'text-blue-600 font-medium' : 'text-gray-700 hover:text-blue-600'}`}
-                >
-                  {t('nav.services')}
-                  {location.pathname === '/services' && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"></div>
-                  )}
-                </Link>
-                <Link 
-                  to="/projects" 
-                  className={`relative pb-2 transition-colors ${location.pathname === '/projects' ? 'text-blue-600 font-medium' : 'text-gray-700 hover:text-blue-600'}`}
-                >
-                  {t('nav.projects')}
-                  {location.pathname === '/projects' && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"></div>
-                  )}
-                </Link>
-                <Link 
-                  to="/contact" 
-                  className={`relative pb-2 transition-colors ${location.pathname === '/contact' ? 'text-blue-600 font-medium' : 'text-gray-700 hover:text-blue-600'}`}
-                >
-                  {t('nav.contact')}
-                  {location.pathname === '/contact' && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"></div>
-                  )}
-                </Link>
+              {/* Desktop Navigation */}
+              <nav className="hidden md:flex space-x-6 lg:space-x-8">
+                {navigationItems.map((item) => (
+                  <Link 
+                    key={item.path}
+                    to={item.path} 
+                    className={`relative pb-2 transition-colors ${location.pathname === item.path ? 'text-blue-600 font-medium' : 'text-gray-700 hover:text-blue-600'}`}
+                  >
+                    {item.label}
+                    {location.pathname === item.path && (
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"></div>
+                    )}
+                  </Link>
+                ))}
               </nav>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 transition-colors"
+                aria-label="Toggle mobile menu"
+              >
+                {isMobileMenuOpen ? (
+                  <XMarkIcon className="h-6 w-6" />
+                ) : (
+                  <Bars3Icon className="h-6 w-6" />
+                )}
+              </button>
             </div>
+
+            {/* Mobile Navigation Menu */}
+            {isMobileMenuOpen && (
+              <div className="md:hidden bg-white border-t border-gray-200 shadow-lg">
+                <nav className="container mx-auto px-4 py-4 space-y-2">
+                  {navigationItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={closeMobileMenu}
+                      className={`block py-3 px-4 rounded-md transition-colors ${
+                        location.pathname === item.path 
+                          ? 'bg-blue-50 text-blue-600 font-medium' 
+                          : 'text-gray-700 hover:bg-gray-50'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+            )}
           </header>
 
           {/* Third Header - Image background with page title and breadcrumb (only for special pages) */}
           {isSpecialPage && (
-            <header className="relative mt-[120px]">
+            <header className="relative mt-[105px] lg:mt-[120px]">
               {/* Background image with grayscale filter and overlay */}
               <div 
                 className="absolute inset-0 bg-cover bg-center z-0 filter grayscale" 
                 style={{
                   backgroundImage: 'url("src/assets/images/header3.jpg")',
-                  height: '348px',
+                  height: '250px',
                 }}
               >
                 {/* Dark overlay for better text readability */}
@@ -156,7 +196,7 @@ const Header = () => {
               </div>
               
               {/* Content - Centered title and breadcrumb */}
-              <div className="relative z-10 flex flex-col items-center justify-center text-center text-white" style={{ height: '348px' }}>
+              <div className="relative z-10 flex flex-col items-center justify-center text-center text-white px-4" style={{ height: '250px' }}>
                 {/* Breadcrumb */}
                 <div className="flex items-center space-x-2 mb-4 text-sm font-bold">
                   <Link to="/" className="text-green-400 hover:text-green-300 transition-colors">
@@ -167,7 +207,7 @@ const Header = () => {
                 </div>
                 
                 {/* Page Title */}
-                <h1 className="text-4xl md:text-5xl font-bold text-white">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
                   {getPageTitle()}
                 </h1>
               </div>
