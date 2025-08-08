@@ -11,10 +11,10 @@ const Footer = () => {
     <footer className="bg-[#1F0951] text-white py-12 relative overflow-hidden">
       {/* Background image */}
       <div className="absolute inset-0 opacity-20">
-        <img src={bgFooter} alt="Background" className="w-full h-full object-cover" />
+        <img src={bgFooter} alt="Background" className="h-full object-contain" />
       </div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-20 relative z-10">
         {/* Logo and social media at top */}
         <div className="flex justify-between items-center mb-12">
           <img src={logoWhite} alt="Friendsoft" className="h-10" />
@@ -51,11 +51,11 @@ const Footer = () => {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-center">
                 <span className="mr-2">📞</span>
-                <span>+57 (000)-000-0000</span>
+                <span>+57 (300)-351 9363</span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">✉️</span>
-                <span>hello@friendsoft.co</span>
+                <span>gerson.almeida@friendsoft.co</span>
               </li>
               <li className="flex items-start">
                 <span className="mr-2">📍</span>

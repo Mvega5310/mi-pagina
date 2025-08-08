@@ -7,7 +7,177 @@
   },
   "home": {
     "title": "Bienvenido a Friendsoft",
-    "subtitle": "Soluciones tecnológicas a tu alcance"
+    "subtitle": "Soluciones tecnológicas a tu alcance",
+    "hero": {
+      "title": "Soluciones innovadoras para tus negocios",
+      "subtitle": "Innovative solutions for your businesses",
+      "button": "Descubrir más"
+    },
+    "section2": {
+      "subtitle": "Plataforma tecnológica",
+      "title": "Notech entregando soluciones TI con completa confianza",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris.",
+      "cards": {
+        "card1": {
+          "title": "Solución perfecta que demanda cada negocio"
+        },
+        "card2": {
+          "title": "Ayudando a negocios alrededor del mundo"
+        },
+        "card3": {
+          "title": "Qué está frenando la solución TI."
+        }
+      }
+    },
+    "section2_1": {
+      "subtitle": "Introducción de la empresa",
+      "title": "Notech es tu empresa de confianza de servicios TI",
+      "description": "Proin est lacus, sagittis lobortis iaculis eget.",
+      "content": "Hay muchas variaciones de pasajes de lorem libre mercado disponible, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias.",
+      "viewMore": "Ver más",
+      "imageOverlay": "Notech está proporcionando la mejor solución por nuestros expertos",
+      "features": {
+        "feature1": "Nsectetur cing elit.",
+        "feature2": "You're going passage.",
+        "feature3": "Suspe se suscipit leo.",
+        "feature4": "Lorem ipsum non tend."
+      },
+      "profile": {
+        "name": "Gerson Almeida",
+        "title": "Founder of friendsoft company"
+      }
+    },
+    "section3": {
+      "subtitle": "Qué ofrecemos",
+      "title": "Servicios que proporcionamos a nuestros clientes",
+      "services": {
+        "service1": {
+          "title": "Desarrollo de productos",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service2": {
+          "title": "Diseño UX/UI",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service3": {
+          "title": "Marketing digital",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service4": {
+          "title": "Gestión de contenido",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        }
+      }
+    },
+    "section4": {
+      "subtitle": "Beneficios de la empresa Notech",
+      "title": "¿Por qué deberías elegir nuestra empresa notech?",
+      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
+      "staticPoints": [
+        "Hacer de este primer generador verdadero",
+        "Lorem Ipsum no es simplemente",
+        "Si vas a usar un pasaje"
+      ],
+      "tabs": {
+        "mission": "Nuestra misión",
+        "vision": "Nuestra visión",
+        "history": "Nuestra historia"
+      },
+      "content": {
+        "mission": {
+          "description": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias que no se ven ni siquiera ligeramente creíbles.",
+          "points": [
+            "Hacer de este primer generador verdadero",
+            "Lorem Ipsum no es simplemente",
+            "Si vas a usar un pasaje"
+          ]
+        },
+        "vision": {
+          "description": "Nuestra visión es ser líderes en innovación tecnológica, proporcionando soluciones que transformen la manera en que las empresas operan y crecen en el mundo digital.",
+          "points": [
+            "Innovación constante en tecnología",
+            "Excelencia en servicio al cliente",
+            "Crecimiento sostenible y responsable"
+          ]
+        },
+        "history": {
+          "description": "Fundada con la misión de democratizar la tecnología, hemos crecido desde una startup hasta convertirnos en un referente en el sector tecnológico.",
+          "points": [
+            "Más de 10 años de experiencia",
+            "Cientos de proyectos exitosos",
+            "Equipo de expertos certificados"
+          ]
+        }
+      },
+      "image": {
+        "title": "Siempre entregando soluciones de calidad",
+        "subtitle": "Lorem Ipsum son muchas variaciones de pase.",
+        "button": "Descubrir más"
+      }
+    },
+    "section5": {
+      "subtitle": "Trabajo completado recientemente",
+      "title": "Nuestra lista de proyectos completados recientemente",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+      "projects": {
+        "project1": {
+          "category": "Diseño",
+          "title": "Servicio de implementación"
+        },
+        "project2": {
+          "category": "Ideas",
+          "title": "Solución tecnológica"
+        },
+        "project3": {
+          "category": "Soluciones",
+          "title": "Integración de plataforma"
+        },
+        "project4": {
+          "category": "Tecnología",
+          "title": "Ciberseguridad"
+        }
+      }
+    },
+    "section6": {
+      "subtitle": "Crecimiento tecnológico",
+      "title": "Somos los expertos destacados en negocios tecnológicos"
+    },
+    "section8": {
+      "subtitle": "Industrias que atendemos",
+      "title": "Servicios de TI personalizados para tu industria",
+      "industries": {
+        "banking": "Banca",
+        "healthcare": "Salud",
+        "education": "Educación",
+        "manufacturing": "Manufactura",
+        "markets": "Mercados"
+      }
+    },
+    "section9": {
+      "subtitle": "Comentarios de nuestros clientes",
+      "title": "Lo que están diciendo",
+      "testimonials": {
+        "testimonial1": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Jessica Brown",
+          "position": "Cliente"
+        },
+        "testimonial2": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Boby Robson",
+          "position": "Stakeholder"
+        },
+        "testimonial3": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Joa Hart",
+          "position": "Cliente"
+        }
+      }
+    }
   },
   "projects": {
     "title": "Nuestros Proyectos",
@@ -137,7 +307,7 @@
       },
       "email": {
         "label": "Escribe un email",
-        "address": "hello@friendsoft.com"
+        "address": "gerson.almeida@friendsoft.co"
       },
       "address": {
         "label": "Visítanos en cualquier momento",
@@ -161,6 +331,6 @@
   },
   "contact_info": {
     "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
-    "email": "hello@friendsoft.co"
+    "email": "gerson.almeida@friendsoft.co"
   }
 }

@@ -7,7 +7,177 @@
   },
   "home": {
     "title": "Welcome to Friendsoft",
-    "subtitle": "Technology solutions at your fingertips"
+    "subtitle": "Technology solutions at your fingertips",
+    "hero": {
+      "title": "Innovative solutions for your businesses",
+      "subtitle": "Innovative solutions for your businesses",
+      "button": "Discover more"
+    },
+    "section2": {
+      "subtitle": "Technology platform",
+      "title": "Notech delivering IT solutions with complete trust",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris.",
+      "cards": {
+        "card1": {
+          "title": "Perfect solution every business demands"
+        },
+        "card2": {
+          "title": "Helping businesses around the world"
+        },
+        "card3": {
+          "title": "What is holding back the IT solution."
+        }
+      }
+    },
+    "section2_1": {
+      "subtitle": "Company introduction",
+      "title": "Notech is your trusted IT services company",
+      "description": "Proin est lacus, sagittis lobortis iaculis eget.",
+      "content": "There are many variations of passages of lorem free market to available, but the majority have alteration in some form, by injected humour, or randomised words.",
+      "viewMore": "View more",
+      "imageOverlay": "Notech is providing the best solution by our experts",
+      "features": {
+        "feature1": "Nsectetur cing elit.",
+        "feature2": "You're going passage.",
+        "feature3": "Suspe se suscipit leo.",
+        "feature4": "Lorem ipsum non tend."
+      },
+      "profile": {
+        "name": "Gerson Almeida",
+        "title": "Founder of friendsoft company"
+      }
+    },
+    "section3": {
+      "subtitle": "What we're offering",
+      "title": "Services we're providing to our customers",
+      "services": {
+        "service1": {
+          "title": "Product development",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Learn more"
+        },
+        "service2": {
+          "title": "UX/UI designing",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Learn more"
+        },
+        "service3": {
+          "title": "Digital marketing",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Learn more"
+        },
+        "service4": {
+          "title": "Content management",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Learn more"
+        }
+      }
+    },
+    "section4": {
+      "subtitle": "Notech company benefits",
+      "title": "Why you should choose our notech company?",
+      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
+      "staticPoints": [
+        "Making this first true generator",
+        "Lorem Ipsum is not simply",
+        "If you are going to passage"
+      ],
+      "tabs": {
+        "mission": "Our mission",
+        "vision": "Our vision",
+        "history": "Our history"
+      },
+      "content": {
+        "mission": {
+          "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+          "points": [
+            "Making this first true generator",
+            "Lorem Ipsum is not simply",
+            "If you are going to passage"
+          ]
+        },
+        "vision": {
+          "description": "Our vision is to be leaders in technological innovation, providing solutions that transform the way companies operate and grow in the digital world.",
+          "points": [
+            "Constant innovation in technology",
+            "Excellence in customer service",
+            "Sustainable and responsible growth"
+          ]
+        },
+        "history": {
+          "description": "Founded with the mission to democratize technology, we have grown from a startup to become a reference in the technology sector.",
+          "points": [
+            "More than 10 years of experience",
+            "Hundreds of successful projects",
+            "Team of certified experts"
+          ]
+        }
+      },
+      "image": {
+        "title": "Always delivering quality solutions",
+        "subtitle": "Lorem Ipsum are many variations of pass.",
+        "button": "Discover more"
+      }
+    },
+    "section5": {
+      "subtitle": "Recently completed work",
+      "title": "Our recently completed projects list",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+      "projects": {
+        "project1": {
+          "category": "Design",
+          "title": "Deployment service"
+        },
+        "project2": {
+          "category": "Ideas",
+          "title": "Tech solution"
+        },
+        "project3": {
+          "category": "Solutions",
+          "title": "Platform integration"
+        },
+        "project4": {
+          "category": "Technology",
+          "title": "Cyber security"
+        }
+      }
+    },
+    "section6": {
+      "subtitle": "Technology growth",
+      "title": "We're the stand out experts in tech business"
+    },
+    "section8": {
+      "subtitle": "Industries we're serving",
+      "title": "IT services customized for your industry",
+      "industries": {
+        "banking": "Banking",
+        "healthcare": "Healthcare",
+        "education": "Education",
+        "manufacturing": "Manufacturing",
+        "markets": "Markets"
+      }
+    },
+    "section9": {
+      "subtitle": "Our client feedbacks",
+      "title": "What they're talking",
+      "testimonials": {
+        "testimonial1": {
+          "comment": "Lorem ipsum is simply free text dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt labore et dolore text.",
+          "name": "Jessica Brown",
+          "position": "Customer"
+        },
+        "testimonial2": {
+          "comment": "Lorem ipsum is simply free text dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt labore et dolore text.",
+          "name": "Boby Robson",
+          "position": "Stakeholder"
+        },
+        "testimonial3": {
+          "comment": "Lorem ipsum is simply free text dolor not sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt labore et dolore text.",
+          "name": "Joa Hart",
+          "position": "Customer"
+        }
+      }
+    }
   },
   "projects": {
     "title": "Our Projects",
@@ -137,7 +307,7 @@
       },
       "email": {
         "label": "Write an email",
-        "address": "hello@friendsoft.com"
+        "address": "gerson.almeida@friendsoft.co"
       },
       "address": {
         "label": "Visit anytime",
@@ -161,6 +331,6 @@
   },
   "contact_info": {
     "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
-    "email": "hello@friendsoft.co"
+    "email": "gerson.almeida@friendsoft.co"
   }
 }

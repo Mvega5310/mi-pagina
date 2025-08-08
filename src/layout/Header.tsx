@@ -60,8 +60,8 @@ const Header = () => {
       {/* Main Header - Different for home vs other pages */}
       {isHomePage ? (
         // Home page header with gradient background
-        <header className="fixed top-[36px] md:top-[45px] left-0 right-0 z-40 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white">
-          <div className="container mx-auto px-4 py-4 lg:py-6 flex justify-between items-center">
+        <header className="fixed top-[36px] md:top-[45px] left-0 right-0 z-40 border border-[#FFFFFF1A] bg-gradient-to-r from-[#70A7FF]/30 via-[#6079FD]/30 to-[#565CFC]/30 backdrop-blur-md text-white">
+          <div className="container mx-auto px-4 py-2 lg:px-8 lg:py-10 flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img src="src\assets\logo-white.svg" alt="LOGO" className="h-8 lg:h-10" />
             </Link>
@@ -76,7 +76,7 @@ const Header = () => {
                 >
                   {item.label}
                   {location.pathname === item.path && (
-                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-white"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#70A8FF]"></div>
                   )}
                 </Link>
               ))}
@@ -98,7 +98,7 @@ const Header = () => {
 
           {/* Mobile Navigation Menu */}
           {isMobileMenuOpen && (
-            <div className="md:hidden bg-gradient-to-r from-blue-700 via-purple-700 to-blue-900 border-t border-white/20">
+            <div className="md:hidden border-t border-white/20">
               <nav className="container mx-auto px-4 py-4 space-y-2">
                 {navigationItems.map((item) => (
                   <Link
