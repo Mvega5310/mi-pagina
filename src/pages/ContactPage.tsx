@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { contactService, ContactFormData } from '../services/contactService'
-import Map from '../components/Map'
+import GoogleMap from '../components/GoogleMap'
 
 // Import contact icons
 import phoneIcon from '../assets/images/contacts/section1-phone.svg'
@@ -319,7 +319,7 @@ const ContactPage = () => {
 
       {/* Map Section */}
       <section className="w-full">
-        <Map 
+        <GoogleMap 
           latitude={10.370511930922696} 
           longitude={-75.50354889736641}
           zoom={17}

@@ -88,30 +88,57 @@ const HeroSection = () => {
           />
         ))}
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gray-500/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-blue-500/60 to-white/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/0 via-blue-500/0 to-purple-600/0"></div>
+
+        {/* Diagonal Blue Stripes */}
+        {/* First diagonal stripe - middle area */}
+       {/* Primera franja diagonal - casi al centro */}
+{/* Franjas diagonales sobre la imagen */}
+<div className="pointer-events-none absolute inset-0 z-[1]">
+  {/* Franja 1: casi al centro (sólida, delgada, leve inclinación) */}
+  <div
+    className="absolute inset-0 bg-[#5a86da] opacity-45 mix-blend-overlay"
+  style={{
+      // top: más a la derecha | bottom: más a la izquierda → inclinación derecha→izquierda
+      clipPath: "polygon(45% 0, 65% 0, 30% 100%, 10% 100%",
+    }}
+  />
+
+  {/* Franja 2: esquina inferior derecha (más sutil) */}
+  <div
+    className="absolute inset-0 bg-[#5a86da] opacity-35 mix-blend-overlay"
+    style={{
+      // Triángulo/rombo en esquina inferior derecha con igual inclinación
+     clipPath: "polygon(100% 80%, 100% 45%, 100% 100%, 88% 100%)",
+    }}
+  />
+</div>
+
+
       </div>
 
       {/* Content */}
       <motion.div 
-        className="relative z-10 text-start text-white px-4 max-w-4xl mx-10 lg:mx-auto"
+        className="relative z-10 text-start text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-4 sm:mx-6 lg:mx-auto mt-16 lg:mt-20"
         initial="hidden"
         animate="visible"
         variants={heroVariants.container}
       >
         <motion.h1 
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight"
           variants={heroVariants.title}
         >
           {heroSlides[currentSlide].title}
         </motion.h1>
         <motion.p 
-          className="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 max-w-2xl"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 opacity-90 max-w-2xl"
           variants={heroVariants.subtitle}
         >
           {heroSlides[currentSlide].subtitle}
         </motion.p>
         <motion.button 
-          className="bg-white text-blue-600 px-8 py-3 rounded-md font-semibold text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
+          className="bg-white text-blue-600 px-6 sm:px-8 py-2 sm:py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg"
           variants={heroVariants.button}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
@@ -121,7 +148,7 @@ const HeroSection = () => {
         
         {/* Slide Navigation Dots */}
         <motion.div 
-          className="flex space-x-3 mt-24"
+          className="flex space-x-3 mt-12 sm:mt-16 lg:mt-24"
           variants={heroVariants.dots}
         >
           {heroSlides.map((_, index) => (
@@ -177,12 +204,6 @@ const HeroSection = () => {
             ease: easeOutConfig
           }}
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 14l-7 7m0 0l-7-7m7 7V3"
-          />
         </motion.svg>
       </motion.div>
     </section>

@@ -25,6 +25,7 @@ const AnimatedSection: React.FC<{ children: React.ReactNode; delay?: number }> =
       animate={isInView ? "visible" : "hidden"}
       variants={fadeInUp}
       transition={{ delay }}
+      className="relative z-10"
     >
       {children}
     </motion.div>
@@ -69,6 +70,28 @@ const HomePage: React.FC = () => {
       <AnimatedSection delay={0.1}>
         <TestimonialsSection />
       </AnimatedSection>
+      
+      {/* Flecha flotante para volver al inicio */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 z-50 group bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+        aria-label="Volver al inicio"
+      >
+        <svg
+          className="w-6 h-6 transform group-hover:-translate-y-1 transition-transform duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
     </div>
   );
 };

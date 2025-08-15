@@ -28,7 +28,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section className="bg-[#1F0951] py-24 px-4">
+    <section className="bg-[#1F0951] py-12 px-4 relative z-5">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

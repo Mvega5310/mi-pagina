@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { MapPinIcon, EnvelopeIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
+import { MapPinIcon, EnvelopeIcon, PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useState, useRef, useEffect } from "react";
 
 const TopHeader = () => {
@@ -32,19 +32,24 @@ const TopHeader = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 py-2">
-            <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-                {/* Left side - Address and Email */}
-                <div className="flex items-center space-x-2 sm:space-x-6 lg:space-x-14 text-gray-600 overflow-hidden">
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 py-1">
+            <div className="container mx-auto px-2 flex justify-between items-center text-xs">
+                {/* Left side - Address, Email and Phone */}
+                <div className="flex items-center space-x-1 sm:space-x-3 lg:space-x-4 text-gray-600 overflow-hidden">
                     {/* Address - Hidden on very small screens */}
                     <div className="hidden sm:flex items-center space-x-1 min-w-0">
-                        <MapPinIcon className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                        <span className="truncate text-xs sm:text-sm">{t("contact_info.address")}</span>
+                        <MapPinIcon className="h-3 w-3 text-blue-500 flex-shrink-0" />
+                        <span className="truncate text-xs">{t("contact_info.address")}</span>
                     </div>
                     {/* Email - Always visible but truncated on small screens */}
                     <div className="flex items-center space-x-1 min-w-0">
-                        <EnvelopeIcon className="h-4 w-4 text-blue-500 flex-shrink-0" />
-                        <span className="truncate text-xs sm:text-sm">{t("contact_info.email")}</span>
+                        <EnvelopeIcon className="h-3 w-3 text-blue-500 flex-shrink-0" />
+                        <span className="truncate text-xs">{t("contact_info.email")}</span>
+                    </div>
+                    {/* Phone - Always visible but truncated on small screens */}
+                    <div className="flex items-center space-x-1 min-w-0">
+                        <PhoneIcon className="h-3 w-3 text-blue-500 flex-shrink-0" />
+                        <span className="truncate text-xs">{t("contact_info.phone")}</span>
                     </div>
                 </div>
 

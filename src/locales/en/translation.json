@@ -19,13 +19,16 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris.",
       "cards": {
         "card1": {
-          "title": "Perfect solution every business demands"
+          "title": "Perfect solution every business demands",
+          "description": "Innovative technology solutions tailored to meet your specific business needs and drive growth."
         },
         "card2": {
-          "title": "Helping businesses around the world"
+          "title": "Helping businesses around the world",
+          "description": "Global reach with local expertise, supporting companies across different industries and markets."
         },
         "card3": {
-          "title": "What is holding back the IT solution."
+          "title": "What is holding back the IT solution.",
+          "description": "Identifying and overcoming technological barriers that prevent your business from reaching its full potential."
         }
       }
     },
@@ -331,6 +334,7 @@
   },
   "contact_info": {
     "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
-    "email": "gerson.almeida@friendsoft.co"
+    "email": "gerson.almeida@friendsoft.co",
+    "phone": "+57 (300)-351 9363"
   }
 }

@@ -19,13 +19,16 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris.",
       "cards": {
         "card1": {
-          "title": "Solución perfecta que demanda cada negocio"
+          "title": "Solución perfecta que demanda cada negocio",
+          "description": "Soluciones tecnológicas innovadoras adaptadas para satisfacer las necesidades específicas de tu negocio e impulsar el crecimiento."
         },
         "card2": {
-          "title": "Ayudando a negocios alrededor del mundo"
+          "title": "Ayudando a negocios alrededor del mundo",
+          "description": "Alcance global con experiencia local, apoyando empresas en diferentes industrias y mercados."
         },
         "card3": {
-          "title": "Qué está frenando la solución TI."
+          "title": "Qué está frenando la solución TI.",
+          "description": "Identificando y superando las barreras tecnológicas que impiden que tu negocio alcance su máximo potencial."
         }
       }
     },
@@ -331,6 +334,7 @@
   },
   "contact_info": {
     "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
-    "email": "gerson.almeida@friendsoft.co"
+    "email": "gerson.almeida@friendsoft.co",
+    "phone": "+57 (300)-351 9363"
   }
 }

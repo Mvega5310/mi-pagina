@@ -43,9 +43,9 @@ const TestimonialsSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative">
       {/* Background Section with Header */}
-      <div className="bg-[#F7F7F9] pt-16 pb-32 md:pb-40 lg:pb-48">
+      <div className="bg-[#F7F7F9] pt-6 sm:pt-8 pb-12 sm:pb-16 md:pb-20 lg:pb-24 overflow-hidden">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div 
@@ -57,14 +57,14 @@ const TestimonialsSection: React.FC = () => {
           >
             <motion.p 
               variants={fadeInUp}
-              className="text-sm font-medium mb-4 tracking-wide uppercase" 
+              className="text-xs sm:text-sm font-medium mb-3 sm:mb-4 tracking-wide uppercase" 
               style={{ color: '#7B43D6' }}
             >
               {t('home.section9.subtitle')}
             </motion.p>
             <motion.h2 
               variants={fadeInUp}
-              className="text-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-2xl mx-auto"
+              className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight max-w-2xl mx-auto"
             >
               {t('home.section9.title')}
             </motion.h2>
@@ -73,16 +73,16 @@ const TestimonialsSection: React.FC = () => {
       </div>
 
       {/* White Background Section */}
-      <div className="bg-white pt-16 pb-16">
+      <div className="bg-white pt-16 pb-16 min-h-[400px]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Testimonials Grid - Positioned to overlap */}
-          <div className="relative -mt-32 md:-mt-40 lg:-mt-48">
+          <div className="relative -mt-24 sm:-mt-32 md:-mt-40 lg:-mt-48">
             <motion.div 
               ref={cardsRef}
               initial="hidden"
               animate={cardsInView ? "visible" : "hidden"}
               variants={staggerContainer}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
             >
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -95,38 +95,38 @@ const TestimonialsSection: React.FC = () => {
                   className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
                 >
                   {/* Upper section with quote icon and comment - F7F7F9 background */}
-                  <div className="p-6 md:p-8 bg-white">
+                  <div className="p-4 sm:p-6 md:p-8 bg-white">
                     {/* Quote Icon - Centered */}
-                    <div className="mb-6 flex justify-center">
+                    <div className="mb-4 sm:mb-6 flex justify-center">
                       <img
                         src={QuoteIcon}
                         alt="Quote"
-                        className="w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
+                        className="w-10 sm:w-12 md:w-14 lg:w-16 xl:w-20 h-10 sm:h-12 md:h-14 lg:h-16 xl:h-20"
                       />
                     </div>
 
                     {/* Comment */}
-                    <p className="text-gray-600 text-sm md:text-base leading-relaxed text-center">
+                    <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-center">
                       {testimonial.comment}
                     </p>
                   </div>
 
                   {/* Lower section with profile - White background */}
-                  <div className="bg-white p-6 md:p-8 flex flex-col items-center text-center">
+                  <div className="bg-white p-4 sm:p-6 md:p-8 flex flex-col items-center text-center">
                     {/* Profile Image */}
-                    <div className="mb-4">
+                    <div className="mb-3 sm:mb-4">
                       <img
                         src={testimonial.profileImage}
                         alt={testimonial.name}
-                        className="w-14 h-14 md:w-16 md:h-16 rounded-full object-cover border-4 border-gray-100 shadow-md"
+                        className="w-12 sm:w-14 md:w-16 h-12 sm:h-14 md:h-16 rounded-full object-cover border-4 border-gray-100 shadow-md"
                       />
                     </div>
 
                     {/* Name and Position */}
-                    <h4 className="text-black text-base md:text-lg font-bold mb-1">
+                    <h4 className="text-black text-sm sm:text-base md:text-lg font-bold mb-1">
                       {testimonial.name}
                     </h4>
-                    <p className="text-gray-500 text-xs md:text-sm">
+                    <p className="text-gray-500 text-xs sm:text-xs md:text-sm">
                       {testimonial.position}
                     </p>
                   </div>

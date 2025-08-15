@@ -108,7 +108,7 @@ const ProjectsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-[#F7F7F9] py-24 pt-48 px-4">
+    <section className="bg-transparent py-12 pt-4 px-4 relative z-[1]">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="grid gap-8 items-start mb-16">
