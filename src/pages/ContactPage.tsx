@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { contactService, ContactFormData } from '../services/contactService'
-import GoogleMap from '../components/GoogleMap'
+import Map from '../components/Map'
 
 // Import contact icons
 import phoneIcon from '../assets/images/contacts/section1-phone.svg'
@@ -116,23 +116,23 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Contact Form Section */}
-      <section className="py-16 lg:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl mx-auto">
+      {/* Contact Form Section - Responsive */}
+      <section className="py-12 sm:py-16 lg:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 max-w-7xl mx-auto">
             
-            {/* Left Column - Contact Form */}
-            <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-              <div className="text-center mb-8">
-                <p className="text-[#7B43D6] font-medium mb-2">{t('contact.form.sendEmail')}</p>
-                <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+            {/* Left Column - Contact Form - Responsive */}
+            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 shadow-lg">
+              <div className="text-center mb-6 sm:mb-8">
+                <p className="text-[#7B43D6] font-medium mb-2 text-sm sm:text-base">{t('contact.form.sendEmail')}</p>
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
                   {t('contact.form.feelFreeToWrite')}
                 </h1>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Name and Email Row */}
-                <div className="grid md:grid-cols-2 gap-4">
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                {/* Name and Email Row - Responsive */}
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('contact.form.fields.name')}
@@ -144,12 +144,12 @@ const ContactPage = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       placeholder={t('contact.form.placeholders.name')}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors ${
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.name ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>
                     )}
                   </div>
                   
@@ -164,18 +164,18 @@ const ContactPage = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder={t('contact.form.placeholders.email')}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors ${
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.email ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
                     )}
                   </div>
                 </div>
 
-                {/* Phone and Subject Row */}
-                <div className="grid md:grid-cols-2 gap-4">
+                {/* Phone and Subject Row - Responsive */}
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
                       {t('contact.form.fields.phone')}
@@ -187,12 +187,12 @@ const ContactPage = () => {
                       value={formData.phone}
                       onChange={handleInputChange}
                       placeholder={t('contact.form.placeholders.phone')}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors ${
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.phone && (
-                      <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
                     )}
                   </div>
                   
@@ -207,17 +207,17 @@ const ContactPage = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       placeholder={t('contact.form.placeholders.subject')}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors ${
+                      className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.subject ? 'border-red-500' : 'border-gray-300'
                       }`}
                     />
                     {errors.subject && (
-                      <p className="text-red-500 text-sm mt-1">{errors.subject}</p>
+                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.subject}</p>
                     )}
                   </div>
                 </div>
 
-                {/* Message Field */}
+                {/* Message Field - Responsive */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                     {t('contact.form.fields.message')}
@@ -225,19 +225,19 @@ const ContactPage = () => {
                   <textarea
                     id="message"
                     name="message"
-                    rows={6}
+                    rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder={t('contact.form.placeholders.message')}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors resize-none"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors resize-none text-sm sm:text-base"
                   />
                 </div>
 
-                {/* Submit Button */}
+                {/* Submit Button - Responsive */}
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#1F0951] text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#2D1065] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-[#1F0951] text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold hover:bg-[#2D1065] transition-colors disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-[#7B43D6]/50"
                 >
                   {isSubmitting ? 'Enviando...' : t('contact.form.button')}
                 </button>
@@ -265,48 +265,48 @@ const ContactPage = () => {
                 </p>
               </div>
 
-              {/* Contact Information Cards */}
-              <div className="space-y-6">
+              {/* Contact Information Cards - Responsive */}
+              <div className="space-y-4 sm:space-y-6">
                 {/* Phone */}
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
-                    <img src={phoneIcon} alt="Phone" className="w-6 h-6" />
+                <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
+                    <img src={phoneIcon} alt="Phone" className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
                       {t('contact.info.phone.label')}
                     </h3>
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-gray-600 font-medium text-sm sm:text-base truncate">
                       {t('contact.info.phone.number')}
                     </p>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
-                    <img src={emailIcon} alt="Email" className="w-6 h-6" />
+                <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
+                    <img src={emailIcon} alt="Email" className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
                       {t('contact.info.email.label')}
                     </h3>
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-gray-600 font-medium text-sm sm:text-base truncate">
                       {t('contact.info.email.address')}
                     </p>
                   </div>
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
-                    <img src={markIcon} alt="Location" className="w-6 h-6" />
+                <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center">
+                    <img src={markIcon} alt="Location" className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                  <div className="min-w-0 flex-1">
+                    <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
                       {t('contact.info.address.label')}
                     </h3>
-                    <p className="text-gray-600 font-medium">
+                    <p className="text-gray-600 font-medium text-sm sm:text-base">
                       {t('contact.info.address.location')}
                     </p>
                   </div>
@@ -317,15 +317,21 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Map Section - Responsive */}
       <section className="w-full">
-        <GoogleMap 
-          latitude={10.370511930922696} 
-          longitude={-75.50354889736641}
-          zoom={17}
-          height="500px"
-          className="w-full"
-        />
+        <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+          <iframe
+            title="Google Map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8!2d-74.0!3d4.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNMKwMzYnMDAuMCJOIDc0wrAwMCcwMC4wIlc!5e0!3m2!1sen!2sco!4v1234567890"
+            width="100%"
+            height="300"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="sm:h-[350px] md:h-[400px]"
+          />
+        </div>
       </section>
     </div>
   )

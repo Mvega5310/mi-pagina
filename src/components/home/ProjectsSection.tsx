@@ -42,13 +42,19 @@ const ProjectsCarousel = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
-  // Calculate visible projects based on screen size
+  // Calculate visible projects based on screen size - responsive
   const getVisibleProjects = () => {
-    const startIndex = currentSlide * 4;
-    return projectsData.slice(startIndex, startIndex + 4);
+    // Show 1 on mobile, 2 on tablet, 4 on desktop
+    const itemsPerSlide = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 4;
+    const startIndex = currentSlide * itemsPerSlide;
+    return projectsData.slice(startIndex, startIndex + itemsPerSlide);
   };
 
-  const totalSlides = Math.ceil(projectsData.length / 4);
+  // Calculate total slides based on screen size
+  const getTotalSlides = () => {
+    const itemsPerSlide = window.innerWidth < 768 ? 1 : window.innerWidth < 1024 ? 2 : 4;
+    return Math.ceil(projectsData.length / itemsPerSlide);
+  };
 
   return (
     <div 
@@ -56,24 +62,24 @@ const ProjectsCarousel = () => {
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+      {/* Projects Grid - Responsive */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12">
         {getVisibleProjects().map((project, index) => (
-          <div key={project.id} className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-2">
+          <div key={project.id} className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
             {/* Project Card with Image and Text Overlay */}
-            <div className="relative overflow-hidden rounded-2xl shadow-lg bg-white">
+            <div className="relative overflow-hidden shadow-lg bg-white">
               <img
                 src={project.image}
                 alt={t(`home.section5.projects.project${project.id}.title`)}
-                className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
               />
               
-              {/* Text Content Inside Card */}
-              <div className="absolute bottom-0 left-0 right-0 bg-white p-6 mx-2 mb-2">
-                <span className={`inline-block ${project.categoryColor} text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wide`}>
+              {/* Text Content Inside Card - Responsive */}
+              <div className="absolute bottom-0 left-0 right-0 bg-white p-3 sm:p-4 lg:p-6 mx-1 sm:mx-2 mb-1 sm:mb-2">
+                <span className={`inline-block ${project.categoryColor} text-xs font-semibold px-2 sm:px-3 py-1 mb-2 sm:mb-3 uppercase tracking-wide`}>
                   {t(`home.section5.projects.project${project.id}.category`)}
                 </span>
-                <h3 className="text-gray-900 font-bold text-xl leading-tight group-hover:text-[#7B43D6] transition-colors duration-300">
+                <h3 className="text-gray-900 font-bold text-base sm:text-lg lg:text-xl leading-tight group-hover:text-[#7B43D6] transition-colors duration-300">
                   {t(`home.section5.projects.project${project.id}.title`)}
                 </h3>
               </div>
@@ -87,7 +93,7 @@ const ProjectsCarousel = () => {
 
       {/* Navigation Dots */}
       <div className="flex justify-center space-x-4">
-        {Array.from({ length: totalSlides }).map((_, index) => (
+        {Array.from({ length: getTotalSlides() }).map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
@@ -108,23 +114,21 @@ const ProjectsSection = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="bg-transparent py-12 pt-4 px-4 relative z-[1]">
+    <section className="bg-transparent py-8 sm:py-12 pt-2 sm:pt-4 px-4 sm:px-6 lg:px-8 relative z-[1]">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="grid gap-8 items-start mb-16">
-          {/* Left - Subtitle */}
-          <div>
-            <p className="text-[#7B43D6] text-sm font-bold mb-4">
-              {t("home.section5.subtitle")}
-            </p>
-          </div>
+        {/* Header - Responsive */}
+        <div className="text-center lg:text-left mb-8 sm:mb-12 lg:mb-16">
+          {/* Subtitle */}
+          <p className="text-[#7B43D6] text-xs sm:text-sm font-bold mb-3 sm:mb-4 uppercase tracking-wide">
+            {t("home.section5.subtitle")}
+          </p>
           
-          {/* Right - Title and Description */}
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+          {/* Title and Description */}
+          <div className="max-w-4xl lg:max-w-none">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4 sm:mb-6">
               {t("home.section5.title")}
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-3xl mx-auto lg:mx-0">
               {t("home.section5.description")}
             </p>
           </div>

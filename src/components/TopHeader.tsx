@@ -32,7 +32,7 @@ const TopHeader = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 py-1">
+        <div className="fixed top-0 left-0 right-0 z-[70] bg-white border-b border-gray-200 py-1">
             <div className="container mx-auto px-2 flex justify-between items-center text-xs">
                 {/* Left side - Address, Email and Phone */}
                 <div className="flex items-center space-x-1 sm:space-x-3 lg:space-x-4 text-gray-600 overflow-hidden">
@@ -59,7 +59,7 @@ const TopHeader = () => {
                     <div className="relative" ref={dropdownRef}>
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="flex items-center space-x-1 sm:space-x-2 bg-gray-50 hover:bg-gray-100 rounded-md px-1 sm:px-2 py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                            className="flex items-center space-x-1 sm:space-x-2 bg-gray-50 hover:bg-gray-100 px-1 sm:px-2 py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                         >
                             <img
                                 src={`https://flagcdn.com/w20/${getFlagCode()}.png`}
@@ -74,7 +74,7 @@ const TopHeader = () => {
 
                         {/* Dropdown menu */}
                         {isOpen && (
-                            <div className="absolute right-0 mt-1 w-32 sm:w-40 bg-white rounded-md shadow-lg z-10 py-1 border border-gray-200">
+                            <div className="absolute right-0 mt-1 w-32 sm:w-40 bg-white shadow-lg z-10 py-1 border border-gray-200">
                                 <button
                                     onClick={() => changeLanguage("en")}
                                     className={`flex items-center space-x-2 w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm ${i18n.language === "en" ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50"}`}

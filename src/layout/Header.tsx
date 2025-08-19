@@ -60,7 +60,7 @@ const Header = () => {
       {/* Main Header - Different for home vs other pages */}
       {isHomePage ? (
         // Home page header with gradient background
-        <header className="fixed top-[28px] left-0 right-0 z-40 border border-[#FFFFFF1A] bg-gradient-to-r from-[#70A7FF]/30 via-[#6079FD]/30 to-[#565CFC]/30 backdrop-blur-md text-white">
+        <header className="fixed top-[28px] left-0 right-0 z-[60] border border-[#FFFFFF1A] bg-gradient-to-r from-[#70A7FF]/30 via-[#6079FD]/30 to-[#565CFC]/30 backdrop-blur-md text-white">
           <div className="container mx-auto px-4 py-2 lg:px-8 lg:py-10 flex justify-between items-center">
             <Link to="/" className="flex items-center space-x-2">
               <img src="src\assets\logo-white.svg" alt="LOGO" className="h-8 lg:h-10" />
@@ -72,7 +72,7 @@ const Header = () => {
                 <Link 
                   key={item.path}
                   to={item.path} 
-                  className={`relative pb-2 transition-colors ${location.pathname === item.path ? 'text-white font-medium' : 'text-white hover:text-blue-200'}`}
+                  className={`relative pb-2 transition-colors ${location.pathname === item.path ? 'text-white font-medium' : 'text-white hover:text-white/50'}`}
                 >
                   {item.label}
                   {location.pathname === item.path && (
@@ -108,7 +108,7 @@ const Header = () => {
                     className={`block py-3 px-4 rounded-md transition-colors ${
                       location.pathname === item.path 
                         ? 'bg-white/20 text-white font-medium' 
-                        : 'text-white hover:bg-white/10'
+                        : 'text-white hover:bg-white/10 hover:text-white/50'
                     }`}
                   >
                     {item.label}
@@ -121,7 +121,7 @@ const Header = () => {
       ) : (
         <>
           {/* Second Header - White background with navigation */}
-          <header className="fixed top-[28px] left-0 right-0 z-40 bg-white border-b border-gray-200">
+          <header className="fixed top-[28px] left-0 right-0 z-[60] bg-white border-b border-gray-200">
             <div className="container mx-auto px-4 py-4 lg:py-6 flex justify-between items-center">
               <Link to="/" className="flex items-center space-x-2">
                 <img src="src\assets\logo.svg" alt="LOGO" className="h-8 lg:h-10" />

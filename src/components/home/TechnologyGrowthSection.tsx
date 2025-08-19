@@ -74,7 +74,7 @@ const TechnologyGrowthSection = () => {
                 </div>
                 
                 {/* Progress Bar */}
-                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-3">
+                <div className="w-full bg-gray-200 h-2 sm:h-3 rounded-full">
                   <div 
                     className="bg-gradient-to-r from-[#70A8FF] to-[#565CFD] h-2 sm:h-3 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${item.percentage}%` }}
