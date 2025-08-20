@@ -14,15 +14,30 @@ const resources = {
   }
 }
 
+// SSR-safe i18n configuration
+const isServer = typeof window === 'undefined'
+
+const i18nConfig = {
+  resources,
+  fallbackLng: 'es',
+  lng: isServer ? 'es' : undefined, // Use fallback language on server
+  interpolation: {
+    escapeValue: false
+  },
+  // Disable language detection on server
+  detection: isServer ? undefined : {
+    order: ['localStorage', 'navigator', 'htmlTag'],
+    caches: ['localStorage']
+  }
+}
+
+// Only use LanguageDetector on client side
+if (!isServer) {
+  i18n.use(LanguageDetector)
+}
+
 i18n
-  .use(LanguageDetector)
   .use(initReactI18next)
-  .init({
-    resources,
-    fallbackLng: 'es',
-    interpolation: {
-      escapeValue: false
-    }
-  })
+  .init(i18nConfig)
 
 export default i18n

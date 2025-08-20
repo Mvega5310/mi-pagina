@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import OptimizedImage from '../OptimizedImage';
 
 // Projects data structure
 const projectsData = [
@@ -68,10 +69,13 @@ const ProjectsCarousel = () => {
           <div key={project.id} className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
             {/* Project Card with Image and Text Overlay */}
             <div className="relative overflow-hidden shadow-lg bg-white">
-              <img
+              <OptimizedImage
                 src={project.image}
                 alt={t(`home.section5.projects.project${project.id}.title`)}
                 className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+                width={400}
+                height={256}
+                loading="lazy"
               />
               
               {/* Text Content Inside Card - Responsive */}

@@ -2,7 +2,6 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { contactService, ContactFormData } from '../services/contactService'
-import Map from '../components/Map'
 
 // Import contact icons
 import phoneIcon from '../assets/images/contacts/section1-phone.svg'
