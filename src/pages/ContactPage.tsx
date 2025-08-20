@@ -2,6 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 import { contactService, ContactFormData } from '../services/contactService'
+import SEO from '../components/SEO'
 
 // Import contact icons
 import phoneIcon from '../assets/images/contacts/section1-phone.svg'
@@ -114,7 +115,15 @@ const ContactPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+      <SEO 
+        title={t('seo.contact.title', 'Contacto | Friendsoft')}
+        description={t('seo.contact.description', 'Contáctanos para discutir tu proyecto de desarrollo de software. Estamos ubicados en Bogotá, Colombia y listos para ayudarte con soluciones tecnológicas.')}
+        keywords={t('seo.contact.keywords', 'contacto, Friendsoft, desarrollo software, Bogotá Colombia, consultoría tecnológica, presupuesto proyecto')}
+        type="website"
+        url="/contact"
+      />
+      <div className="min-h-screen bg-gray-50">
       {/* Contact Form Section - Responsive */}
       <section className="py-12 sm:py-16 lg:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -146,9 +155,12 @@ const ContactPage = () => {
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.name ? 'border-red-500' : 'border-gray-300'
                       }`}
+                      aria-invalid={errors.name ? 'true' : 'false'}
+                      aria-describedby={errors.name ? 'name-error' : undefined}
+                      required
                     />
                     {errors.name && (
-                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>
+                      <p id="name-error" className="text-red-500 text-xs sm:text-sm mt-1" role="alert">{errors.name}</p>
                     )}
                   </div>
                   
@@ -166,9 +178,12 @@ const ContactPage = () => {
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.email ? 'border-red-500' : 'border-gray-300'
                       }`}
+                      aria-invalid={errors.email ? 'true' : 'false'}
+                      aria-describedby={errors.email ? 'email-error' : undefined}
+                      required
                     />
                     {errors.email && (
-                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>
+                      <p id="email-error" className="text-red-500 text-xs sm:text-sm mt-1" role="alert">{errors.email}</p>
                     )}
                   </div>
                 </div>
@@ -189,9 +204,11 @@ const ContactPage = () => {
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.phone ? 'border-red-500' : 'border-gray-300'
                       }`}
+                      aria-invalid={errors.phone ? 'true' : 'false'}
+                      aria-describedby={errors.phone ? 'phone-error' : undefined}
                     />
                     {errors.phone && (
-                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.phone}</p>
+                      <p id="phone-error" className="text-red-500 text-xs sm:text-sm mt-1" role="alert">{errors.phone}</p>
                     )}
                   </div>
                   
@@ -209,9 +226,12 @@ const ContactPage = () => {
                       className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 border rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors text-sm sm:text-base ${
                         errors.subject ? 'border-red-500' : 'border-gray-300'
                       }`}
+                      aria-invalid={errors.subject ? 'true' : 'false'}
+                      aria-describedby={errors.subject ? 'subject-error' : undefined}
+                      required
                     />
                     {errors.subject && (
-                      <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.subject}</p>
+                      <p id="subject-error" className="text-red-500 text-xs sm:text-sm mt-1" role="alert">{errors.subject}</p>
                     )}
                   </div>
                 </div>
@@ -229,6 +249,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     placeholder={t('contact.form.placeholders.message')}
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#7B43D6] focus:border-transparent transition-colors resize-none text-sm sm:text-base"
+                    required
                   />
                 </div>
 
@@ -243,9 +264,13 @@ const ContactPage = () => {
 
                 {/* Submit Message */}
                 {submitMessage && (
-                  <div className={`p-4 rounded-lg text-center ${
-                    submitSuccess ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
-                  }`}>
+                  <div 
+                    className={`p-4 rounded-lg text-center ${
+                      submitSuccess ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+                    }`}
+                    role="alert"
+                    aria-live="polite"
+                  >
                     {submitMessage}
                   </div>
                 )}
@@ -332,7 +357,8 @@ const ContactPage = () => {
           />
         </div>
       </section>
-    </div>
+      </div>
+    </>
   )
 }
 

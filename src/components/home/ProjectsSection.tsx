@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import OptimizedImage from '../OptimizedImage';
 
@@ -6,22 +6,22 @@ import OptimizedImage from '../OptimizedImage';
 const projectsData = [
   {
     id: 1,
-    image: "src/assets/images/home/section5-image1.jpg",
+    image: "/src/assets/images/home/section5-image1.jpg",
     categoryColor: "bg-blue-100 text-blue-600"
   },
   {
     id: 2,
-    image: "src/assets/images/home/section5-image2.jpg",
+    image: "/src/assets/images/home/section5-image2.jpg",
     categoryColor: "bg-green-100 text-green-600"
   },
   {
     id: 3,
-    image: "src/assets/images/home/section5-image3.jpg",
+    image: "/src/assets/images/home/section5-image3.jpg",
     categoryColor: "bg-purple-100 text-purple-600"
   },
   {
     id: 4,
-    image: "src/assets/images/home/section5-image4.jpg",
+    image: "/src/assets/images/home/section5-image4.jpg",
     categoryColor: "bg-orange-100 text-orange-600"
   }
 ];

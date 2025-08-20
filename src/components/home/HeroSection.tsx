@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { heroVariants, easeOutConfig } from '../../hooks/useScrollAnimation';
@@ -12,13 +12,13 @@ const HeroSection = () => {
   // Hero slides data (can be extended for multiple slides)
   const heroSlides = [
     {
-      image: "src/assets/images/home/section1-imagen1.jpg",
+      image: "/src/assets/images/home/section1-imagen1.jpg",
       title: t("home.hero.title"),
       subtitle: t("home.hero.subtitle"),
       button: t("home.hero.button"),
     },
     {
-      image: "src/assets/images/home/section1-imagen1.jpg",
+      image: "/src/assets/images/home/section1-imagen1.jpg",
       title: t("home.hero.title"),
       subtitle: t("home.hero.subtitle"),
       button: t("home.hero.button"),
@@ -171,8 +171,8 @@ const HeroSection = () => {
                 </button>
               ))}
               {/* Additional static dots for visual effect */}
-              <button className="w-3 h-3 sm:w-4 sm:h-4 bg-white/30 rounded-full"></button>
-              <button className="w-3 h-3 sm:w-4 sm:h-4 bg-white/30 rounded-full"></button>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-white/30 rounded-full" aria-hidden="true"></div>
+              <div className="w-3 h-3 sm:w-4 sm:h-4 bg-white/30 rounded-full" aria-hidden="true"></div>
             </motion.div>
           </div>
         </motion.div>

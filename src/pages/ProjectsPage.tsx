@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import SEO from '../components/SEO'
 
 const ProjectsPage = () => {
   const { t } = useTranslation()
@@ -49,7 +50,16 @@ const ProjectsPage = () => {
   ]
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
+    <>
+      <SEO 
+        title={t('seo.projects.title', 'Portfolio de Proyectos | Friendsoft')}
+        description={t('seo.projects.description', 'Explora nuestro portfolio de proyectos exitosos en desarrollo de software, aplicaciones web y móviles. Casos de éxito y soluciones innovadoras.')}
+        keywords={t('seo.projects.keywords', 'portfolio proyectos, casos éxito, desarrollo software, aplicaciones web, aplicaciones móviles, soluciones tecnológicas')}
+        type="website"
+        image="/src/assets/images/projects/project1.webp"
+        url="/projects"
+      />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
       
       {/* Projects Grid - Responsive */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -71,7 +81,10 @@ const ProjectsPage = () => {
                 <div className="text-center text-white p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-xs sm:text-sm mb-3 sm:mb-4 opacity-90 line-clamp-3">{project.description}</p>
-                  <button className="bg-white text-[#9782A2] px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50">
+                  <button 
+                    className="bg-white text-[#9782A2] px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white/50 rounded"
+                    aria-label={`${t('projects.viewProject')}: ${project.title}`}
+                  >
                     {t('projects.viewProject')}
                   </button>
                 </div>
@@ -100,9 +113,9 @@ const ProjectsPage = () => {
               </div>
             </div>
           </div>
-        ))}
+        ))}</div>
       </div>
-    </div>
+    </>
   )
 }
 

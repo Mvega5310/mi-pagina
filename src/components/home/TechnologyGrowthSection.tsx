@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const TechnologyGrowthSection = () => {
@@ -21,7 +20,7 @@ const TechnologyGrowthSection = () => {
               className="absolute inset-0 bg-center bg-no-repeat bg-contain bottom-12 sm:bottom-16 md:bottom-0 left-4 sm:left-8 md:left-24"
 
               style={{
-                backgroundImage: `url('/src/assets/images/home/section6-image1-bg.png')`
+                backgroundImage: `url('/src/assets/images/home/section6-image1-bg.webp')`
               }}
             />
             
@@ -30,7 +29,7 @@ const TechnologyGrowthSection = () => {
               <h2 
                 className="text-[50px] sm:text-[80px] md:text-[140px] lg:text-[180px] xl:text-[200px] font-bold leading-[0.8] lg:leading-[265px] text-transparent bg-clip-text select-none"
                 style={{
-                  backgroundImage: `url('/src/assets/images/home/section6-image2-bg-letters.jpg')`,
+                  backgroundImage: `url('/src/assets/images/home/section6-image2-bg-letters.webp')`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                   backgroundRepeat: 'no-repeat',

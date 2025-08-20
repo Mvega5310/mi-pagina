@@ -60,10 +60,23 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     }
   }, [priority, loading])
 
-  // Generate WebP source if supported
-  const getWebPSrc = (originalSrc: string): string => {
-    if (originalSrc.endsWith('.svg')) return originalSrc
-    return originalSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')
+  // Generate modern image formats
+  const getModernSrc = (originalSrc: string, format: 'webp' | 'avif'): string => {
+     if (originalSrc.endsWith('.svg')) return originalSrc
+     return originalSrc.replace(/\.(jpg|jpeg|png)$/i, `.${format}`)
+  }
+
+  // Normalize Vite asset paths
+  const normalizeSrc = (src: string): string => {
+    // Handle Vite asset imports
+    return src;
+    if (src.startsWith('/src/')) {
+      return src.replace('/src/', '/')
+    }
+    if (src.startsWith('src/')) {
+      return '/' + src
+    }
+    return src
   }
 
   // Generate responsive sizes
@@ -123,10 +136,19 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
 
   return (
     <picture>
+      {/* AVIF source for maximum compression */}
+      {/* {!normalizedSrc.endsWith('.svg') && (
+        <source
+          srcSet={getModernSrc(normalizedSrc, 'avif')}
+          type="image/avif"
+          sizes={getResponsiveSizes()}
+        />
+      )} */}
+      
       {/* WebP source for modern browsers */}
       {!src.endsWith('.svg') && (
         <source
-          srcSet={getWebPSrc(src)}
+          srcSet={getModernSrc(src, 'webp')}
           type="image/webp"
           sizes={getResponsiveSizes()}
         />

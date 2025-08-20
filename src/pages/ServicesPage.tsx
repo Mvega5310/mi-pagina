@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import SEO from '../components/SEO'
 
 const ServicesPage = () => {
   const { t } = useTranslation()
@@ -6,19 +7,19 @@ const ServicesPage = () => {
   const services = [
     {
       id: 'manage_it',
-      image: 'src/assets/images/services/section1-imagen1.jpg',
+      image: '/src/assets/images/services/section1-imagen1.jpg',
       titleKey: 'services.manage_it.title',
       descriptionKey: 'services.manage_it.description'
     },
     {
       id: 'cyber_security',
-      image: 'src/assets/images/services/section1-imagen2.jpg',
+      image: '/src/assets/images/services/section1-imagen2.jpg',
       titleKey: 'services.cyber_security.title',
       descriptionKey: 'services.cyber_security.description'
     },
     {
       id: 'digital_experience',
-      image: 'src/assets/images/services/section1-imagen3.jpg',
+      image: '/src/assets/images/services/section1-imagen3.jpg',
       titleKey: 'services.digital_experience.title',
       descriptionKey: 'services.digital_experience.description'
     }
@@ -28,31 +29,31 @@ const ServicesPage = () => {
   const serviceIcons = [
     {
       id: 'product_development',
-      icon: 'src/assets/images/services/icons/section2-icon1.svg',
+      icon: '/src/assets/images/services/icons/section2-icon1.svg',
       titleKey: 'services.section2.product_development.title',
       descriptionKey: 'services.section2.product_development.description'
     },
     {
       id: 'ui_ux',
-      icon: 'src/assets/images/services/icons/section2-icon2.svg',
+      icon: '/src/assets/images/services/icons/section2-icon2.svg',
       titleKey: 'services.section2.ui_ux.title',
       descriptionKey: 'services.section2.ui_ux.description'
     },
     {
       id: 'digital_marketing',
-      icon: 'src/assets/images/services/icons/section2-icon3.svg',
+      icon: '/src/assets/images/services/icons/section2-icon3.svg',
       titleKey: 'services.section2.digital_marketing.title',
       descriptionKey: 'services.section2.digital_marketing.description'
     },
     {
       id: 'content_management',
-      icon: 'src/assets/images/services/icons/section2-icon4.svg',
+      icon: '/src/assets/images/services/icons/section2-icon4.svg',
       titleKey: 'services.section2.content_management.title',
       descriptionKey: 'services.section2.content_management.description'
     },
     {
       id: 'data_analysis',
-      icon: 'src/assets/images/services/icons/section2-icon5.svg',
+      icon: '/src/assets/images/services/icons/section2-icon5.svg',
       titleKey: 'services.section2.data_analysis.title',
       descriptionKey: 'services.section2.data_analysis.description'
     }
@@ -60,6 +61,14 @@ const ServicesPage = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO 
+        title={t('seo.services.title', 'Servicios de Desarrollo de Software | Friendsoft')}
+        description={t('seo.services.description', 'Servicios profesionales de desarrollo web, aplicaciones móviles, UX/UI, marketing digital y consultoría tecnológica. Soluciones personalizadas para tu empresa.')}
+        keywords={t('seo.services.keywords', 'servicios desarrollo software, desarrollo web, aplicaciones móviles, UX/UI design, marketing digital, consultoría TI, gestión contenido, análisis datos')}
+        type="service"
+        image="/src/assets/images/services/hero-bg.webp"
+        url="/services"
+      />
       {/* Primera sección de servicios - Responsive */}
       <section className="py-8 sm:py-12 lg:py-16 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +156,7 @@ const ServicesPage = () => {
                 {/* Imagen principal - Responsive */}
                 <div className="overflow-hidden">
                   <img 
-                    src="src/assets/images/services/section3-imagen1.jpg"
+                    src="/src/assets/images/services/section3-imagen1.jpg"
                     alt={t('services.section3.title')}
                     className="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[500px] object-cover"
                   />

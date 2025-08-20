@@ -11,9 +11,12 @@ const LayoutContent = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <a href="#main-content" className="skip-to-main">
+        Skip to main content
+      </a>
       <SEO />
       <Header />
-      <main className="flex-grow"> {/* Adjusted padding-top: TopHeader (~50px) + MainHeader (~80px) */}
+      <main id="main-content" className="flex-grow"> {/* Adjusted padding-top: TopHeader (~50px) + MainHeader (~80px) */}
         <Outlet />
       </main>
       <Footer />

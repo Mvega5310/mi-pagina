@@ -275,6 +275,31 @@
       "button": "Learn more"
     }
   },
+  "seo": {
+    "title": "Friendsoft - Software Development & Technology Solutions",
+    "description": "Professional software development, web applications and technology consulting services. Transform your business with cutting-edge digital solutions.",
+    "keywords": "software development, web development, technology solutions, digital transformation, consulting",
+    "home": {
+      "title": "Friendsoft - Software Development & Technology Solutions",
+      "description": "Professional software development, web applications and technology consulting services. Transform your business with cutting-edge digital solutions in Colombia.",
+      "keywords": "software development, web development, mobile apps, technology consulting, digital transformation, Colombia, Bogotá"
+    },
+    "services": {
+      "title": "Software Development Services | Friendsoft",
+      "description": "Professional web development, mobile applications, UX/UI design, digital marketing and technology consulting services. Custom solutions for your business.",
+      "keywords": "software development services, web development, mobile applications, UX/UI design, digital marketing, IT consulting, content management, data analytics"
+    },
+    "projects": {
+      "title": "Project Portfolio | Friendsoft",
+      "description": "Explore our portfolio of successful projects in software development, web and mobile applications. Success stories and innovative solutions.",
+      "keywords": "project portfolio, success stories, software development, web applications, mobile apps, technology solutions"
+    },
+    "contact": {
+      "title": "Contact | Friendsoft",
+      "description": "Contact us to discuss your software development project. We are located in Bogotá, Colombia and ready to help you with technology solutions.",
+      "keywords": "contact, Friendsoft, software development, Bogotá Colombia, technology consulting, project quote"
+    }
+  },
   "contact": {
     "title": "Contact Us",
     "subtitle": "We are here to help you",

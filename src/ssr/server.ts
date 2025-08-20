@@ -26,12 +26,92 @@ async function createServer(
   // Enable compression for all responses
   app.use(compression())
 
+  // CORS configuration
+  app.use((req, res, next) => {
+    const allowedOrigins = [
+      'http://localhost:3000',
+      'http://localhost:5173',
+      'https://friendsoft.com',
+      'https://www.friendsoft.com'
+    ]
+    const origin = req.headers.origin
+    
+    if (allowedOrigins.includes(origin as string)) {
+      res.setHeader('Access-Control-Allow-Origin', origin as string)
+    }
+    
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With')
+    res.setHeader('Access-Control-Allow-Credentials', 'true')
+    res.setHeader('Access-Control-Max-Age', '86400') // 24 hours
+    
+    if (req.method === 'OPTIONS') {
+      res.status(200).end()
+      return
+    }
+    
+    next()
+  })
+
+  // Basic rate limiting
+  const rateLimitMap = new Map()
+  app.use((req, res, next) => {
+    const clientIP = req.ip || req.connection.remoteAddress || 'unknown'
+    const now = Date.now()
+    const windowMs = 15 * 60 * 1000 // 15 minutes
+    const maxRequests = 100 // requests per window
+    
+    if (!rateLimitMap.has(clientIP)) {
+      rateLimitMap.set(clientIP, { count: 1, resetTime: now + windowMs })
+    } else {
+      const clientData = rateLimitMap.get(clientIP)
+      
+      if (now > clientData.resetTime) {
+        // Reset the window
+        rateLimitMap.set(clientIP, { count: 1, resetTime: now + windowMs })
+      } else {
+        clientData.count++
+        
+        if (clientData.count > maxRequests) {
+          res.status(429).json({ error: 'Too many requests' })
+          return
+        }
+      }
+    }
+    
+    next()
+  })
+
   // Security headers
   app.use((req, res, next) => {
+    // Prevent MIME type sniffing
     res.setHeader('X-Content-Type-Options', 'nosniff')
+    // Prevent clickjacking
     res.setHeader('X-Frame-Options', 'DENY')
+    // XSS protection (legacy but still useful)
     res.setHeader('X-XSS-Protection', '1; mode=block')
+    // Referrer policy
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
+    // Content Security Policy
+    res.setHeader('Content-Security-Policy', 
+      "default-src 'self'; " +
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+      "font-src 'self' https://fonts.gstatic.com; " +
+      "img-src 'self' data: https:; " +
+      "connect-src 'self' https:; " +
+      "frame-ancestors 'none'; " +
+      "base-uri 'self'; " +
+      "form-action 'self';"
+    )
+    // Strict Transport Security (HTTPS only)
+    if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+      res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload')
+    }
+    // Permissions Policy
+    res.setHeader('Permissions-Policy', 
+      'camera=(), microphone=(), geolocation=(), payment=(), usb=()'
+    )
     next()
   })
 
@@ -79,9 +159,17 @@ async function createServer(
           // Cache static assets for 1 year
           if (pathname.includes('/assets/')) {
             res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+            res.setHeader('ETag', 'strong')
+          } else if (pathname.match(/\.(js|css|woff2?|ttf|eot|svg|png|jpg|jpeg|gif|webp|ico)$/)) {
+            // Cache other static files for 1 week
+            res.setHeader('Cache-Control', 'public, max-age=604800')
+            res.setHeader('ETag', 'strong')
+          } else if (pathname.match(/\.(html|xml|txt|json)$/)) {
+            // Cache HTML and other text files for 1 hour
+            res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
           } else {
-            // Cache other files for 1 hour
-            res.setHeader('Cache-Control', 'public, max-age=3600')
+            // Default cache for other files
+            res.setHeader('Cache-Control', 'public, max-age=300')
           }
         }
       })

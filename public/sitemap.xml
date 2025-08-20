@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://friendsoft.com/</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en" />
+    <image:image>
+      <image:loc>https://friendsoft.com/og-image.jpg</image:loc>
+      <image:title>Friendsoft - Desarrollo de Software y Soluciones Tecnológicas</image:title>
+      <image:caption>Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Services Page -->
+  <url>
+    <loc>https://friendsoft.com/services</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/services" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/services" />
+    <image:image>
+      <image:loc>https://friendsoft.com/src/assets/images/services/hero-bg.webp</image:loc>
+      <image:title>Servicios de Desarrollo de Software</image:title>
+      <image:caption>Servicios profesionales de desarrollo web, móvil y consultoría tecnológica</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Projects Page -->
+  <url>
+    <loc>https://friendsoft.com/projects</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/projects" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/projects" />
+    <image:image>
+      <image:loc>https://friendsoft.com/src/assets/images/projects/project1.webp</image:loc>
+      <image:title>Proyectos de Desarrollo de Software</image:title>
+      <image:caption>Portfolio de proyectos exitosos en desarrollo web y aplicaciones móviles</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Contact Page -->
+  <url>
+    <loc>https://friendsoft.com/contact</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/contact" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/contact" />
+  </url>
+  
+  <!-- English versions -->
+  <url>
+    <loc>https://friendsoft.com/en</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en" />
+  </url>
+  
+  <url>
+    <loc>https://friendsoft.com/en/services</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/services" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/services" />
+  </url>
+  
+  <url>
+    <loc>https://friendsoft.com/en/projects</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/projects" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/projects" />
+  </url>
+  
+  <url>
+    <loc>https://friendsoft.com/en/contact</loc>
+    <lastmod>2024-01-15T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hrefLang="es" href="https://friendsoft.com/contact" />
+    <xhtml:link rel="alternate" hrefLang="en" href="https://friendsoft.com/en/contact" />
+  </url>
+  
+</urlset>

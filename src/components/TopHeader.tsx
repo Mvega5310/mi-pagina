@@ -2,6 +2,8 @@ import { useTranslation } from "react-i18next";
 import { MapPinIcon, EnvelopeIcon, PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useState, useRef, useEffect } from "react";
 import ClientOnly from "../ssr/ClientOnly";
+import usFlag from '../assets/flags/us.svg'
+import esFlag from '../assets/flags/es.svg'
 
 const TopHeaderContent = () => {
     const { t, i18n } = useTranslation();
@@ -28,8 +30,8 @@ const TopHeaderContent = () => {
     }, []);
 
     // Obtener la bandera según el idioma actual
-    const getFlagCode = () => {
-        return i18n.language === "en" ? "us" : "es";
+    const getFlagSrc = () => {
+        return i18n.language === "en" ? usFlag : esFlag;
     };
 
     return (
@@ -62,7 +64,7 @@ const TopHeaderContent = () => {
                         className="flex items-center space-x-1 sm:space-x-2 bg-gray-50 hover:bg-gray-100 px-1 sm:px-2 py-1 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                     >
                         <img
-                            src={`https://flagcdn.com/w20/${getFlagCode()}.png`}
+                            src={getFlagSrc()}
                             alt={i18n.language === "en" ? "US Flag" : "Spain Flag"}
                             className="w-4 sm:w-5 h-3 object-cover flex-shrink-0"
                         />
@@ -80,7 +82,7 @@ const TopHeaderContent = () => {
                                 className={`flex items-center space-x-2 w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm ${i18n.language === "en" ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50"}`}
                             >
                                 <img
-                                    src="https://flagcdn.com/w20/us.png"
+                                    src={usFlag}
                                     alt="US Flag"
                                     className="w-4 sm:w-5 h-3 object-cover"
                                 />
@@ -91,7 +93,7 @@ const TopHeaderContent = () => {
                                 className={`flex items-center space-x-2 w-full text-left px-3 sm:px-4 py-2 text-xs sm:text-sm ${i18n.language === "es" ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50"}`}
                             >
                                 <img
-                                    src="https://flagcdn.com/w20/es.png"
+                                    src={esFlag}
                                     alt="Spain Flag"
                                     className="w-4 sm:w-5 h-3 object-cover"
                                 />
@@ -109,7 +111,7 @@ const TopHeaderContent = () => {
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-blue-500 transition-colors"
                     >
-                        <img src="src/assets/x.svg" alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
+                        <img src="/src/assets/x.svg" alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
                     <a
                         href="https://facebook.com/friendsoft"
@@ -117,7 +119,7 @@ const TopHeaderContent = () => {
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-blue-600 transition-colors"
                     >
-                        <img src="src/assets/facebook.svg" alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
+                        <img src="/src/assets/facebook.svg" alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
                     <a
                         href="https://instagram.com/friendsoft"
@@ -125,7 +127,7 @@ const TopHeaderContent = () => {
                         rel="noopener noreferrer"
                         className="text-gray-600 hover:text-pink-600 transition-colors"
                     >
-                        <img src="src/assets/instagram.svg" alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
+                        <img src="/src/assets/instagram.svg" alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
                 </div>
             </div>
@@ -155,7 +157,7 @@ const TopHeader = () => {
                     <div className="flex items-center space-x-2 sm:space-x-4 lg:space-x-10 flex-shrink-0">
                         <div className="flex items-center space-x-1 sm:space-x-2 bg-gray-50 px-1 sm:px-2 py-1">
                             <img
-                                src="https://flagcdn.com/w20/us.png"
+                                src={usFlag}
                                 alt="US Flag"
                                 className="w-4 sm:w-5 h-3 object-cover flex-shrink-0"
                             />
@@ -171,7 +173,7 @@ const TopHeader = () => {
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-blue-500 transition-colors"
                             >
-                                <img src="src/assets/x.svg" alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
+                                <img src="/src/assets/x.svg" alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
                             <a
                                 href="https://facebook.com/friendsoft"
@@ -179,7 +181,7 @@ const TopHeader = () => {
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-blue-600 transition-colors"
                             >
-                                <img src="src/assets/facebook.svg" alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
+                                <img src="/src/assets/facebook.svg" alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
                             <a
                                 href="https://instagram.com/friendsoft"
@@ -187,7 +189,7 @@ const TopHeader = () => {
                                 rel="noopener noreferrer"
                                 className="text-gray-600 hover:text-pink-600 transition-colors"
                             >
-                                <img src="src/assets/instagram.svg" alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
+                                <img src="/src/assets/instagram.svg" alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
                         </div>
                     </div>

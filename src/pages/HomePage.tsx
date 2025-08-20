@@ -1,11 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import SEO from '../components/SEO';
 import HeroSection from '../components/home/HeroSection';
-import TechnologySection from '../components/home/TechnologySection';
-import ServicesSection from '../components/home/ServicesSection';
-import AboutSection from '../components/home/AboutSection';
-import ProjectsSection from '../components/home/ProjectsSection';
-import TechnologyGrowthSection from '../components/home/TechnologyGrowthSection';
+import {
+  LazyTechnologySection,
+  LazyServicesSection,
+  LazyAboutSection,
+  LazyProjectsSection,
+  LazyTechnologyGrowthSection
+} from '../components/LazyComponents';
 import LogoSection from '../components/home/LogoSection';
 import IndustriesSection from '../components/home/IndustriesSection';
 import TestimonialsSection from '../components/home/TestimonialsSection';
@@ -33,30 +37,40 @@ const AnimatedSection: React.FC<{ children: React.ReactNode; delay?: number }> =
 };
 
 const HomePage: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title={t('seo.home.title', 'Friendsoft - Desarrollo de Software y Soluciones Tecnológicas')}
+        description={t('seo.home.description', 'Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia en Colombia.')}
+        keywords={t('seo.home.keywords', 'desarrollo de software, desarrollo web, aplicaciones móviles, consultoría tecnológica, transformación digital, Colombia, Bogotá')}
+        type="website"
+        image="/og-image.jpg"
+        url="/"
+      />
       {/* Hero Section sin animación ya que es la primera vista */}
       <HeroSection />
       
-      {/* Secciones animadas */}
+      {/* Secciones animadas con lazy loading */}
       <AnimatedSection>
-        <TechnologySection />
+        <LazyTechnologySection />
       </AnimatedSection>
       
       <AnimatedSection delay={0.1}>
-        <ServicesSection />
+        <LazyServicesSection />
       </AnimatedSection>
       
       <AnimatedSection delay={0.2}>
-        <AboutSection />
+        <LazyAboutSection />
       </AnimatedSection>
       
       <AnimatedSection delay={0.1}>
-        <ProjectsSection />
+        <LazyProjectsSection />
       </AnimatedSection>
       
       <AnimatedSection delay={0.2}>
-        <TechnologyGrowthSection />
+        <LazyTechnologyGrowthSection />
       </AnimatedSection>
       
       <AnimatedSection delay={0.1}>

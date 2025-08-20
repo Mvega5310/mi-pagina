@@ -1,5 +1,3 @@
-import React from 'react';
-
 const LogoSection = () => {
   return (
     <section className="py-8 sm:py-12 bg-white">

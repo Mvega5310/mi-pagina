@@ -275,6 +275,31 @@
       "button": "Saber más"
     }
   },
+  "seo": {
+    "title": "Friendsoft - Desarrollo de Software y Soluciones Tecnológicas",
+    "description": "Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia.",
+    "keywords": "desarrollo de software, desarrollo web, soluciones tecnológicas, transformación digital, consultoría",
+    "home": {
+      "title": "Friendsoft - Desarrollo de Software y Soluciones Tecnológicas",
+      "description": "Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia en Colombia.",
+      "keywords": "desarrollo de software, desarrollo web, aplicaciones móviles, consultoría tecnológica, transformación digital, Colombia, Bogotá"
+    },
+    "services": {
+      "title": "Servicios de Desarrollo de Software | Friendsoft",
+      "description": "Servicios profesionales de desarrollo web, aplicaciones móviles, UX/UI, marketing digital y consultoría tecnológica. Soluciones personalizadas para tu empresa.",
+      "keywords": "servicios desarrollo software, desarrollo web, aplicaciones móviles, UX/UI design, marketing digital, consultoría TI, gestión contenido, análisis datos"
+    },
+    "projects": {
+      "title": "Portfolio de Proyectos | Friendsoft",
+      "description": "Explora nuestro portfolio de proyectos exitosos en desarrollo de software, aplicaciones web y móviles. Casos de éxito y soluciones innovadoras.",
+      "keywords": "portfolio proyectos, casos éxito, desarrollo software, aplicaciones web, aplicaciones móviles, soluciones tecnológicas"
+    },
+    "contact": {
+      "title": "Contacto | Friendsoft",
+      "description": "Contáctanos para discutir tu proyecto de desarrollo de software. Estamos ubicados en Bogotá, Colombia y listos para ayudarte con soluciones tecnológicas.",
+      "keywords": "contacto, Friendsoft, desarrollo software, Bogotá Colombia, consultoría tecnológica, presupuesto proyecto"
+    }
+  },
   "contact": {
     "title": "Contáctanos",
     "subtitle": "Estamos aquí para ayudarte",

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const AboutSection = () => {
@@ -10,10 +10,10 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-2">
-            {t("home.about.title")}
+            {t("home.section4.title")}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto px-2">
-            {t("home.about.subtitle")}
+            {t("home.section4.subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
@@ -79,7 +79,7 @@ const AboutSection = () => {
             <div className="relative overflow-hidden shadow-2xl h-64 sm:h-80 md:h-96 lg:h-[410px]">
               {/* Background Image */}
               <img
-                src="src/assets/images/home/section4-image1.jpg"
+                src="/src/assets/images/home/section4-image1.jpg"
                 alt="Team collaboration"
                 className="w-full h-full object-cover"
               />
