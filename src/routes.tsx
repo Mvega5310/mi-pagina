@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Layout from './layout/Layout'
+import Layout from './shared/layout/Layout'
 
 // Lazy load pages for code splitting
-const HomePage = React.lazy(() => import('./pages/HomePage'))
-const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'))
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'))
-const ContactPage = React.lazy(() => import('./pages/ContactPage'))
+const HomePage = React.lazy(() => import('./shared/pages/HomePage'))
+const ProjectsPage = React.lazy(() => import('./shared/pages/ProjectsPage'))
+const ServicesPage = React.lazy(() => import('./shared/pages/ServicesPage'))
+const ContactPage = React.lazy(() => import('./shared/pages/ContactPage'))
 
 // Loading component for Suspense fallback
 const PageLoader = () => (
@@ -36,12 +36,6 @@ export function AppRoutes() {
   )
 }
 
-// Route definitions for static analysis and prerendering
-export const routes = [
-  { path: '/', component: HomePage },
-  { path: '/projects', component: ProjectsPage },
-  { path: '/services', component: ServicesPage },
-  { path: '/contact', component: ContactPage },
-] as const
+// Routes are now exported from shared/config/routes.ts
 
 export default AppRoutes

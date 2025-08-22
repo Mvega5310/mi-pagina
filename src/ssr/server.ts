@@ -1,20 +1,34 @@
 import express from 'express'
-import { createServer as createViteServer } from 'vite'
+// removed static Vite import to avoid requiring dev dependency in production
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import compression from 'compression'
 import sirv from 'sirv'
+import { Buffer } from 'node:buffer'
+
+// Override console.error specifically to handle [object Object] errors
+const originalConsoleError = console.error;
+console.error = function(...args: any[]) {
+  const processedArgs = args.map(arg => {
+    if (typeof arg === 'string' && arg === '[object Object]') {
+      return 'Error: Invalid object serialization';
+    }
+    if (arg && typeof arg === 'object' && arg.toString && arg.toString() === '[object Object]') {
+      return arg.message || arg.stack || JSON.stringify(arg, Object.getOwnPropertyNames(arg)) || 'Error object';
+    }
+    return arg;
+  });
+  originalConsoleError.apply(console, processedArgs);
+};
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const isProduction = process.env.NODE_ENV === 'production'
-const port = process.env.PORT || 5173
+const port = Number(process.env.PORT) || 3000
 const base = process.env.BASE || '/'
-const root = process.cwd()
-const templateHtml = isProduction
-  ? fs.readFileSync(path.resolve(root, 'dist/client/index.html'), 'utf-8')
-  : fs.readFileSync(path.resolve(__dirname, 'index.html'), 'utf-8')
+// Root directory is available via process.cwd() when needed
+// Template HTML is loaded dynamically in the SSR handler
 
 async function createServer(
   serverRoot = process.cwd(),
@@ -23,8 +37,19 @@ async function createServer(
 ) {
   const app = express()
 
-  // Enable compression for all responses
-  app.use(compression())
+  // Enable enhanced compression for all responses
+  app.use(compression({
+    level: 6, // Optimal balance between compression and speed
+    threshold: 1024, // Only compress files larger than 1KB
+    filter: (req, res) => {
+      // Don't compress responses with this request header
+      if (req.headers['x-no-compression']) {
+        return false
+      }
+      // Use compression filter function
+      return compression.filter(req, res)
+    }
+  }))
 
   // CORS configuration
   app.use((req, res, next) => {
@@ -94,7 +119,7 @@ async function createServer(
     res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin')
     // Content Security Policy
     res.setHeader('Content-Security-Policy', 
-      "default-src 'self'; " +
+      "default-src 'self' https://friendsoft.com https://www.google.com; " +
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'; " +
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
       "font-src 'self' https://fonts.gstatic.com; " +
@@ -115,12 +140,23 @@ async function createServer(
     next()
   })
 
-  let vite: any
+  // Health endpoint for Docker/K8s
+  app.get('/health', (_req, res) => {
+    res.status(200).json({ status: 'ok' })
+  })
+
+  let vite: {
+    middlewares: express.RequestHandler
+    transformIndexHtml: (_url: string, _template: string) => Promise<string>
+    ssrLoadModule: (_path: string) => Promise<Record<string, unknown>>
+    ssrFixStacktrace: (_err: Error) => void
+  }
   let template: string
-  let ssrManifest: any
+  let ssrManifest: Record<string, string[]> | undefined
 
   if (!isProd) {
     // Development mode
+    const { createServer: createViteServer } = await import('vite')
     vite = await createViteServer({
       root: serverRoot,
       logLevel: 'info',
@@ -137,7 +173,7 @@ async function createServer(
       appType: 'custom',
       base
     })
-    app.use(vite.middlewares)
+    app.use(vite!.middlewares)
 
     template = fs.readFileSync(
       path.resolve(__dirname, 'index.html'),
@@ -148,24 +184,39 @@ async function createServer(
     const templatePath = path.resolve(serverRoot, 'dist/client/index.html')
     template = fs.readFileSync(templatePath, 'utf-8')
     
-    // Serve static files with long-term caching
+    // Serve static files with optimized caching and compression
     app.use(
       base,
       sirv(path.resolve(serverRoot, 'dist/client'), {
-        extensions: [],
+        extensions: ['css'],
         gzip: true,
         brotli: true,
         setHeaders: (res, pathname) => {
-          // Cache static assets for 1 year
+          // Performance headers for all static files
+          res.setHeader('X-Content-Type-Options', 'nosniff')
+          
+          // Cache static assets for 1 year with immutable flag
           if (pathname.includes('/assets/')) {
             res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
             res.setHeader('ETag', 'strong')
-          } else if (pathname.match(/\.(js|css|woff2?|ttf|eot|svg|png|jpg|jpeg|gif|webp|ico)$/)) {
-            // Cache other static files for 1 week
-            res.setHeader('Cache-Control', 'public, max-age=604800')
+            // Add preload hints for critical assets
+            if (pathname.includes('.css')) {
+              res.setHeader('Link', '</assets/css/index.css>; rel=preload; as=style')
+            }
+          } else if (pathname.match(/\.(js|css)$/)) {
+            // Cache JS/CSS files for 1 year
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+            res.setHeader('ETag', 'strong')
+          } else if (pathname.match(/\.(woff2?|ttf|eot)$/)) {
+            // Cache fonts for 1 year
+            res.setHeader('Cache-Control', 'public, max-age=31536000, immutable')
+            res.setHeader('ETag', 'strong')
+          } else if (pathname.match(/\.(svg|png|jpg|jpeg|gif|webp|avif|ico)$/)) {
+            // Cache images for 1 month
+            res.setHeader('Cache-Control', 'public, max-age=2592000')
             res.setHeader('ETag', 'strong')
           } else if (pathname.match(/\.(html|xml|txt|json)$/)) {
-            // Cache HTML and other text files for 1 hour
+            // Cache HTML and other text files for 1 hour with revalidation
             res.setHeader('Cache-Control', 'public, max-age=3600, must-revalidate')
           } else {
             // Default cache for other files
@@ -178,86 +229,160 @@ async function createServer(
     // Load SSR manifest for production
     try {
       ssrManifest = JSON.parse(
-        fs.readFileSync(path.resolve(serverRoot, 'dist/client/ssr-manifest.json'), 'utf-8')
+        fs.readFileSync(path.resolve(serverRoot, 'dist/server/entry/ssr-manifest.json'), 'utf-8')
       )
-    } catch (e) {
+    } catch {
       console.warn('SSR manifest not found, continuing without it')
     }
   }
 
   // Error handling middleware
-  app.use((err: any, req: any, res: any, next: any) => {
+  app.use((err: Error, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
     if (isProd) {
-      console.error('Server error:', err)
-      res.status(500).json({ error: 'Internal Server Error' })
+      console.error('Server error:', err.message || err.toString())
+      if (typeof res.status === 'function') {
+        res.status(500).json({ error: 'Internal Server Error' })
+      } else {
+        res.writeHead(500, { 'Content-Type': 'application/json' })
+        res.end(JSON.stringify({ error: 'Internal Server Error' }))
+      }
     } else {
-      next(err)
+      throw err
     }
   })
 
   // SSR handler
-  app.use('*', async (req, res, next) => {
-    const url = req.originalUrl.replace(base, '')
+  app.get(/.*/, async (req, res) => {
+    const requestUrl = req.originalUrl.replace(base, '')
 
     try {
-      let render: any
+      let render: (_url: string, _ssrManifest?: Record<string, string[]>) => Promise<{ html: string; head: string }>
       let html = template
 
       if (!isProd) {
         // Development: transform template and load module
-        html = await vite.transformIndexHtml(url, template)
-        render = (await vite.ssrLoadModule('/src/ssr/entry-server.tsx')).render
+        html = await vite!.transformIndexHtml(requestUrl, template)
+        const module = await vite!.ssrLoadModule('/src/ssr/entry-server.tsx') as { render: (_url: string, _ssrManifest?: Record<string, unknown>) => Promise<{ html: string; head: string }> }
+        render = module.render
       } else {
         // Production: load pre-built module
-        const serverDir = path.resolve(serverRoot, 'dist/server/assets/js')
-        const entryFile = fs.readdirSync(serverDir).find(file => file.startsWith('entry-server-'))
-        if (!entryFile) {
-          throw new Error('Entry server file not found in dist/server/assets/js')
+        try {
+          const candidates: string[] = []
+
+          // 1) Default CLI outDir: dist/server/entry (no hashed file name by default)
+          const entryDirDefault = path.resolve(serverRoot, 'dist/server/entry')
+          if (fs.existsSync(entryDirDefault)) {
+            // explicit name (no hash)
+            candidates.push(path.resolve(entryDirDefault, 'entry-server.js'))
+            // any hashed variations in same dir
+            try {
+              const files = fs.readdirSync(entryDirDefault)
+              candidates.push(
+                ...files
+                  .filter(f => /^entry-server([.-][A-Za-z0-9_-]+)?\.js$/.test(f)) // allow both entry-server-<hash>.js and entry-server.<hash>.js
+                  .map(f => path.resolve(entryDirDefault, f))
+              )
+            } catch {}
+          }
+
+          // 2) Nested assets path: dist/server/entry/assets/js
+          const entryDirAssets = path.resolve(serverRoot, 'dist/server/entry/assets/js')
+          if (fs.existsSync(entryDirAssets)) {
+            try {
+              const files = fs.readdirSync(entryDirAssets)
+              candidates.push(
+                ...files
+                  .filter(f => f.startsWith('entry-server') && f.endsWith('.js'))
+                  .map(f => path.resolve(entryDirAssets, f))
+              )
+            } catch {}
+          }
+
+          // Deduplicate and pick first existing
+          const seen = new Set<string>()
+          const finalFile = candidates.filter(p => {
+            if (seen.has(p)) return false
+            seen.add(p)
+            return fs.existsSync(p)
+          })[0]
+
+          if (!finalFile) {
+            throw new Error('No entry-server bundle found. Looked in dist/server/entry and dist/server/entry/assets/js')
+          }
+
+          // Convert Windows paths to file:// URLs properly
+          const normalizedPath = finalFile.replace(/\\/g, '/').replace(/^([A-Za-z]):\//, '/$1:/')
+          const importedModule = await import(`file://${normalizedPath}`)
+          render = (importedModule as any).render
+        } catch (error) {
+          console.error('Error loading SSR module:', (error as Error).message || (error as Error).toString())
+          throw new Error('Failed to load SSR module. Please ensure the SSR build completed successfully.')
         }
-        render = (await import(path.resolve(serverDir, entryFile))).render
       }
 
       // Render the app HTML
-       const { html: appHtml, helmet } = await render(url, ssrManifest)
+      const { html: appHtml, head } = await render(requestUrl, ssrManifest)
 
-       // Replace the placeholder with the rendered HTML
-       html = html.replace('<!--ssr-outlet-->', appHtml)
-       
-       // Inject helmet meta tags if available
-       if (helmet && helmet.helmet) {
-         const { title, meta, link, script } = helmet.helmet
-         if (title) html = html.replace('<title></title>', title.toString())
-         if (meta) html = html.replace('</head>', `${meta.toString()}</head>`)
-         if (link) html = html.replace('</head>', `${link.toString()}</head>`)
-         if (script) html = html.replace('</head>', `${script.toString()}</head>`)
-       }
+      // Replace placeholder(s) with the rendered HTML
+      const outletPlaceholder = '<!--ssr-outlet-->'
+      const appHtmlPlaceholder = '<!--app-html-->'
+      if (html.includes(outletPlaceholder)) {
+        html = html.replace(outletPlaceholder, appHtml)
+      } else if (html.includes(appHtmlPlaceholder)) {
+        html = html.replace(appHtmlPlaceholder, appHtml)
+      } else {
+        html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+      }
+      
+      // Inject helmet meta tags if available
+      if (head) {
+        html = html.replace('</head>', `${head}</head>`)
+      }
 
-      res.status(200).set({ 'Content-Type': 'text/html' }).end(html)
-    } catch (e: any) {
+      // Set optimized response headers
+      res.status(200).set({ 
+        'Content-Type': 'text/html; charset=utf-8',
+        'Cache-Control': 'public, max-age=0, must-revalidate',
+        'ETag': `W/"${Buffer.from(html, 'utf-8').length.toString(16)}"`,
+        'Vary': 'Accept-Encoding'
+      }).end(html)
+    } catch (error: unknown) {
+      const e = error as Error
       if (!isProd && vite) {
         vite.ssrFixStacktrace(e)
       }
-      console.error('SSR Error:', e)
+      console.error('SSR Error:', e.message || e.toString())
       
       if (e.message?.includes('404')) {
         res.status(404).end('Page not found')
       } else {
-        res.status(500).end(isProd ? 'Internal Server Error' : e.message)
+        const errorMessage = isProd ? 'Internal Server Error' : (e.message || e.toString() || 'Unknown error')
+        res.status(500).end(errorMessage)
       }
     }
   })
 
-  return { app, vite }
+  return { app, vite: vite! }
 }
 
 // Start server in both development and production
 createServer().then(({ app }) => {
-  app.listen(port, () => {
+  const server = app.listen(port, () => {
     console.log(`SSR server running at http://localhost:${port}`)
     console.log(`Environment: ${isProduction ? 'production' : 'development'}`)
   })
-}).catch(err => {
-  console.error('Failed to start server:', err)
+  
+  // Add error handler to prevent [object Object] logging
+  server.on('error', (err: Error) => {
+    console.error('Server error:', err.message || err.toString() || 'Unknown server error')
+  })
+  
+  // Handle uncaught exceptions in Express
+  // app.on('error', (err: Error) => {
+  //   console.error('Express app error:', err.message || err.toString() || 'Unknown app error')
+  // })
+}).catch((err: Error) => {
+  console.error('Failed to start server:', err.message || err.toString())
   process.exit(1)
 })
 
