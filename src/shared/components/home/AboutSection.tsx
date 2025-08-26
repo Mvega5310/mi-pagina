@@ -20,18 +20,28 @@ const AboutSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Left Side - Tabs */}
           <div className="space-y-4 sm:space-y-6">
-            <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1 bg-gray-100 p-1 rounded-lg">
+            <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1">
               {['mission', 'vision', 'history'].map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 px-3 sm:px-4 py-2 sm:py-3 rounded-md text-xs sm:text-sm md:text-base font-medium transition-all duration-200 ${
+                  className={`group relative flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-medium transition-all duration-300 ease-in-out overflow-hidden ${
                     activeTab === tab
-                      ? 'bg-white text-blue-600 shadow-sm'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'bg-blue-500 text-white rounded-lg shadow-md'
+                      : 'text-gray-900 bg-transparent border-t-2 border-blue-500 rounded-t-lg'
                   }`}
                 >
-                  {t("home.section4.tabs." + tab)}
+                  {/* Hover animation overlay for inactive tabs */}
+                  {activeTab !== tab && (
+                    <div className="absolute inset-0 bg-blue-500 origin-top transform scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100" />
+                  )}
+                  
+                  {/* Tab text with proper z-index */}
+                  <span className={`relative z-10 transition-colors duration-300 ${
+                    activeTab === tab ? 'text-white' : 'text-gray-900 group-hover:text-white'
+                  }`}>
+                    {t("home.section4.tabs." + tab)}
+                  </span>
                 </button>
               ))}
             </div>

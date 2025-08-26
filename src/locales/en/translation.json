@@ -142,6 +142,38 @@
         "project4": {
           "category": "Technology",
           "title": "Cyber security"
+        },
+        "project5": {
+          "category": "Development",
+          "title": "Cloud migration"
+        },
+        "project6": {
+          "category": "Innovation",
+          "title": "AI integration"
+        },
+        "project7": {
+          "category": "Strategy",
+          "title": "Digital transformation"
+        },
+        "project8": {
+          "category": "Security",
+          "title": "Data protection"
+        },
+        "project9": {
+          "category": "Analytics",
+          "title": "Business intelligence"
+        },
+        "project10": {
+          "category": "Mobile",
+          "title": "App development"
+        },
+        "project11": {
+          "category": "Web",
+          "title": "E-commerce platform"
+        },
+        "project12": {
+          "category": "Automation",
+          "title": "Process optimization"
         }
       }
     },

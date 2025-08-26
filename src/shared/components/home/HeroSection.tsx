@@ -10,6 +10,7 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   // Hero slides data (can be extended for multiple slides)
   const heroSlides = useMemo(() => [
@@ -21,6 +22,14 @@ const HeroSection = () => {
     },
     // Add more slides here if needed
   ], [t]);
+
+  // Trigger image animation on component mount
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setImageLoaded(true);
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Auto-slide functionality with progress indicator
   useEffect(() => {
@@ -70,13 +79,15 @@ const HeroSection = () => {
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      {/* Background Image with smooth transition */}
+      {/* Background Image with smooth transition and entrance animation */}
       <div className="absolute inset-0">
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-out ${
               index === currentSlide ? 'opacity-100' : 'opacity-0'
+            } ${
+              imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
             }`}
             style={{
               backgroundImage: `url("${slide.image}")`,
@@ -131,12 +142,18 @@ const HeroSection = () => {
               {heroSlides[currentSlide].subtitle}
             </motion.p>
             <motion.button 
-              className="bg-white text-blue-600 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 font-semibold text-base sm:text-lg lg:text-xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-white/50"
+              className="group bg-white text-blue-600 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 font-semibold text-base sm:text-lg lg:text-xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-white/50 overflow-hidden relative"
               variants={heroVariants.button}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {heroSlides[currentSlide].button}
+              {/* Hover animation overlay for button */}
+              <div className="absolute inset-0 bg-blue-600 origin-top transform scale-y-0 transition-all duration-700 ease-out group-hover:scale-y-100 group-hover:opacity-100 opacity-0"></div>
+              
+              {/* Button text with proper z-index */}
+              <span className="relative z-10 transition-all duration-700 ease-out group-hover:text-white">
+                {heroSlides[currentSlide].button}
+              </span>
             </motion.button>
             
             {/* Slide Navigation Dots - Better responsive positioning */}

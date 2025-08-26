@@ -142,6 +142,38 @@
         "project4": {
           "category": "Tecnología",
           "title": "Ciberseguridad"
+        },
+        "project5": {
+          "category": "Desarrollo",
+          "title": "Migración a la nube"
+        },
+        "project6": {
+          "category": "Innovación",
+          "title": "Integración de IA"
+        },
+        "project7": {
+          "category": "Estrategia",
+          "title": "Transformación digital"
+        },
+        "project8": {
+          "category": "Seguridad",
+          "title": "Protección de datos"
+        },
+        "project9": {
+          "category": "Análisis",
+          "title": "Inteligencia empresarial"
+        },
+        "project10": {
+          "category": "Móvil",
+          "title": "Desarrollo de apps"
+        },
+        "project11": {
+          "category": "Web",
+          "title": "Plataforma e-commerce"
+        },
+        "project12": {
+          "category": "Automatización",
+          "title": "Optimización de procesos"
         }
       }
     },

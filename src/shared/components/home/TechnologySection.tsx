@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import tech1 from '../../../assets/images/home/profile.webp';
+import profileImage from '../../../assets/images/home/profile.webp';
+import tech1 from '../../../assets/images/home/section2-imagen1.webp';
 import tech2 from '../../../assets/images/home/section2-imagen2.jpg';
 import tech3 from '../../../assets/images/home/section2-imagen3.jpg';
 import tech21 from '../../../assets/images/home/section2.1-imagen.webp';
@@ -177,7 +178,7 @@ const TechnologySection = () => {
                 <div className="flex-shrink-0">
                   <div className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-purple-500 rounded-full overflow-hidden">
                     <img
-                      src={tech1}
+                      src={profileImage}
                       alt="Gerson Almeida"
                       className="w-full h-full object-cover rounded-full"
                     />
