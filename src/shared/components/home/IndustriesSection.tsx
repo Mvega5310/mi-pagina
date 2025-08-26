@@ -21,27 +21,27 @@ const IndustriesSection: React.FC = () => {
     {
       icon: Icon1,
       title: t('home.section8.industries.banking'),
-      bgColor: '#4800F1'
+      bgColor: '#FFFFFF'
     },
     {
       icon: Icon2,
       title: t('home.section8.industries.healthcare'),
-      bgColor: '#4800F1'
+      bgColor: '#FFFFFF'
     },
     {
       icon: Icon3,
       title: t('home.section8.industries.education'),
-      bgColor: '#4800F1'
+      bgColor: '#FFFFFF'
     },
     {
       icon: Icon4,
       title: t('home.section8.industries.manufacturing'),
-      bgColor: '#4800F1'
+      bgColor: '#FFFFFF'
     },
     {
       icon: Icon5,
       title: t('home.section8.industries.markets'),
-      bgColor: '#4800F1'
+      bgColor: '#FFFFFF'
     }
   ];
 
@@ -76,7 +76,7 @@ const IndustriesSection: React.FC = () => {
               </div>
               
               {/* Title */}
-              <h3 className="text-white text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+              <h3 className="text-black text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
                 {industry.title}
               </h3>
             </div>

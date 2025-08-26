@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import tech1 from '../../../assets/images/home/section2-imagen1.jpg';
+import tech1 from '../../../assets/images/home/profile.webp';
 import tech2 from '../../../assets/images/home/section2-imagen2.jpg';
 import tech3 from '../../../assets/images/home/section2-imagen3.jpg';
 import tech21 from '../../../assets/images/home/section2.1-imagen.webp';

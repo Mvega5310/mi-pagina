@@ -79,7 +79,7 @@
     "section4": {
       "subtitle": "Beneficios de la empresa Notech",
       "title": "¿Por qué deberías elegir nuestra empresa notech?",
-      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
+      "staticDescription": "Existen numerosas variaciones del texto Lorem Ipsum disponibles en la actualidad; sin embargo, la mayoría han sido modificadas respecto a la versión original, ya sea mediante la inclusión de fragmentos libres con fines humorísticos o por procesos de aleatorización que generan secuencias de palabras con apariencia latina pero sin coherencia semántica.",
       "staticPoints": [
         "Hacer de este primer generador verdadero",
         "Lorem Ipsum no es simplemente",
@@ -92,7 +92,7 @@
       },
       "content": {
         "mission": {
-          "description": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias que no se ven ni siquiera ligeramente creíbles.",
+          "description": "Nuestra misión es impulsar la transformación digital de las empresas a través del desarrollo de páginas web innovadoras, aplicaciones a la medida y la automatización de sistemas empresariales mediante el uso estratégico de herramientas de inteligencia artificial. Buscamos ofrecer soluciones tecnológicas eficientes, seguras y escalables que optimicen procesos, potencien la productividad y generen valor sostenible para nuestros clientes.",
           "points": [
             "Hacer de este primer generador verdadero",
             "Lorem Ipsum no es simplemente",
@@ -100,7 +100,7 @@
           ]
         },
         "vision": {
-          "description": "Nuestra visión es ser líderes en innovación tecnológica, proporcionando soluciones que transformen la manera en que las empresas operan y crecen en el mundo digital.",
+          "description": "Ser una empresa líder en soluciones tecnológicas innovadoras, reconocida a nivel nacional e internacional por transformar la manera en que las organizaciones operan, a través de páginas web inteligentes, aplicaciones de alto impacto y sistemas empresariales automatizados con inteligencia artificial, contribuyendo al crecimiento sostenible y a la competitividad global de nuestros clientes.",
           "points": [
             "Innovación constante en tecnología",
             "Excelencia en servicio al cliente",
@@ -108,7 +108,7 @@
           ]
         },
         "history": {
-          "description": "Fundada con la misión de democratizar la tecnología, hemos crecido desde una startup hasta convertirnos en un referente en el sector tecnológico.",
+          "description": "Nuestra empresa nació con la visión de ofrecer soluciones tecnológicas que realmente transformen la manera en que las organizaciones trabajan. Iniciamos creando páginas web personalizadas para pequeñas y medianas empresas, ayudándolas a posicionarse en el mundo digital. Con el tiempo, fuimos ampliando nuestros servicios hacia el desarrollo de aplicaciones móviles, sistemas empresariales y automatizaciones que integran inteligencia artificial, con el propósito de hacer más eficientes los procesos y potenciar la productividad. Hoy somos un equipo multidisciplinario apasionado por la innovación, comprometido en brindar tecnología de vanguardia que impulse el crecimiento sostenible de nuestros clientes, adaptándonos a sus necesidades y a las exigencias de un mercado en constante evolución.",
           "points": [
             "Más de 10 años de experiencia",
             "Cientos de proyectos exitosos",
@@ -125,7 +125,7 @@
     "section5": {
       "subtitle": "Trabajo completado recientemente",
       "title": "Nuestra lista de proyectos completados recientemente",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+      "description": "Cada uno de nuestros proyectos refleja la aplicación práctica de nuestra misión: impulsar la transformación digital de las empresas mediante soluciones web, aplicaciones inteligentes y automatización empresarial con herramientas de inteligencia artificial.",
       "projects": {
         "project1": {
           "category": "Diseño",

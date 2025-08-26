@@ -79,7 +79,7 @@
     "section4": {
       "subtitle": "Notech company benefits",
       "title": "Why you should choose our notech company?",
-      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
+      "staticDescription": "There are numerous variations of the Lorem Ipsum text available today; however, most have been altered from the original version, either by the inclusion of free fragments for humorous purposes or through randomization processes that generate sequences of words with a Latin-like appearance but without semantic coherence.",
       "staticPoints": [
         "Making this first true generator",
         "Lorem Ipsum is not simply",
@@ -92,7 +92,7 @@
       },
       "content": {
         "mission": {
-          "description": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+          "description": "Our mission is to drive the digital transformation of companies through the development of innovative websites, customized applications, and the automation of business systems by strategically leveraging artificial intelligence tools. We aim to deliver efficient, secure, and scalable technological solutions that optimize processes, enhance productivity, and create sustainable value for our clients.",
           "points": [
             "Making this first true generator",
             "Lorem Ipsum is not simply",
@@ -100,7 +100,7 @@
           ]
         },
         "vision": {
-          "description": "Our vision is to be leaders in technological innovation, providing solutions that transform the way companies operate and grow in the digital world.",
+          "description": "To become a leading company in innovative technological solutions, recognized nationally and internationally for transforming the way organizations operate through intelligent websites, high-impact applications, and AI-powered business automation systems, contributing to the sustainable growth and global competitiveness of our clients.",
           "points": [
             "Constant innovation in technology",
             "Excellence in customer service",
@@ -108,7 +108,7 @@
           ]
         },
         "history": {
-          "description": "Founded with the mission to democratize technology, we have grown from a startup to become a reference in the technology sector.",
+          "description": "Our company was founded with the vision of delivering technological solutions that truly transform the way organizations work. We started by creating customized websites for small and medium-sized businesses, helping them establish a strong digital presence. Over time, we expanded our services to mobile applications, enterprise systems, and automation powered by artificial intelligence, with the goal of making processes more efficient and enhancing productivity. Today, we are a multidisciplinary team passionate about innovation, committed to providing cutting-edge technology that drives the sustainable growth of our clients while adapting to their needs and the demands of an ever-evolving market.",
           "points": [
             "More than 10 years of experience",
             "Hundreds of successful projects",
@@ -125,7 +125,7 @@
     "section5": {
       "subtitle": "Recently completed work",
       "title": "Our recently completed projects list",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+      "description": "Each of our projects reflects the practical application of our mission: to drive the digital transformation of companies through innovative websites, intelligent applications, and business automation powered by artificial intelligence.",
       "projects": {
         "project1": {
           "category": "Design",
