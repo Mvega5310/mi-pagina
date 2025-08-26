@@ -1,3 +1,4 @@
+import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
 import Footer from './Footer'
@@ -14,7 +15,6 @@ const LayoutContent = () => {
       <a href="#main-content" className="skip-to-main">
         Skip to main content
       </a>
-      <SEO />
       <Header />
       <main id="main-content" className="flex-grow"> {/* Adjusted padding-top: TopHeader (~50px) + MainHeader (~80px) */}
         <Outlet />
@@ -26,19 +26,22 @@ const LayoutContent = () => {
 
 const Layout = () => {
   return (
-    <ClientOnly
-      fallback={
-        <div className="flex flex-col min-h-screen">
-          <div className="h-20 bg-white shadow-sm"></div>
-          <main className="flex-grow flex items-center justify-center">
-            <div className="text-gray-600">Loading...</div>
-          </main>
-          <div className="h-16 bg-gray-100"></div>
-        </div>
-      }
-    >
-      <LayoutContent />
-    </ClientOnly>
+    <>
+      <SEO />
+      <ClientOnly
+        fallback={
+          <div className="flex flex-col min-h-screen">
+            <div className="h-20 bg-white shadow-sm"></div>
+            <main className="flex-grow flex items-center justify-center">
+              <div className="text-gray-600">Loading...</div>
+            </main>
+            <div className="h-16 bg-gray-100"></div>
+          </div>
+        }
+      >
+        <LayoutContent />
+      </ClientOnly>
+    </>
   )
 }
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import logoWhite from '../../assets/logo-white.svg'
 import bgFooter from '../../assets/bg-footer.png'
 import facebook from '../../assets/facebook.svg'

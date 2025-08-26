@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import bg1 from '../../../assets/images/home/section6-image1-bg.webp';
 import bgLetters from '../../../assets/images/home/section6-image2-bg-letters.webp';

@@ -1,11 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import App from '../App'
 
 // Import styles and i18n for client-side
 import '../styles/index.css'
 import '../i18n'
+
+// Create a new helmet context for client-side
+const helmetContext = {}
 
 // Ensure DOM is ready before hydration
 function hydrate() {
@@ -21,14 +25,11 @@ function hydrate() {
     ReactDOM.hydrateRoot(
       rootElement,
       <React.StrictMode>
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
-          <App />
-        </BrowserRouter>
+        <HelmetProvider context={helmetContext}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </HelmetProvider>
       </React.StrictMode>
     )
   } catch (error) {
@@ -37,14 +38,11 @@ function hydrate() {
     const root = ReactDOM.createRoot(rootElement)
     root.render(
       <React.StrictMode>
-        <BrowserRouter
-          future={{
-            v7_startTransition: true,
-            v7_relativeSplatPath: true,
-          }}
-        >
-          <App />
-        </BrowserRouter>
+        <HelmetProvider context={helmetContext}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </HelmetProvider>
       </React.StrictMode>
     )
   }

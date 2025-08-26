@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
-import { HelmetProvider } from 'react-helmet-async'
 import App from '../App'
 import i18n from '../i18n'
 
@@ -15,26 +14,21 @@ export async function render(url: string, _manifest?: Record<string, unknown>) {
     // Set a default language for SSR to ensure consistent rendering
     await i18n.changeLanguage('en')
     
-    const helmetContext: any = {}
-    
     const html = ReactDOMServer.renderToString(
       <React.StrictMode>
-        <HelmetProvider context={helmetContext}>
-          <StaticRouter location={url}>
-            <App />
-          </StaticRouter>
-        </HelmetProvider>
+        <StaticRouter location={url}>
+          <App />
+        </StaticRouter>
       </React.StrictMode>
     )
     
-    // Extract helmet HTML from context
-    const { helmet } = helmetContext
-    const head = helmet ? [
-      (helmet.title && typeof helmet.title.toString === 'function') ? helmet.title.toString() : '',
-      (helmet.meta && typeof helmet.meta.toString === 'function') ? helmet.meta.toString() : '',
-      (helmet.link && typeof helmet.link.toString === 'function') ? helmet.link.toString() : '',
-      (helmet.script && typeof helmet.script.toString === 'function') ? helmet.script.toString() : ''
-    ].filter(Boolean).join('\n') : ''
+    // Since SafeHelmet only renders on client-side, we provide basic head content for SSR
+    const head = `
+      <title>Mi Página - Desarrollo Web Profesional</title>
+      <meta name="description" content="Servicios profesionales de desarrollo web, aplicaciones móviles y soluciones tecnológicas innovadoras." />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charset="utf-8" />
+    `
     
     return { html, head }
   } catch (error) {

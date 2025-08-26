@@ -1,3 +1,4 @@
+import React from 'react'
 import { useTranslation } from 'react-i18next'
 import SEO from '../components/SEO'
 import s1 from '../../assets/images/services/section1-imagen1.jpg'

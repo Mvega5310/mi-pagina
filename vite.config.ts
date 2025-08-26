@@ -11,7 +11,7 @@ export default defineConfig({
     react({
       // Enable React Fast Refresh
       // Fast Refresh is enabled by default in Vite
-      // Optimize JSX runtime
+      // Use automatic JSX runtime (React 17+)
       jsxRuntime: 'automatic'
     })
   ],
@@ -180,7 +180,7 @@ export default defineConfig({
   // SSR configuration
   ssr: {
     // Handle CommonJS modules properly in SSR
-    noExternal: ['react-helmet-async'],
+    noExternal: ['react-helmet-async', 'react-helmet-async/lib/index.js'],
     // Optimize SSR dependencies
     optimizeDeps: {
       include: [
@@ -192,21 +192,34 @@ export default defineConfig({
         'react-helmet-async'
       ]
     },
+    // External dependencies that should remain external
+    external: [],
+    // Resolve conditions for SSR
+    resolve: {
+      conditions: ['node', 'import', 'module', 'browser', 'default'],
+      externalConditions: ['node', 'import']
+    },
     // Configure SSR build outputs
     target: 'node',
     format: 'esm',
     rollupOptions: {
-      input: {
-        entry: 'src/ssr/entry-server.tsx',
-        static: 'src/ssr/start-server.ts'
-      },
+      input: process.env.VITE_SSR_RUNTIME === '1' 
+        ? { server: 'src/ssr/server.ts' }
+        : {
+            entry: 'src/ssr/entry-server.tsx',
+            static: 'src/ssr/start-server.ts'
+          },
       output: {
         entryFileNames: (chunkInfo) => {
+          // For runtime server build, use stable naming
+          if (process.env.VITE_SSR_RUNTIME === '1') {
+            return chunkInfo.name === 'server' ? 'server.js' : `${chunkInfo.name}.js`;
+          }
           return `${chunkInfo.name}.js`;
         },
-        chunkFileNames: 'assets/js/[name]-[hash].js',
-        assetFileNames: 'assets/[name]-[hash][extname]',
-        dir: 'dist/server'
+        chunkFileNames: process.env.VITE_SSR_RUNTIME === '1' ? '[name].js' : 'assets/js/[name]-[hash].js',
+        assetFileNames: process.env.VITE_SSR_RUNTIME === '1' ? '[name][extname]' : 'assets/[name]-[hash][extname]',
+        dir: process.env.VITE_SSR_RUNTIME === '1' ? 'dist/server/runtime' : 'dist/server'
       }
     }
   }

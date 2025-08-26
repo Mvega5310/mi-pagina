@@ -91,14 +91,14 @@ lighthouse-results.json
 # Scripts (not needed in production)
 scripts/
 
-# Development files
-*.config.js
-*.config.ts
-vite.config.ts
-tailwind.config.js
-postcss.config.js
-eslint.config.js
-tsconfig*.json
+# Development files (commented out for Docker build)
+# *.config.js
+# *.config.ts
+# vite.config.ts
+# tailwind.config.js
+# postcss.config.js
+# eslint.config.js
+# tsconfig*.json
 
 # GitHub
 .github/

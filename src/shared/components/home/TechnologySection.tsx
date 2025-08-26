@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import tech1 from '../../../assets/images/home/section2-imagen1.jpg';
 import tech2 from '../../../assets/images/home/section2-imagen2.jpg';
