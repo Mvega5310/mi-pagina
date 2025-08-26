@@ -1,5 +1,5 @@
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useEffect } from 'react'
 import SEO from '../components/SEO'
 import p1w from '../../assets/images/projects/section1-imagen1.webp'
 import p1j from '../../assets/images/projects/section1-imagen1.jpg'

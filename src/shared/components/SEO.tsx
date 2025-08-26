@@ -1,5 +1,5 @@
 import React from 'react'
-import { Helmet } from 'react-helmet-async'
+import SafeHelmet from './SafeHelmet'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router-dom'
 
@@ -135,7 +135,7 @@ const SEO: React.FC<SEOProps> = ({
   }
 
   return (
-    <Helmet>
+    <SafeHelmet>
       {/* Basic Meta Tags */}
       <title>{fullTitle}</title>
       <meta name="description" content={finalDescription} />
@@ -225,7 +225,7 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
       <link rel="manifest" href="/site.webmanifest" />
-    </Helmet>
+    </SafeHelmet>
   )
 }
 

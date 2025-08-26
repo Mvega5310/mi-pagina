@@ -12,8 +12,13 @@ COPY package*.json ./
 # Install all dependencies (including devDependencies for build)
 RUN npm ci --silent
 
+# Copy configuration files first
+COPY tsconfig*.json vite.config.ts tailwind.config.js postcss.config.js ./
+
 # Copy source code
-COPY . .
+COPY src ./src
+COPY public ./public
+COPY index.html ./
 
 # Build the application
 RUN npm run build:ssr
@@ -42,11 +47,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/dist/client ./dist/client
 COPY --from=builder --chown=nextjs:nodejs /app/dist/server ./dist/server
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 
-# Copy necessary source files for SSR runtime
-COPY --from=builder --chown=nextjs:nodejs /app/src/ssr ./src/ssr
-COPY --from=builder --chown=nextjs:nodejs /app/src/locales ./src/locales
-COPY --from=builder --chown=nextjs:nodejs /app/src/i18n.ts ./src/i18n.ts
-
 # Switch to non-root user
 USER nextjs
 
@@ -59,11 +59,11 @@ ENV PORT=3000
 ENV HOST=0.0.0.0
 
 # Health check (use dynamic PORT)
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD node -e "const p=process.env.PORT||3000; require('http').get(`http://localhost:${p}/health`, (res)=>{ process.exit(res.statusCode === 200 ? 0 : 1) })"
+# HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+#   CMD node -e "const p=process.env.PORT||3000; require('http').get(`http://localhost:${p}/health`, (res)=>{ process.exit(res.statusCode === 200 ? 0 : 1) })"
 
-# Start the SSR server with dumb-init using tsx via --import (replaces deprecated --loader)
-CMD ["dumb-init", "node", "--enable-source-maps", "--import=tsx", "src/ssr/server.ts"]
+# Start the SSR server with dumb-init using server
+CMD ["dumb-init", "node", "--enable-source-maps", "dist/server/runtime/assets/js/server-787f5489.js"]
 
 # Labels for metadata
 LABEL maintainer="FriendSoft Team"

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import profileImage from '../../../assets/images/home/profile.webp';
 import tech1 from '../../../assets/images/home/section2-imagen1.webp';

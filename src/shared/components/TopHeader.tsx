@@ -1,6 +1,6 @@
+import React, { useState, useRef, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { MapPinIcon, EnvelopeIcon, PhoneIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
-import { useState, useRef, useEffect } from "react";
 import ClientOnly from "../../ssr/ClientOnly";
 import usFlag from '../../assets/flags/us.svg'
 import esFlag from '../../assets/flags/es.svg'

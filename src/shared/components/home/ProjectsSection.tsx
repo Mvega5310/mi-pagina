@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import p1 from '../../../assets/images/home/section5-image1.jpg';
 import p2 from '../../../assets/images/home/section5-image2.jpg';

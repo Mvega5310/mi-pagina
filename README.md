@@ -165,15 +165,170 @@ npm run build:ssr
 npm run preview:ssr
 ```
 
-### Docker Deployment
+## 🐳 Docker Deployment
 
+Este proyecto incluye una configuración completa de Docker con scripts npm para facilitar el despliegue y gestión de contenedores.
+
+### Scripts de Construcción y Despliegue
+
+#### `npm run docker:build`
+**Propósito**: Construye la imagen Docker de la aplicación.
 ```bash
-# Build Docker image
-docker build -t friendsoft .
-
-# Run container
-docker run -p 3000:3000 friendsoft
+npm run docker:build
+# Equivale a: docker build -t mi-pagina .
 ```
+
+#### `npm run deploy:prod`
+**Propósito**: Script completo de despliegue en producción que construye la aplicación SSR y la imagen Docker.
+```bash
+npm run deploy:prod
+# Equivale a: npm run build:ssr && npm run docker:build
+```
+
+### Scripts de Ejecución de Contenedores
+
+#### `npm run docker:run`
+**Propósito**: Ejecuta el contenedor en modo daemon (background) en el puerto 3013.
+```bash
+npm run docker:run
+# Equivale a: docker run -d -p 3013:3000 --name mi-pagina-container mi-pagina
+```
+
+#### `npm run docker:run:dev`
+**Propósito**: Ejecuta el contenedor en modo interactivo para desarrollo y debugging.
+```bash
+npm run docker:run:dev
+# Equivale a: docker run -it -p 3013:3000 --name mi-pagina-dev mi-pagina
+```
+
+### Scripts de Gestión de Contenedores
+
+#### `npm run docker:stop`
+**Propósito**: Detiene el contenedor en ejecución sin eliminarlo.
+```bash
+npm run docker:stop
+# Equivale a: docker stop mi-pagina-container
+```
+
+#### `npm run docker:remove`
+**Propósito**: Elimina el contenedor (debe estar detenido previamente).
+```bash
+npm run docker:remove
+# Equivale a: docker rm mi-pagina-container
+```
+
+#### `npm run docker:clean`
+**Propósito**: Detiene y elimina el contenedor en un solo comando.
+```bash
+npm run docker:clean
+# Equivale a: docker stop mi-pagina-container && docker rm mi-pagina-container
+```
+
+#### `npm run docker:rebuild`
+**Propósito**: Reconstruye completamente el contenedor (limpia, construye y ejecuta).
+```bash
+npm run docker:rebuild
+# Equivale a: npm run docker:clean && npm run docker:build && npm run docker:run
+```
+
+### Scripts de Monitoreo y Debugging
+
+#### `npm run docker:logs`
+**Propósito**: Muestra los logs del contenedor.
+```bash
+npm run docker:logs
+# Equivale a: docker logs mi-pagina-container
+```
+
+#### `npm run docker:logs:follow`
+**Propósito**: Sigue los logs del contenedor en tiempo real.
+```bash
+npm run docker:logs:follow
+# Equivale a: docker logs -f mi-pagina-container
+```
+
+#### `npm run docker:shell`
+**Propósito**: Accede al shell del contenedor para debugging interno.
+```bash
+npm run docker:shell
+# Equivale a: docker exec -it mi-pagina-container sh
+```
+
+### Scripts de Docker Compose
+
+#### `npm run docker:compose:up`
+**Propósito**: Inicia todos los servicios definidos en docker-compose.yml.
+```bash
+npm run docker:compose:up
+# Equivale a: docker-compose up -d
+```
+
+#### `npm run docker:compose:down`
+**Propósito**: Detiene y elimina todos los servicios de Docker Compose.
+```bash
+npm run docker:compose:down
+# Equivale a: docker-compose down
+```
+
+#### `npm run docker:compose:logs`
+**Propósito**: Muestra logs de todos los servicios de Docker Compose en tiempo real.
+```bash
+npm run docker:compose:logs
+# Equivale a: docker-compose logs -f
+```
+
+### Scripts de Mantenimiento
+
+#### `npm run docker:prune`
+**Propósito**: Limpia recursos Docker no utilizados (imágenes, contenedores, redes).
+```bash
+npm run docker:prune
+# Equivale a: docker system prune -f
+```
+
+### Flujo de Trabajo Recomendado
+
+#### Para Desarrollo:
+```bash
+# 1. Construir la imagen
+npm run docker:build
+
+# 2. Ejecutar en modo desarrollo
+npm run docker:run:dev
+
+# 3. Ver logs en tiempo real
+npm run docker:logs:follow
+```
+
+#### Para Producción:
+```bash
+# 1. Despliegue completo
+npm run deploy:prod
+
+# 2. Ejecutar en background
+npm run docker:run
+
+# 3. Verificar estado
+npm run docker:logs
+```
+
+#### Para Mantenimiento:
+```bash
+# Reconstruir completamente
+npm run docker:rebuild
+
+# Limpiar recursos
+npm run docker:prune
+```
+
+### Configuración del Contenedor
+
+- **Puerto de la aplicación**: 3000 (interno del contenedor)
+- **Puerto expuesto**: 3013 (accesible desde el host)
+- **URL de acceso**: http://localhost:3013
+- **Imagen base**: Node.js 18 Alpine
+- **Usuario**: nextjs (no-root para seguridad)
+- **Healthcheck**: Endpoint `/health` cada 30 segundos
 
 ## 🤝 Contributing
 

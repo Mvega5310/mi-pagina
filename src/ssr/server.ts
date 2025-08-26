@@ -78,13 +78,13 @@ async function createServer(
     next()
   })
 
-  // Basic rate limiting
+  // Rate limiting - More permissive for development
   const rateLimitMap = new Map()
   app.use((req, res, next) => {
     const clientIP = req.ip || req.connection.remoteAddress || 'unknown'
     const now = Date.now()
-    const windowMs = 15 * 60 * 1000 // 15 minutes
-    const maxRequests = 100 // requests per window
+    const windowMs = 5 * 60 * 1000 // 5 minutes (reduced from 15)
+    const maxRequests = 1000 // requests per window (increased from 100)
     
     if (!rateLimitMap.has(clientIP)) {
       rateLimitMap.set(clientIP, { count: 1, resetTime: now + windowMs })
@@ -97,9 +97,12 @@ async function createServer(
       } else {
         clientData.count++
         
-        if (clientData.count > maxRequests) {
-          res.status(429).json({ error: 'Too many requests' })
-          return
+        // Check if limit exceeded (skip for health endpoint and static assets)
+        if (req.path !== '/health' && !req.path.startsWith('/assets/')) {
+          if (clientData.count > maxRequests) {
+            res.status(429).json({ error: 'Too many requests' })
+            return
+          }
         }
       }
     }
@@ -188,10 +191,17 @@ async function createServer(
     app.use(
       base,
       sirv(path.resolve(serverRoot, 'dist/client'), {
-        extensions: ['css'],
+        extensions: [],
         gzip: true,
         brotli: true,
+        dev: false,
         setHeaders: (res, pathname) => {
+          // Set correct MIME types
+          if (pathname.endsWith('.css')) {
+            res.setHeader('Content-Type', 'text/css; charset=utf-8')
+          } else if (pathname.endsWith('.js')) {
+            res.setHeader('Content-Type', 'application/javascript; charset=utf-8')
+          }
           // Performance headers for all static files
           res.setHeader('X-Content-Type-Options', 'nosniff')
           
@@ -201,7 +211,7 @@ async function createServer(
             res.setHeader('ETag', 'strong')
             // Add preload hints for critical assets
             if (pathname.includes('.css')) {
-              res.setHeader('Link', '</assets/css/index.css>; rel=preload; as=style')
+              res.setHeader('Link', `<${pathname}>; rel=preload; as=style`)
             }
           } else if (pathname.match(/\.(js|css)$/)) {
             // Cache JS/CSS files for 1 year

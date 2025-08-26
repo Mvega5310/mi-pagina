@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import sIcon1 from '../../../assets/icons/home/section3-icon1.svg'
 import sIcon2 from '../../../assets/icons/home/section3-icon2.svg'
