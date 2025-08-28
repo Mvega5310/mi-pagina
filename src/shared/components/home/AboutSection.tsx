@@ -27,8 +27,8 @@ const AboutSection = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`group relative flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-medium transition-all duration-300 ease-in-out overflow-hidden ${
                     activeTab === tab
-                      ? 'bg-blue-500 text-white rounded-lg shadow-md'
-                      : 'text-gray-900 bg-transparent border-t-2 border-blue-500 rounded-t-lg'
+                      ? 'bg-blue-500 text-white shadow-md'
+                      : 'text-gray-900 bg-transparent border-t-2 border-blue-500'
                   }`}
                 >
                   {/* Hover animation overlay for inactive tabs */}
@@ -47,7 +47,7 @@ const AboutSection = () => {
             </div>
 
             {/* Tab Content */}
-            <div className="bg-gray-50 rounded-lg p-4 sm:p-6">
+            <div className="bg-gray-50 p-4 sm:p-6">
               <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
                 {t("home.section4.tabs." + activeTab)}
               </h3>

@@ -5,6 +5,7 @@ import Layout from './shared/layout/Layout'
 // Lazy load pages for code splitting
 const HomePage = React.lazy(() => import('./shared/pages/HomePage'))
 const ProjectsPage = React.lazy(() => import('./shared/pages/ProjectsPage'))
+const ProjectDetails = React.lazy(() => import('./shared/pages/ProjectDetails'))
 const ServicesPage = React.lazy(() => import('./shared/pages/ServicesPage'))
 const ContactPage = React.lazy(() => import('./shared/pages/ContactPage'))
 
@@ -29,6 +30,7 @@ export function AppRoutes() {
       <Route path="/" element={<Layout />}>
         <Route index element={<LazyPageWrapper><HomePage /></LazyPageWrapper>} />
         <Route path="projects" element={<LazyPageWrapper><ProjectsPage /></LazyPageWrapper>} />
+        <Route path="projects/:id" element={<LazyPageWrapper><ProjectDetails /></LazyPageWrapper>} />
         <Route path="services" element={<LazyPageWrapper><ServicesPage /></LazyPageWrapper>} />
         <Route path="contact" element={<LazyPageWrapper><ContactPage /></LazyPageWrapper>} />
       </Route>

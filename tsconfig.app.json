@@ -23,5 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "files": [
+    "src/App.js",
+    "src/Projects.js",
+    "src/ProjectDetails.js"
+  ]
 }

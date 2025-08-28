@@ -181,17 +181,6 @@ export default defineConfig({
   ssr: {
     // Handle CommonJS modules properly in SSR
     noExternal: ['react-helmet-async', 'react-helmet-async/lib/index.js'],
-    // Optimize SSR dependencies
-    optimizeDeps: {
-      include: [
-        'react',
-        'react-dom/server',
-        'react-router-dom',
-        'react-i18next',
-        'i18next',
-        'react-helmet-async'
-      ]
-    },
     // External dependencies that should remain external
     external: [],
     // Resolve conditions for SSR
@@ -201,26 +190,6 @@ export default defineConfig({
     },
     // Configure SSR build outputs
     target: 'node',
-    format: 'esm',
-    rollupOptions: {
-      input: process.env.VITE_SSR_RUNTIME === '1' 
-        ? { server: 'src/ssr/server.ts' }
-        : {
-            entry: 'src/ssr/entry-server.tsx',
-            static: 'src/ssr/start-server.ts'
-          },
-      output: {
-        entryFileNames: (chunkInfo) => {
-          // For runtime server build, use stable naming
-          if (process.env.VITE_SSR_RUNTIME === '1') {
-            return chunkInfo.name === 'server' ? 'server.js' : `${chunkInfo.name}.js`;
-          }
-          return `${chunkInfo.name}.js`;
-        },
-        chunkFileNames: process.env.VITE_SSR_RUNTIME === '1' ? '[name].js' : 'assets/js/[name]-[hash].js',
-        assetFileNames: process.env.VITE_SSR_RUNTIME === '1' ? '[name][extname]' : 'assets/[name]-[hash][extname]',
-        dir: process.env.VITE_SSR_RUNTIME === '1' ? 'dist/server/runtime' : 'dist/server'
-      }
-    }
+    format: 'esm'
   }
 })

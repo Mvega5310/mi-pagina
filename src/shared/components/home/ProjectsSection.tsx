@@ -171,7 +171,7 @@ const ProjectsCarousel = () => {
 
         {/* Page Indicator */}
         <div className="text-sm text-gray-500 font-medium">
-          Página {currentPage + 1} de 3
+          Page {currentPage + 1} of 3
         </div>
       </div>
     </div>

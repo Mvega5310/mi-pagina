@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
+import projectsData from '../data/projectsData.json'
 import p1w from '../../assets/images/projects/section1-imagen1.webp'
 import p1j from '../../assets/images/projects/section1-imagen1.jpg'
 import p2w from '../../assets/images/projects/section1-imagen2.webp'
@@ -35,56 +37,22 @@ const ProjectsPage = () => {
     })
   }, [])
 
-  const projects = [
-    {
-      id: 1,
-      image: p1w,
-      fallback: p1j,
-      category: t('projects.categories.technology'),
-      title: t('projects.items.project1.title'),
-      description: t('projects.items.project1.description')
-    },
-    {
-      id: 2,
-      image: p2w,
-      fallback: p2j,
-      category: t('projects.categories.development'),
-      title: t('projects.items.project2.title'),
-      description: t('projects.items.project2.description')
-    },
-    {
-      id: 3,
-      image: p3w,
-      fallback: p3j,
-      category: t('projects.categories.solution'),
-      title: t('projects.items.project3.title'),
-      description: t('projects.items.project3.description')
-    },
-    {
-      id: 4,
-      image: p4w,
-      fallback: p4j,
-      category: t('projects.categories.design'),
-      title: t('projects.items.project4.title'),
-      description: t('projects.items.project4.description')
-    },
-    {
-      id: 5,
-      image: p5w,
-      fallback: p5j,
-      category: t('projects.categories.technology'),
-      title: t('projects.items.project5.title'),
-      description: t('projects.items.project5.description')
-    },
-    {
-      id: 6,
-      image: p6w,
-      fallback: p6j,
-      category: t('projects.categories.ideas'),
-      title: t('projects.items.project6.title'),
-      description: t('projects.items.project6.description')
-    }
-  ]
+  // Map images to projects data
+  const imageMap = {
+    '1': { webp: p1w, jpg: p1j },
+    '2': { webp: p2w, jpg: p2j },
+    '3': { webp: p3w, jpg: p3j },
+    '4': { webp: p4w, jpg: p4j },
+    '5': { webp: p5w, jpg: p5j },
+    '6': { webp: p6w, jpg: p6j }
+  }
+
+  // Combine projects data with images
+  const projects = projectsData.map(project => ({
+    ...project,
+    image: imageMap[project.id as keyof typeof imageMap]?.webp || project.image,
+    fallback: imageMap[project.id as keyof typeof imageMap]?.jpg || project.image
+  }))
 
   return (
     <>
@@ -97,15 +65,6 @@ const ProjectsPage = () => {
         url="/projects"
       />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
-        {/* Page Header */}
-        <header className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            {t('projects.title', 'Nuestros Proyectos')}
-          </h1>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            {t('projects.subtitle', 'Descubre nuestro portfolio de proyectos exitosos y soluciones innovadoras.')}
-          </p>
-        </header>
         
         {/* Projects Grid - Responsive */}
         <main>
@@ -136,14 +95,14 @@ const ProjectsPage = () => {
               <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-85 transition-opacity duration-300 flex items-center justify-center">
                 <div className="text-center text-white p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-xs sm:text-sm mb-3 sm:mb-4 opacity-90 line-clamp-3">{project.description}</p>
-                  <button 
-                    className="bg-white text-gray-900 px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 rounded"
+                  <p className="text-xs sm:text-sm mb-3 sm:mb-4 opacity-90 line-clamp-3">{project.shortDescription}</p>
+                  <Link 
+                    to={`/projects/${project.id}`}
+                    className="bg-white text-gray-900 px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 rounded inline-block"
                     aria-label={`${t('projects.viewProject')}: ${project.title}`}
-                    type="button"
                   >
-                    {t('projects.viewProject')}
-                  </button>
+                    {t('projects.viewProject', 'Discover more')}
+                  </Link>
                 </div>
               </div>
               
@@ -161,16 +120,16 @@ const ProjectsPage = () => {
                 <span className="text-blue-700 text-xs sm:text-sm font-semibold">{project.category}</span>
               </div>
               <h2 id={`project-title-${project.id}`} className="text-lg sm:text-xl font-bold text-gray-900 mb-2 line-clamp-2">{project.title}</h2>
-              <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">{project.description}</p>
+              <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">{project.shortDescription}</p>
               
               <div className="mt-3 sm:mt-4">
-                <button 
+                <Link 
+                  to={`/projects/${project.id}`}
                   className="text-blue-700 text-sm sm:text-base font-semibold hover:text-blue-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1 py-1"
                   aria-label={`${t('projects.viewProject')}: ${project.title}`}
-                  type="button"
                 >
-                  {t('projects.viewProject')}
-                </button>
+                  {t('projects.viewProject', 'Discover more')}
+                </Link>
               </div>
             </div>
           </article>
