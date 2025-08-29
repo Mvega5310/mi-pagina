@@ -129,7 +129,7 @@ const Header = () => {
           <header className="fixed top-[28px] left-0 right-0 z-[60] bg-white border-b border-gray-200">
             <div className="container mx-auto px-4 py-4 lg:py-6 flex justify-between items-center">
               <Link to="/" className="flex items-center space-x-2">
-                <img src={logoWhite} alt="LOGO" className="h-8 lg:h-10" width={120} height={40} loading="eager" />
+                <img src={logo} alt="LOGO" className="h-8 lg:h-10" width={120} height={40} loading="eager" />
               </Link>
               
               {/* Desktop Navigation */}

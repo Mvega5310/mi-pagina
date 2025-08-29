@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useScrollAnimation, staggerContainer, scaleIn, fadeInUp } from '../../hooks/useScrollAnimation';
@@ -20,6 +20,7 @@ const TestimonialsSection: React.FC = () => {
   const { t } = useTranslation();
   const { ref: headerRef, isInView: headerInView } = useScrollAnimation();
   const { ref: cardsRef, isInView: cardsInView } = useScrollAnimation();
+  const [mobileActiveTab, setMobileActiveTab] = useState(0);
 
   const testimonials: Testimonial[] = [
     {
@@ -41,6 +42,11 @@ const TestimonialsSection: React.FC = () => {
       profileImage: Profile3
     }
   ];
+
+  // Mobile tab navigation
+  const handleMobileTabClick = (index: number) => {
+    setMobileActiveTab(index);
+  };
 
   return (
     <section className="relative">
@@ -75,64 +81,135 @@ const TestimonialsSection: React.FC = () => {
       {/* White Background Section */}
       <div className="bg-[#F7F7F9] pt-8 sm:pt-12 pb-16 sm:pb-20 min-h-[400px] sm:min-h-[500px]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
-          {/* Testimonials Grid */}
-          <div className="relative">
-            <motion.div 
-              ref={cardsRef}
-              initial="hidden"
-              animate={cardsInView ? "visible" : "hidden"}
-              variants={staggerContainer}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8"
-            >
+          
+          {/* Mobile View - Single Testimonial with Tabs */}
+          <div className="block sm:hidden">
+            {/* Mobile Tabs */}
+            <div className="flex justify-center mb-6 bg-gray-100 rounded-lg p-1 mx-4">
               {testimonials.map((testimonial, index) => (
-                <motion.div
+                <button
                   key={index}
-                  variants={scaleIn}
-                  whileHover={{ 
-                    scale: 1.05,
-                    transition: { duration: 0.3 }
-                  }}
-                  className="bg-white shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                  onClick={() => handleMobileTabClick(index)}
+                  className={`flex-1 py-2 px-3 text-xs font-medium rounded-md transition-all duration-200 ${
+                    mobileActiveTab === index
+                      ? 'bg-white text-[#7B43D6] shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
                 >
-                  {/* Upper section with quote icon and comment - F7F7F9 background */}
-                  <div className="p-3 sm:p-4 md:p-6 lg:p-8 bg-white">
-                    {/* Quote Icon - Centered */}
-                    <div className="mb-3 sm:mb-4 md:mb-6 flex justify-center">
-                      <img
-                        src={QuoteIcon}
-                        alt="Quote"
-                        className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16"
-                      />
-                    </div>
-
-                    {/* Comment */}
-                    <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-center px-1">
-                      {testimonial.comment}
-                    </p>
-                  </div>
-
-                  {/* Lower section with profile - White background */}
-                  <div className="bg-white p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col items-center text-center">
-                    {/* Profile Image */}
-                    <div className="mb-2 sm:mb-3 md:mb-4">
-                      <img
-                        src={testimonial.profileImage}
-                        alt={testimonial.name}
-                        className="w-10 sm:w-12 md:w-14 lg:w-16 h-10 sm:h-12 md:h-14 lg:h-16 object-cover border-2 sm:border-4 border-gray-100 shadow-md"
-                      />
-                    </div>
-
-                    {/* Name and Position */}
-                    <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-bold mb-1">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-gray-500 text-xs sm:text-xs md:text-sm">
-                      {testimonial.position}
-                    </p>
-                  </div>
-                </motion.div>
+                  {testimonial.name}
+                </button>
               ))}
-            </motion.div>
+            </div>
+
+            {/* Mobile Single Testimonial Display */}
+            <div className="px-4">
+              <motion.div
+                key={mobileActiveTab}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="bg-white shadow-lg overflow-hidden transition-all duration-300"
+              >
+                {/* Upper section with quote icon and comment */}
+                <div className="p-6 bg-white">
+                  {/* Quote Icon - Centered */}
+                  <div className="mb-6 flex justify-center">
+                    <img
+                      src={QuoteIcon}
+                      alt="Quote"
+                      className="w-12 h-12"
+                    />
+                  </div>
+
+                  {/* Comment */}
+                  <p className="text-gray-600 text-sm leading-relaxed text-center">
+                    {testimonials[mobileActiveTab].comment}
+                  </p>
+                </div>
+
+                {/* Lower section with profile */}
+                <div className="bg-white p-6 flex flex-col items-center text-center">
+                  {/* Profile Image */}
+                  <div className="mb-4">
+                    <img
+                      src={testimonials[mobileActiveTab].profileImage}
+                      alt={testimonials[mobileActiveTab].name}
+                      className="w-16 h-16 object-cover border-4 border-gray-100 shadow-md"
+                    />
+                  </div>
+
+                  {/* Name and Position */}
+                  <h4 className="text-black text-base font-bold mb-1">
+                    {testimonials[mobileActiveTab].name}
+                  </h4>
+                  <p className="text-gray-500 text-sm">
+                    {testimonials[mobileActiveTab].position}
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+
+          {/* Tablet and Desktop View - Original Grid */}
+          <div className="hidden sm:block">
+            <div className="relative">
+              <motion.div 
+                ref={cardsRef}
+                initial="hidden"
+                animate={cardsInView ? "visible" : "hidden"}
+                variants={staggerContainer}
+                className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+              >
+                {testimonials.map((testimonial, index) => (
+                  <motion.div
+                    key={index}
+                    variants={scaleIn}
+                    whileHover={{ 
+                      scale: 1.05,
+                      transition: { duration: 0.3 }
+                    }}
+                    className="bg-white shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                  >
+                    {/* Upper section with quote icon and comment */}
+                    <div className="p-3 sm:p-4 md:p-6 lg:p-8 bg-white">
+                      {/* Quote Icon - Centered */}
+                      <div className="mb-3 sm:mb-4 md:mb-6 flex justify-center">
+                        <img
+                          src={QuoteIcon}
+                          alt="Quote"
+                          className="w-8 sm:w-10 md:w-12 lg:w-14 xl:w-16 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16"
+                        />
+                      </div>
+
+                      {/* Comment */}
+                      <p className="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed text-center px-1">
+                        {testimonial.comment}
+                      </p>
+                    </div>
+
+                    {/* Lower section with profile */}
+                    <div className="bg-white p-3 sm:p-4 md:p-6 lg:p-8 flex flex-col items-center text-center">
+                      {/* Profile Image */}
+                      <div className="mb-2 sm:mb-3 md:mb-4">
+                        <img
+                          src={testimonial.profileImage}
+                          alt={testimonial.name}
+                          className="w-10 sm:w-12 md:w-14 lg:w-16 h-10 sm:h-12 md:h-14 lg:h-16 object-cover border-2 sm:border-4 border-gray-100 shadow-md"
+                        />
+                      </div>
+
+                      {/* Name and Position */}
+                      <h4 className="text-black text-xs sm:text-sm md:text-base lg:text-lg font-bold mb-1">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-gray-500 text-xs sm:text-xs md:text-sm">
+                        {testimonial.position}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
           </div>
         </div>
       </div>

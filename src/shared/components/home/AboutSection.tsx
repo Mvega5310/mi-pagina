@@ -17,69 +17,71 @@ const AboutSection = () => {
             {t("home.section4.subtitle")}
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
-          {/* Left Side - Tabs */}
-          <div className="space-y-4 sm:space-y-6">
-            <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-1">
-              {['mission', 'vision', 'history'].map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`group relative flex-1 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm md:text-base font-medium transition-all duration-300 ease-in-out overflow-hidden ${
-                    activeTab === tab
-                      ? 'bg-blue-500 text-white shadow-md'
-                      : 'text-gray-900 bg-transparent border-t-2 border-blue-500'
-                  }`}
-                >
-                  {/* Hover animation overlay for inactive tabs */}
-                  {activeTab !== tab && (
-                    <div className="absolute inset-0 bg-blue-500 origin-top transform scale-y-0 transition-transform duration-300 ease-out group-hover:scale-y-100" />
-                  )}
-                  
-                  {/* Tab text with proper z-index */}
-                  <span className={`relative z-10 transition-colors duration-300 ${
-                    activeTab === tab ? 'text-white' : 'text-gray-900 group-hover:text-white'
-                  }`}>
-                    {t("home.section4.tabs." + tab)}
-                  </span>
-                </button>
-              ))}
-            </div>
+        {/* Simple Tabs Layout */}
+        <div className="space-y-8">
+          {/* Interactive Tab Buttons */}
+          <div className="flex justify-start space-x-4">
+            {['mission', 'vision', 'history'].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`group relative px-6 py-3 text-base font-medium transition-all duration-300 overflow-hidden ${
+                  activeTab === tab
+                    ? 'bg-blue-500 text-white'
+                    : 'bg-transparent text-gray-900 border-t-2 border-blue-500'
+                }`}
+              >
+                {/* Animated blue stripe for inactive tabs on hover */}
+                {activeTab !== tab && (
+                  <div className="absolute top-0 left-0 w-full h-full bg-blue-500 transform scale-y-0 origin-top transition-transform duration-300 ease-out group-hover:scale-y-100" />
+                )}
+                
+                {/* Tab text with proper z-index */}
+                <span className={`relative z-10 transition-colors duration-300 ${
+                  activeTab === tab ? 'text-white' : 'text-gray-900 group-hover:text-white'
+                }`}>
+                  {t("home.section4.tabs." + tab)}
+                </span>
+              </button>
+            ))}
+          </div>
 
-            {/* Tab Content */}
-            <div className="bg-gray-50 p-4 sm:p-6">
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
+          {/* Content Layout - Two columns on large screens */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {/* Left Side - Tab Content */}
+            <div className="bg-gray-50 p-6 lg:p-8 rounded-xl shadow-sm">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">
                 {t("home.section4.tabs." + activeTab)}
               </h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed">
                 {t("home.section4.content." + activeTab + ".description")}
               </p>
             </div>
-          </div>
 
-          {/* Right Side - Static Content */}
-          <div className="mt-4 lg:mt-0 space-y-4 sm:space-y-6">
-            <div>
-              <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">
-                {t("home.section4.staticDescription")}
-              </h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                {t("home.section4.staticDescription")}
-              </p>
-            </div>
+            {/* Right Side - Static Content */}
+            <div className="space-y-6 lg:space-y-8">
+              <div>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 lg:mb-6">
+                  Beneficios adicionales
+                </h3>
+                <p className="text-sm md:text-base lg:text-lg text-gray-600 leading-relaxed mb-6 lg:mb-8">
+                  {t("home.section4.staticDescription")}
+                </p>
+              </div>
 
-            {/* Static Checkmark List */}
-            <div className="space-y-2 sm:space-y-3">
-              {["Making this first true generator", "Lorem Ipsum is not simply", "If you are going to passage"].map((item, index) => (
-                <div key={index} className="flex items-start space-x-2 sm:space-x-3">
-                  <div className="flex-shrink-0 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-green-500 rounded-full flex items-center justify-center mt-0.5">
-                    <svg className="w-2 h-2 sm:w-3 sm:h-3 md:w-4 md:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
+              {/* Static Checkmark List */}
+              <div className="space-y-3 lg:space-y-4">
+                {[0, 1, 2].map((index) => (
+                  <div key={index} className="flex items-start space-x-3 lg:space-x-4">
+                    <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 bg-green-500 rounded-full flex items-center justify-center mt-1">
+                      <svg className="w-3 h-3 lg:w-4 lg:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-sm md:text-base lg:text-lg text-gray-700 font-medium">{t(`home.section4.staticPoints.${index}`)}</p>
                   </div>
-                  <p className="text-xs sm:text-sm md:text-base text-gray-700">{item}</p>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>

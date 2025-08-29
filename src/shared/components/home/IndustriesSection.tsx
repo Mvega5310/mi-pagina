@@ -58,29 +58,55 @@ const IndustriesSection: React.FC = () => {
           </h2>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 justify-items-center">
+        {/* Mobile View - Vertical List */}
+        <div className="block sm:hidden space-y-4">
           {industries.map((industry, index) => (
             <div
               key={index}
-              className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 rounded-lg flex flex-col items-center justify-center text-center p-2 sm:p-3 md:p-4 lg:p-6 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-              style={{ backgroundColor: industry.bgColor }}
+              className="bg-white rounded-lg p-6 flex items-center space-x-6 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
             >
-              {/* Icon */}
-              <div className="mb-1 sm:mb-2 md:mb-3 lg:mb-4">
+              {/* Icon Container */}
+              <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center">
                 <img 
                   src={industry.icon} 
                   alt={industry.title}
-                  className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                  className="w-12 h-12"
                 />
               </div>
               
               {/* Title */}
-              <h3 className="text-black text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+              <h3 className="text-black text-lg font-semibold flex-grow">
                 {industry.title}
               </h3>
             </div>
           ))}
+        </div>
+
+        {/* Tablet and Desktop View - Original Grid */}
+        <div className="hidden sm:block">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-6 justify-items-center">
+            {industries.map((industry, index) => (
+              <div
+                key={index}
+                className="w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 xl:w-44 xl:h-44 rounded-lg flex flex-col items-center justify-center text-center p-3 md:p-4 lg:p-6 transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                style={{ backgroundColor: industry.bgColor }}
+              >
+                {/* Icon */}
+                <div className="mb-2 md:mb-3 lg:mb-4">
+                  <img 
+                    src={industry.icon} 
+                    alt={industry.title}
+                    className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                  />
+                </div>
+                
+                {/* Title */}
+                <h3 className="text-black text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+                  {industry.title}
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

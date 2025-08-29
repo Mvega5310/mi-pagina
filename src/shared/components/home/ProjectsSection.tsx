@@ -47,6 +47,7 @@ const ProjectsCarousel = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [mobileActiveTab, setMobileActiveTab] = useState(0);
   
   // Get projects data with translations
   const projectsData = transformProjectsData(t);
@@ -89,14 +90,71 @@ const ProjectsCarousel = () => {
     setTimeout(() => setIsTransitioning(false), 300);
   };
 
+  // Mobile tab navigation
+  const handleMobileTabClick = (tabIndex: number) => {
+    setMobileActiveTab(tabIndex);
+  };
+
   return (
     <div 
       className="relative"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      {/* Projects Grid - Always show 4 cards per page with smooth transitions */}
-      <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 transition-all duration-300 ${
+      {/* Mobile View - Single Image with Tabs */}
+      <div className="block sm:hidden mb-8">
+        {/* Mobile Tabs */}
+        <div className="flex justify-center mb-4 bg-gray-100 rounded-lg p-1 mx-4">
+          {getCurrentPageProjects().map((project, index) => (
+            <button
+              key={project.id}
+              onClick={() => handleMobileTabClick(index)}
+              className={`flex-1 py-2 px-3 text-xs font-medium rounded-md transition-all duration-200 ${
+                mobileActiveTab === index
+                  ? 'bg-white text-[#7B43D6] shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {project.category}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Single Project Display */}
+        {getCurrentPageProjects()[mobileActiveTab] && (
+          <div className="px-4">
+            <div 
+              className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1"
+              onClick={() => handleProjectClick(getCurrentPageProjects()[mobileActiveTab].id)}
+            >
+              <div className="relative overflow-hidden shadow-lg bg-white rounded-lg">
+                <img
+                  src={getCurrentPageProjects()[mobileActiveTab].image}
+                  alt={getCurrentPageProjects()[mobileActiveTab].title}
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                  width={400}
+                  height={256}
+                  loading="lazy"
+                />
+                
+                <div className="absolute bottom-0 left-0 right-0 bg-white p-4 mx-2 mb-2">
+                  <span className={`inline-block ${getCurrentPageProjects()[mobileActiveTab].categoryColor} text-xs font-semibold px-3 py-1 mb-3 uppercase tracking-wide rounded-full`}>
+                    {getCurrentPageProjects()[mobileActiveTab].category}
+                  </span>
+                  <h3 className="text-gray-900 font-bold text-lg leading-tight group-hover:text-[#7B43D6] transition-colors duration-300">
+                    {getCurrentPageProjects()[mobileActiveTab].title}
+                  </h3>
+                </div>
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Tablet and Desktop View - Original Grid */}
+      <div className={`hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 transition-all duration-300 ${
         isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
       }`}>
         {getCurrentPageProjects().map((project) => (
@@ -140,7 +198,11 @@ const ProjectsCarousel = () => {
           {[0, 1, 2].map((pageIndex) => (
             <button
               key={pageIndex}
-              onClick={() => goToPage(pageIndex)}
+              onClick={() => {
+                goToPage(pageIndex);
+                // Reset mobile tab when changing page
+                setMobileActiveTab(0);
+              }}
               disabled={isTransitioning}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 pageIndex === currentPage 

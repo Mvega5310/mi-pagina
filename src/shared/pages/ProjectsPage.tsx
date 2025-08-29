@@ -23,13 +23,13 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [isTransitioning, setIsTransitioning] = useState(false)
   
-  // Calculate how many cards to show per page based on screen size (original design)
+  // Calculate how many cards to show per page based on screen size (6 cards for desktop)
   const getCardsPerPage = () => {
-    if (typeof window === 'undefined') return 4 // Default 4 cards per page
+    if (typeof window === 'undefined') return 6 // Default 6 cards per page
     const width = window.innerWidth
     if (width < 640) return 1 // sm: 1 card
     if (width < 1024) return 2 // md: 2 cards
-    return 4 // lg+: 4 cards (original design)
+    return 6 // lg+: 6 cards (2 rows x 3 columns)
   }
   
   const [cardsPerPage, setCardsPerPage] = useState(getCardsPerPage())
@@ -130,14 +130,14 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
     >
-      {/* Projects Grid - Original Design */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 transition-all duration-300 ${
+      {/* Projects Grid - 2x3 Layout (6 images) */}
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 transition-all duration-300 ${
           isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
         }`} role="grid" aria-label={t('projects.gridLabel', 'Portfolio de proyectos')}>
         {getCurrentPageProjects().map((project, index) => (
           <article
             key={project.id}
-            className="group relative bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 sm:hover:-translate-y-2 rounded-lg"
+            className="group relative bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 rounded-lg"
             role="gridcell"
             aria-labelledby={`project-title-${project.id}`}
           >
@@ -148,7 +148,7 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
                 <img
                   src={project.fallback}
                   alt={`${project.title} - ${project.category}`}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                   width="400"
                   height="240"
                   loading={index < 3 ? 'eager' : 'lazy'}
@@ -157,13 +157,13 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
               </picture>
               
               {/* Overlay with improved contrast - Responsive */}
-              <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-85 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-85 flex items-center justify-center">
                 <div className="text-center text-white p-4 sm:p-6">
                   <h3 className="text-lg sm:text-xl font-bold mb-2">{project.title}</h3>
                   <p className="text-xs sm:text-sm mb-3 sm:mb-4 opacity-90 line-clamp-3">{project.shortDescription}</p>
                   <Link 
                     to={`/projects/${project.id}`}
-                    className="bg-white text-gray-900 px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 rounded inline-block"
+                    className="bg-white text-gray-900 px-4 sm:px-6 py-2 text-sm sm:text-base font-semibold hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-900 rounded inline-block"
                     aria-label={`${t('projects.viewProject')}: ${project.title}`}
                   >
                     {t('projects.viewProject', 'Discover more')}
@@ -190,7 +190,7 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
               <div className="mt-3 sm:mt-4">
                 <Link 
                   to={`/projects/${project.id}`}
-                  className="text-blue-700 text-sm sm:text-base font-semibold hover:text-blue-800 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1 py-1"
+                  className="text-blue-700 text-sm sm:text-base font-semibold hover:text-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded px-1 py-1"
                   aria-label={`${t('projects.viewProject')}: ${project.title}`}
                 >
                   {t('projects.viewProject', 'Discover more')}
