@@ -161,9 +161,9 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 xl:gap-24 items-center">
             {/* Imagen con overlay - Responsive */}
-            <div className="relative order-2 lg:order-1 mb-8 sm:mb-12 lg:mb-0">
+            <div className="relative order-1 mb-8 sm:mb-12 lg:mb-0">
               {/* Contenedor para posicionamiento relativo */}
-              <div className="relative">
+              <div className="flex flex-col lg:relative">
                 {/* Imagen principal - Responsive */}
                 <div className="overflow-hidden">
                   <img 
@@ -174,7 +174,7 @@ const ServicesPage = () => {
                 </div>
                 
                 {/* Overlay azul con contenido - Completamente responsive */}
-                <div className="absolute 
+                <div className="lg:absolute 
                   bottom-4 left-4 right-4 
                   sm:bottom-6 sm:left-6 sm:right-6 
                   md:-bottom-8 md:left-8 md:right-8 
@@ -204,7 +204,7 @@ const ServicesPage = () => {
             </div>
 
             {/* Contenido de texto - Responsive */}
-            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1 lg:order-2">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-2">
               {/* Encabezado - Responsive */}
               <div>
                 <h4 className="text-[#6366F1] text-xs sm:text-sm font-semibold mb-2 sm:mb-3 uppercase tracking-wider">

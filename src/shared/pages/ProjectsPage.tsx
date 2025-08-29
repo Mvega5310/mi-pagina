@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import SEO from '../components/SEO'
@@ -19,103 +19,8 @@ import p6j from '../../assets/images/projects/section1-imagen6.jpg'
 // Projects Carousel Component
 const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
   const { t } = useTranslation()
-  const [currentPage, setCurrentPage] = useState(0)
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   
-  // Calculate how many cards to show per page based on screen size (6 cards for desktop)
-  const getCardsPerPage = () => {
-    if (typeof window === 'undefined') return 6 // Default 6 cards per page
-    const width = window.innerWidth
-    if (width < 640) return 1 // sm: 1 card
-    if (width < 1024) return 2 // md: 2 cards
-    return 6 // lg+: 6 cards (2 rows x 3 columns)
-  }
-  
-  const [cardsPerPage, setCardsPerPage] = useState(getCardsPerPage())
-  
-  // Update cards per page on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setCardsPerPage(getCardsPerPage())
-    }
-    
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [projects.length])
-  
-  // Calculate total pages
-  const totalPages = Math.ceil(projects.length / cardsPerPage)
-  
-  // Auto-slide functionality
-  useEffect(() => {
-    if (!isAutoPlaying || totalPages <= 1) return
-
-    const interval = setInterval(() => {
-      goToNextPage()
-    }, 5000) // Change page every 5 seconds
-
-    return () => clearInterval(interval)
-  }, [isAutoPlaying, currentPage, totalPages])
-  
-  // Get projects for current page
-  const getCurrentPageProjects = () => {
-    const startIndex = currentPage * cardsPerPage
-    return projects.slice(startIndex, startIndex + cardsPerPage)
-  }
-  
-  // Navigation functions
-  const goToNextPage = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
-    setCurrentPage((prev) => (prev + 1) % totalPages)
-    setTimeout(() => setIsTransitioning(false), 300)
-  }
-  
-  const goToPrevPage = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages)
-    setTimeout(() => setIsTransitioning(false), 300)
-  }
-  
-  const goToPage = (pageIndex: number) => {
-    if (isTransitioning || pageIndex === currentPage) return
-    setIsTransitioning(true)
-    setCurrentPage(pageIndex)
-    setTimeout(() => setIsTransitioning(false), 300)
-  }
-  
-  // Keyboard navigation for accessibility
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (totalPages <= 1) return
-      
-      switch (event.key) {
-        case 'ArrowLeft':
-          event.preventDefault()
-          goToPrevPage()
-          break
-        case 'ArrowRight':
-          event.preventDefault()
-          goToNextPage()
-          break
-        case 'Home':
-          event.preventDefault()
-          goToPage(0)
-          break
-        case 'End':
-          event.preventDefault()
-          goToPage(totalPages - 1)
-          break
-      }
-    }
-
-    document.addEventListener('keydown', handleKeyDown)
-    return () => document.removeEventListener('keydown', handleKeyDown)
-  }, [totalPages, currentPage])
-  
-  // Don't render carousel if no projects
+  // Don't render if no projects
   if (projects.length === 0) {
     return (
       <div className="text-center py-12">
@@ -125,16 +30,10 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
   }
   
   return (
-    <div 
-      className="relative"
-      onMouseEnter={() => setIsAutoPlaying(false)}
-      onMouseLeave={() => setIsAutoPlaying(true)}
-    >
-      {/* Projects Grid - 2x3 Layout (6 images) */}
-        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 transition-all duration-300 ${
-          isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
-        }`} role="grid" aria-label={t('projects.gridLabel', 'Portfolio de proyectos')}>
-        {getCurrentPageProjects().map((project, index) => (
+    <div className="relative">
+      {/* Projects Grid - Vertical Layout (all projects displayed) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" role="grid" aria-label={t('projects.gridLabel', 'Portfolio de proyectos')}>
+        {projects.map((project, index) => (
           <article
             key={project.id}
             className="group relative bg-white shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 rounded-lg"
@@ -200,33 +99,6 @@ const ProjectsCarousel = ({ projects }: { projects: any[] }) => {
           </article>
         ))}
       </div>
-      
-      {/* Navigation Controls - Only show if more than one page */}
-      {totalPages > 1 && (
-        <div className="flex flex-col items-center space-y-4">
-          {/* Page Dots */}
-          <div className="flex justify-center space-x-2">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index}
-                onClick={() => goToPage(index)}
-                disabled={isTransitioning}
-                className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                  index === currentPage 
-                    ? 'bg-blue-600 scale-125' 
-                    : 'bg-gray-300 hover:bg-gray-400 hover:scale-110'
-                } disabled:opacity-50 disabled:cursor-not-allowed`}
-                aria-label={`${t('projects.goToPage', 'Ir a página')} ${index + 1}`}
-              />
-            ))}
-          </div>
-          
-          {/* Page Indicator */}
-          <div className="text-sm text-gray-500 font-medium">
-            {t('projects.page', 'Página')} {currentPage + 1} {t('projects.of', 'de')} {totalPages}
-          </div>
-        </div>
-      )}
     </div>
   )
 }
