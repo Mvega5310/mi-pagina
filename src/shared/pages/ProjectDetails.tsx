@@ -2,18 +2,18 @@ import React, { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import SEO from '../components/SEO'
-import projectsData from '../data/projectsData.json'
+import { getProjectById, getSimilarProjects } from '../utils/projectsDataGenerator'
 
 const ProjectDetails = () => {
   const { id } = useParams<{ id: string }>()
   const navigate = useNavigate()
   const { t } = useTranslation()
 
-  // Find the current project
-  const project = projectsData.find((p) => p.id === id)
-
-  // Get similar projects
-  const similarProjects = project ? projectsData.filter((p) => project.similar.includes(p.id)) : []
+  // Get project data from translations
+  const project = id ? getProjectById(id, t) : null
+  
+  // Get similar projects from translations
+  const similarProjects = id ? getSimilarProjects(id, t) : []
 
   // Redirect to projects page if project not found
   useEffect(() => {
@@ -101,7 +101,7 @@ const ProjectDetails = () => {
                   {t('projectDetails.services', 'Servicios')}
                 </h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.services.map((service, index) => (
+                  {project.services.map((service: any, index: any) => (
                     <span 
                       key={index}
                       className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full"
@@ -118,7 +118,7 @@ const ProjectDetails = () => {
         {/* Project Description */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-            {t('projectDetails.description', 'Descripción del Proyecto')}
+            {t('home.projectDetailGeneral.description')}
           </h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed text-lg">

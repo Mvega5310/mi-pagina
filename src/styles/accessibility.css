@@ -115,8 +115,9 @@ p, li, td, th {
   line-height: 1.6;
 }
 
+/*PRODUCE ERRORES DE RESPONSIVE*/
 /* Better spacing for touch targets */
-@media (pointer: coarse) {
+/* @media (pointer: coarse) {
   button,
   a,
   input,
@@ -125,7 +126,7 @@ p, li, td, th {
     min-height: 44px;
     min-width: 44px;
   }
-}
+} */
 
 /* Error states */
 .error {

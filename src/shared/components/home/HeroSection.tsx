@@ -121,7 +121,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content - Improved responsive layout */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full top-32">
         <motion.div 
           className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"
           initial="hidden"
@@ -130,7 +130,7 @@ const HeroSection = () => {
         >
           <div className="max-w-4xl mx-auto text-center sm:text-left">
             <motion.h1 
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
+              className="text-2x max-w-96 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
               variants={heroVariants.title}
             >
               {heroSlides[currentSlide].title}

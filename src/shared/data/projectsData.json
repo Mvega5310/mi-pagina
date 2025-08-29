@@ -1,74 +1,206 @@
 [
   {
-    "id": "1",
-    "title": "Deployment service",
-    "category": "Technology",
-    "client": "TechCorp Solutions",
-    "services": ["Cloud Infrastructure", "DevOps", "Automation"],
-    "shortDescription": "Servicio automatizado de despliegue en la nube con integración continua.",
-    "longDescription": "Desarrollamos una plataforma completa de despliegue automatizado que permite a los equipos de desarrollo implementar sus aplicaciones de manera rápida y segura. La solución incluye pipelines de CI/CD, monitoreo en tiempo real, y rollback automático en caso de errores. Utilizamos tecnologías como Docker, Kubernetes, y AWS para garantizar escalabilidad y alta disponibilidad.",
-    "results": "Reducción del 75% en tiempo de despliegue, 99.9% de uptime, y eliminación completa de errores manuales en producción.",
-    "image": "/src/assets/images/projects/section1-imagen1.webp",
-    "similar": ["2", "3", "5"]
+    "id": "proyecto-1",
+    "title": "Desarrollo de Aplicación Móvil para E-commerce",
+    "category": "Desarrollo Móvil",
+    "client": "TechStore Solutions",
+    "services": ["Desarrollo iOS", "Desarrollo Android", "UI/UX Design", "Backend API"],
+    "shortDescription": "Aplicación móvil completa para comercio electrónico con funcionalidades avanzadas de compra y gestión de inventario.",
+    "longDescription": "Desarrollamos una aplicación móvil integral para TechStore Solutions que revolucionó su presencia en el comercio electrónico. La aplicación incluye un sistema de autenticación seguro, catálogo de productos interactivo, carrito de compras optimizado, múltiples métodos de pago, seguimiento de pedidos en tiempo real y un panel de administración completo. Implementamos tecnologías de vanguardia como React Native para el frontend, Node.js para el backend, y MongoDB para la base de datos, asegurando una experiencia de usuario fluida y escalable.",
+    "results": "La aplicación logró más de 50,000 descargas en los primeros 3 meses, incrementó las ventas online en un 300% y mejoró la satisfacción del cliente con una calificación promedio de 4.8/5 estrellas.",
+    "image": "/src/assets/images/projects/proyecto-1.jpg",
+    "similar": ["proyecto-2", "proyecto-3"],
+    "children": {
+      "title": "E-commerce Mobile App",
+      "category": "Mobile Development",
+      "image": "/src/assets/images/home/section5-image1.jpg"
+    }
   },
   {
-    "id": "2",
-    "title": "Tech solution",
-    "category": "Development",
-    "client": "InnovateX",
-    "services": ["Full-Stack Development", "API Design", "Database Architecture"],
-    "shortDescription": "Solución tecnológica integral para optimización de procesos empresariales.",
-    "longDescription": "Creamos una solución tecnológica completa que integra múltiples sistemas empresariales en una plataforma unificada. El proyecto incluyó el desarrollo de APIs RESTful, una interfaz de usuario moderna con React, y una arquitectura de microservicios robusta. La solución permite a las empresas gestionar sus operaciones de manera más eficiente y tomar decisiones basadas en datos en tiempo real.",
-    "results": "Incremento del 40% en productividad, reducción del 60% en tiempo de procesamiento de datos, y mejora significativa en la experiencia del usuario.",
-    "image": "/src/assets/images/projects/section1-imagen2.webp",
-    "similar": ["1", "4", "6"]
+    "id": "proyecto-2",
+    "title": "Plataforma Web de Gestión Empresarial",
+    "category": "Desarrollo Web",
+    "client": "Innovate Corp",
+    "services": ["Desarrollo Frontend", "Desarrollo Backend", "Base de Datos", "DevOps"],
+    "shortDescription": "Sistema web completo para la gestión integral de recursos empresariales con módulos especializados.",
+    "longDescription": "Creamos una plataforma web robusta para Innovate Corp que centraliza todas las operaciones empresariales en un solo sistema. La solución incluye módulos para gestión de recursos humanos, contabilidad, inventario, CRM, reportes analíticos y comunicación interna. Utilizamos React para el frontend, Django para el backend, PostgreSQL como base de datos y implementamos microservicios para garantizar escalabilidad y mantenimiento eficiente.",
+    "results": "La plataforma redujo los tiempos de procesamiento administrativo en un 60%, mejoró la comunicación interna en un 80% y generó ahorros operativos de $200,000 anuales.",
+    "image": "/src/assets/images/projects/proyecto-2.jpg",
+    "similar": ["proyecto-1", "proyecto-4"],
+    "children": {
+      "title": "Business Management Platform",
+      "category": "Web Development",
+      "image": "/src/assets/images/home/section5-image2.jpg"
+    }
   },
   {
-    "id": "3",
-    "title": "Platform integration",
-    "category": "Solution",
-    "client": "GlobalTech Inc",
-    "services": ["System Integration", "API Development", "Data Migration"],
-    "shortDescription": "Integración completa de múltiples plataformas empresariales.",
-    "longDescription": "Lideramos un proyecto complejo de integración que conectó más de 15 sistemas diferentes en una sola plataforma cohesiva. El desafío principal fue mantener la integridad de los datos mientras se migraban terabytes de información histórica. Implementamos una arquitectura de eventos que permite la sincronización en tiempo real entre todos los sistemas, garantizando consistencia y disponibilidad.",
-    "results": "Unificación exitosa de 15 sistemas, reducción del 80% en inconsistencias de datos, y ahorro anual de $2M en costos operativos.",
-    "image": "/src/assets/images/projects/section1-imagen3.webp",
-    "similar": ["1", "2", "4"]
+    "id": "proyecto-3",
+    "title": "Sistema de Inteligencia Artificial para Análisis de Datos",
+    "category": "Inteligencia Artificial",
+    "client": "DataInsights Analytics",
+    "services": ["Machine Learning", "Data Science", "Python Development", "Cloud Computing"],
+    "shortDescription": "Solución de IA avanzada para análisis predictivo y procesamiento de grandes volúmenes de datos.",
+    "longDescription": "Desarrollamos un sistema de inteligencia artificial sofisticado para DataInsights Analytics que procesa y analiza grandes volúmenes de datos empresariales. La solución incorpora algoritmos de machine learning para análisis predictivo, procesamiento de lenguaje natural para análisis de sentimientos, y visualización de datos interactiva. Implementamos modelos de deep learning usando TensorFlow y PyTorch, con infraestructura en AWS para garantizar escalabilidad y rendimiento óptimo.",
+    "results": "El sistema mejoró la precisión de predicciones empresariales en un 85%, redujo el tiempo de análisis de datos de semanas a horas, y generó insights que incrementaron la rentabilidad en un 25%.",
+    "image": "/src/assets/images/projects/proyecto-3.jpg",
+    "similar": ["proyecto-5", "proyecto-6"],
+    "children": {
+      "title": "AI Data Analysis System",
+      "category": "Artificial Intelligence",
+      "image": "/src/assets/images/home/section5-image3.jpg"
+    }
   },
   {
-    "id": "4",
-    "title": "Cyber security",
-    "category": "Design",
-    "client": "SecureNet Corp",
-    "services": ["Security Audit", "Penetration Testing", "Security Architecture"],
-    "shortDescription": "Sistema integral de ciberseguridad con monitoreo 24/7.",
-    "longDescription": "Diseñamos e implementamos una solución de ciberseguridad de nivel empresarial que protege activos digitales críticos. El sistema incluye detección de amenazas en tiempo real, análisis de comportamiento basado en IA, y respuesta automática a incidentes. Además, desarrollamos un centro de operaciones de seguridad (SOC) que proporciona monitoreo continuo y análisis forense avanzado.",
-    "results": "Reducción del 95% en incidentes de seguridad, detección de amenazas en menos de 30 segundos, y cumplimiento total con estándares ISO 27001.",
-    "image": "/src/assets/images/projects/section1-imagen4.webp",
-    "similar": ["2", "3", "6"]
+    "id": "proyecto-4",
+    "title": "Aplicación de Realidad Aumentada para Educación",
+    "category": "Realidad Aumentada",
+    "client": "EduTech Innovations",
+    "services": ["Desarrollo AR", "Unity 3D", "Modelado 3D", "UI/UX Design"],
+    "shortDescription": "Aplicación educativa innovadora que utiliza realidad aumentada para crear experiencias de aprendizaje inmersivas.",
+    "longDescription": "Creamos una aplicación revolucionaria de realidad aumentada para EduTech Innovations que transforma la educación tradicional en experiencias interactivas e inmersivas. La aplicación permite a los estudiantes explorar conceptos complejos de ciencias, historia y matemáticas a través de modelos 3D interactivos, simulaciones en tiempo real y experiencias gamificadas. Utilizamos Unity 3D, ARCore/ARKit, y Blender para crear contenido 3D de alta calidad.",
+    "results": "La aplicación mejoró la comprensión de conceptos complejos en un 70%, incrementó el engagement estudiantil en un 90%, y fue adoptada por más de 500 instituciones educativas.",
+    "image": "/src/assets/images/projects/proyecto-4.jpg",
+    "similar": ["proyecto-7", "proyecto-8"],
+    "children": {
+      "title": "AR Education App",
+      "category": "Augmented Reality",
+      "image": "/src/assets/images/home/section5-image4.jpg"
+    }
   },
   {
-    "id": "5",
-    "title": "Mobile application",
-    "category": "Technology",
-    "client": "MobileFirst Solutions",
-    "services": ["Mobile Development", "UX/UI Design", "Backend API"],
-    "shortDescription": "Aplicación móvil nativa con funcionalidades avanzadas de geolocalización.",
-    "longDescription": "Desarrollamos una aplicación móvil multiplataforma que revoluciona la forma en que los usuarios interactúan con servicios de ubicación. La app incluye navegación en tiempo real, realidad aumentada, y funcionalidades sociales que permiten compartir experiencias. Utilizamos React Native para garantizar un rendimiento nativo en iOS y Android, con un backend robusto en Node.js y MongoDB.",
-    "results": "Más de 500K descargas en los primeros 6 meses, calificación de 4.8 estrellas en app stores, y 85% de retención de usuarios activos.",
-    "image": "/src/assets/images/projects/section1-imagen5.webp",
-    "similar": ["1", "3", "6"]
+    "id": "proyecto-5",
+    "title": "Plataforma de Blockchain para Fintech",
+    "category": "Blockchain",
+    "client": "CryptoFinance Solutions",
+    "services": ["Desarrollo Blockchain", "Smart Contracts", "Seguridad", "Frontend Web"],
+    "shortDescription": "Plataforma financiera descentralizada basada en blockchain para transacciones seguras y transparentes.",
+    "longDescription": "Desarrollamos una plataforma fintech innovadora para CryptoFinance Solutions que utiliza tecnología blockchain para ofrecer servicios financieros descentralizados. La plataforma incluye smart contracts para préstamos automatizados, intercambio de criptomonedas, staking, y un sistema de governance descentralizado. Implementamos la solución usando Solidity para smart contracts, Web3.js para la integración frontend, y Ethereum como blockchain principal.",
+    "results": "La plataforma procesó más de $50 millones en transacciones en el primer año, redujo costos de transacción en un 40%, y estableció nuevos estándares de seguridad en el sector fintech.",
+    "image": "/src/assets/images/projects/proyecto-5.jpg",
+    "similar": ["proyecto-3", "proyecto-9"],
+    "children": {
+      "title": "Blockchain Fintech Platform",
+      "category": "Blockchain",
+      "image": "/src/assets/images/projects/proyecto-5.jpg"
+    }
   },
   {
-    "id": "6",
-    "title": "Creative ideas",
-    "category": "Ideas",
-    "client": "Creative Studios",
-    "services": ["Creative Direction", "Digital Strategy", "Brand Development"],
-    "shortDescription": "Plataforma digital innovadora para gestión de ideas creativas.",
-    "longDescription": "Creamos una plataforma digital que transforma la manera en que los equipos creativos colaboran y desarrollan ideas. La solución incluye herramientas de brainstorming virtual, gestión de proyectos creativos, y un sistema de feedback en tiempo real. La plataforma utiliza inteligencia artificial para sugerir conexiones entre ideas y optimizar el proceso creativo, resultando en una experiencia única para profesionales creativos.",
-    "results": "Incremento del 60% en la velocidad de desarrollo de ideas, mejora del 45% en la colaboración entre equipos, y reducción del 30% en tiempo de iteración.",
-    "image": "/src/assets/images/projects/section1-imagen6.webp",
-    "similar": ["2", "4", "5"]
+    "id": "proyecto-6",
+    "title": "Sistema IoT para Smart Cities",
+    "category": "Internet de las Cosas",
+    "client": "Urban Solutions Municipality",
+    "services": ["Desarrollo IoT", "Sensores", "Big Data", "Cloud Computing"],
+    "shortDescription": "Red inteligente de sensores IoT para optimizar la gestión urbana y mejorar la calidad de vida ciudadana.",
+    "longDescription": "Implementamos un ecosistema IoT integral para Urban Solutions Municipality que conecta miles de sensores distribuidos por la ciudad para monitorear tráfico, calidad del aire, consumo energético, gestión de residuos y seguridad pública. El sistema utiliza MQTT para comunicación de dispositivos, Apache Kafka para streaming de datos, y machine learning para análisis predictivo y optimización automática de recursos urbanos.",
+    "results": "El sistema redujo el tráfico urbano en un 30%, mejoró la eficiencia energética en un 45%, y incrementó la satisfacción ciudadana con los servicios públicos en un 60%.",
+    "image": "/src/assets/images/projects/proyecto-6.jpg",
+    "similar": ["proyecto-3", "proyecto-10"],
+    "children": {
+      "title": "Smart Cities IoT System",
+      "category": "Internet of Things",
+      "image": "/src/assets/images/projects/proyecto-6.jpg"
+    }
+  },
+  {
+    "id": "proyecto-7",
+    "title": "Plataforma de Streaming de Video en Tiempo Real",
+    "category": "Multimedia",
+    "client": "StreamTech Media",
+    "services": ["Desarrollo Backend", "CDN", "Video Processing", "Escalabilidad"],
+    "shortDescription": "Plataforma de streaming de alta performance para transmisión de video en vivo con millones de usuarios concurrentes.",
+    "longDescription": "Construimos una plataforma de streaming robusta para StreamTech Media capaz de manejar millones de usuarios simultáneos con latencia mínima. La solución incluye transcodificación de video en tiempo real, CDN global distribuido, chat en vivo, monetización integrada, y analytics avanzados. Utilizamos WebRTC para comunicación peer-to-peer, FFmpeg para procesamiento de video, y Kubernetes para orquestación de contenedores.",
+    "results": "La plataforma soportó picos de 5 millones de usuarios concurrentes, redujo la latencia de streaming en un 70%, y generó $10 millones en ingresos por monetización en el primer año.",
+    "image": "/src/assets/images/projects/proyecto-7.jpg",
+    "similar": ["proyecto-4", "proyecto-11"],
+    "children": {
+      "title": "Real-time Video Streaming Platform",
+      "category": "Multimedia",
+      "image": "/src/assets/images/projects/proyecto-7.jpg"
+    }
+  },
+  {
+    "id": "proyecto-8",
+    "title": "Sistema de Gestión Hospitalaria con IA",
+    "category": "HealthTech",
+    "client": "MedCare Hospital Network",
+    "services": ["Desarrollo Web", "IA Médica", "Seguridad HIPAA", "Integración de Sistemas"],
+    "shortDescription": "Sistema hospitalario inteligente que optimiza operaciones médicas y mejora la atención al paciente mediante IA.",
+    "longDescription": "Desarrollamos un sistema hospitalario integral para MedCare Hospital Network que integra inteligencia artificial para optimizar diagnósticos, gestión de camas, programación de cirugías, y seguimiento de pacientes. El sistema incluye reconocimiento de imágenes médicas, análisis predictivo de riesgos, automatización de historiales clínicos, y cumplimiento total con regulaciones HIPAA. Implementamos computer vision para análisis de radiografías y deep learning para predicción de complicaciones.",
+    "results": "El sistema redujo errores de diagnóstico en un 40%, optimizó la ocupación hospitalaria en un 35%, y mejoró los tiempos de respuesta médica en un 50%.",
+    "image": "/src/assets/images/projects/proyecto-8.jpg",
+    "similar": ["proyecto-4", "proyecto-12"],
+    "children": {
+      "title": "AI Hospital Management System",
+      "category": "HealthTech",
+      "image": "/src/assets/images/projects/proyecto-8.jpg"
+    }
+  },
+  {
+    "id": "proyecto-9",
+    "title": "Marketplace de NFTs con Funcionalidades Avanzadas",
+    "category": "Web3",
+    "client": "ArtChain Collective",
+    "services": ["Desarrollo Web3", "Smart Contracts", "IPFS", "Wallet Integration"],
+    "shortDescription": "Marketplace descentralizado para NFTs con funcionalidades únicas de creación, comercio y coleccionismo digital.",
+    "longDescription": "Creamos un marketplace NFT innovador para ArtChain Collective que va más allá del comercio básico, ofreciendo herramientas de creación colaborativa, subastas dinámicas, fraccionalización de NFTs, y experiencias de realidad virtual para galerías digitales. La plataforma utiliza IPFS para almacenamiento descentralizado, Polygon para transacciones eficientes, y integración con múltiples wallets. Implementamos smart contracts avanzados para royalties automáticos y governance comunitario.",
+    "results": "El marketplace facilitó $25 millones en transacciones NFT, atrajo a más de 100,000 artistas y coleccionistas, y estableció nuevos estándares para experiencias NFT inmersivas.",
+    "image": "/src/assets/images/projects/proyecto-9.jpg",
+    "similar": ["proyecto-5", "proyecto-11"],
+    "children": {
+      "title": "Advanced NFT Marketplace",
+      "category": "Web3",
+      "image": "/src/assets/images/projects/proyecto-9.jpg"
+    }
+  },
+  {
+    "id": "proyecto-10",
+    "title": "Plataforma de Automatización Industrial 4.0",
+    "category": "Industria 4.0",
+    "client": "ManufactureTech Industries",
+    "services": ["Automatización", "IoT Industrial", "Machine Learning", "Robótica"],
+    "shortDescription": "Sistema de automatización inteligente para manufactura que optimiza producción mediante IoT y machine learning.",
+    "longDescription": "Implementamos una solución de Industria 4.0 completa para ManufactureTech Industries que revoluciona sus procesos de manufactura. El sistema integra sensores IoT industriales, robots colaborativos, visión artificial para control de calidad, mantenimiento predictivo basado en IA, y gemelos digitales para simulación de procesos. Utilizamos protocolos industriales como OPC-UA, edge computing para procesamiento local, y machine learning para optimización continua.",
+    "results": "La automatización incrementó la eficiencia productiva en un 55%, redujo defectos de calidad en un 80%, y disminuyó costos de mantenimiento en un 45%.",
+    "image": "/src/assets/images/projects/proyecto-10.jpg",
+    "similar": ["proyecto-6", "proyecto-12"],
+    "children": {
+      "title": "Industrial Automation 4.0 Platform",
+      "category": "Industry 4.0",
+      "image": "/src/assets/images/projects/proyecto-10.jpg"
+    }
+  },
+  {
+    "id": "proyecto-11",
+    "title": "Aplicación de Fitness con Gamificación y IA",
+    "category": "Fitness Tech",
+    "client": "FitLife Wellness",
+    "services": ["Desarrollo Móvil", "IA Personalizada", "Gamificación", "Wearables Integration"],
+    "shortDescription": "App de fitness inteligente que personaliza entrenamientos y motiva usuarios mediante gamificación y IA.",
+    "longDescription": "Desarrollamos una aplicación de fitness revolucionaria para FitLife Wellness que combina inteligencia artificial, gamificación y integración con wearables para crear experiencias de entrenamiento personalizadas. La app incluye planes de ejercicio adaptativos basados en IA, seguimiento nutricional inteligente, competencias sociales, realidad aumentada para corrección de posturas, y integración con dispositivos como Apple Watch y Fitbit. Utilizamos computer vision para análisis de movimientos y machine learning para personalización continua.",
+    "results": "La aplicación alcanzó 2 millones de usuarios activos, mejoró la adherencia a rutinas de ejercicio en un 75%, y generó $5 millones en suscripciones premium.",
+    "image": "/src/assets/images/projects/proyecto-11.jpg",
+    "similar": ["proyecto-7", "proyecto-9"],
+    "children": {
+      "title": "AI-Powered Fitness App",
+      "category": "Fitness Tech",
+      "image": "/src/assets/images/projects/proyecto-11.jpg"
+    }
+  },
+  {
+    "id": "proyecto-12",
+    "title": "Sistema de Gestión Energética Inteligente",
+    "category": "Green Tech",
+    "client": "EcoEnergy Solutions",
+    "services": ["IoT Energético", "Machine Learning", "Energías Renovables", "Optimización"],
+    "shortDescription": "Plataforma inteligente para optimización energética que integra fuentes renovables y reduce consumo mediante IA.",
+    "longDescription": "Creamos un sistema de gestión energética avanzado para EcoEnergy Solutions que optimiza el consumo y distribución de energía en edificios inteligentes y microgrids. La plataforma integra paneles solares, almacenamiento en baterías, sensores IoT, y algoritmos de machine learning para predicción de demanda y optimización automática. El sistema incluye trading energético peer-to-peer, análisis de huella de carbono, y integración con redes eléctricas inteligentes.",
+    "results": "El sistema redujo el consumo energético en un 40%, incrementó el uso de energías renovables en un 60%, y generó ahorros de $500,000 anuales en costos energéticos.",
+    "image": "/src/assets/images/projects/proyecto-12.jpg",
+    "similar": ["proyecto-8", "proyecto-10"],
+    "children": {
+      "title": "Smart Energy Management System",
+      "category": "Green Tech",
+      "image": "/src/assets/images/projects/proyecto-12.jpg"
+    }
   }
 ]

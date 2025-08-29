@@ -45,7 +45,6 @@ class ContactService {
   async submitContactFormMock(data: ContactFormData): Promise<ContactResponse> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log('Contact form data:', JSON.stringify(data, null, 2));
         resolve({
           success: true,
           message: 'Message sent successfully! We will get back to you soon.',

@@ -1,82 +1,61 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { generateProjectsData } from '../../utils/projectsDataGenerator';
 import p1 from '../../../assets/images/home/section5-image1.jpg';
 import p2 from '../../../assets/images/home/section5-image2.jpg';
 import p3 from '../../../assets/images/home/section5-image3.jpg';
 import p4 from '../../../assets/images/home/section5-image4.jpg';
 
-// Projects data structure - Extended to 12 projects
-const projectsData = [
-  {
-    id: 1,
-    image: p1,
-    categoryColor: "bg-blue-100 text-blue-600"
-  },
-  {
-    id: 2,
-    image: p2,
-    categoryColor: "bg-green-100 text-green-600"
-  },
-  {
-    id: 3,
-    image: p3,
-    categoryColor: "bg-purple-100 text-purple-600"
-  },
-  {
-    id: 4,
-    image: p4,
-    categoryColor: "bg-orange-100 text-orange-600"
-  },
-  // New projects 5-8
-  {
-    id: 5,
-    image: p1, // Reusing existing images for demo, you can replace with new ones
-    categoryColor: "bg-red-100 text-red-600"
-  },
-  {
-    id: 6,
-    image: p2,
-    categoryColor: "bg-indigo-100 text-indigo-600"
-  },
-  {
-    id: 7,
-    image: p3,
-    categoryColor: "bg-pink-100 text-pink-600"
-  },
-  {
-    id: 8,
-    image: p4,
-    categoryColor: "bg-yellow-100 text-yellow-600"
-  },
-  // New projects 9-12
-  {
-    id: 9,
-    image: p1,
-    categoryColor: "bg-teal-100 text-teal-600"
-  },
-  {
-    id: 10,
-    image: p2,
-    categoryColor: "bg-cyan-100 text-cyan-600"
-  },
-  {
-    id: 11,
-    image: p3,
-    categoryColor: "bg-emerald-100 text-emerald-600"
-  },
-  {
-    id: 12,
-    image: p4,
-    categoryColor: "bg-rose-100 text-rose-600"
-  }
-];
+// Color mapping for different categories
+const categoryColors: { [key: string]: string } = {
+  'Diseño': 'bg-blue-100 text-blue-600',
+  'Ideas': 'bg-green-100 text-green-600',
+  'Soluciones': 'bg-purple-100 text-purple-600',
+  'Tecnología': 'bg-orange-100 text-orange-600',
+  'Desarrollo': 'bg-red-100 text-red-600',
+  'Innovación': 'bg-indigo-100 text-indigo-600',
+  'Estrategia': 'bg-pink-100 text-pink-600',
+  'Seguridad': 'bg-yellow-100 text-yellow-600',
+  'Análisis': 'bg-teal-100 text-teal-600',
+  'Móvil': 'bg-cyan-100 text-cyan-600',
+  'Web': 'bg-emerald-100 text-emerald-600',
+  'Automatización': 'bg-rose-100 text-rose-600'
+};
+
+// Image mapping for projects
+const projectImages = [p1, p2, p3, p4];
+// Transform translation data to component format - showing project data
+const transformProjectsData = (t: any) => {
+  const projectsData = generateProjectsData(t);
+  
+  return projectsData.map((project, index) => {
+    return {
+      id: project.id,
+      title: project.title,
+      category: project.category,
+      image: project.image || projectImages[index % projectImages.length],
+      categoryColor: categoryColors[project.category ?? ''] || 'bg-gray-100 text-gray-600'
+    };
+  });
+};
 
 // Projects Carousel Component
 const ProjectsCarousel = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [currentPage, setCurrentPage] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  
+  // Get projects data with translations
+  const projectsData = transformProjectsData(t);
+
+  // Handle project click navigation
+  const handleProjectClick = (projectId: string) => {
+    // Navigate to project detail page using the project ID
+    navigate(`/projects/${projectId}`);
+  };
 
   // Auto-slide functionality
   useEffect(() => {
@@ -121,12 +100,16 @@ const ProjectsCarousel = () => {
         isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
       }`}>
         {getCurrentPageProjects().map((project) => (
-          <div key={project.id} className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2">
+          <div 
+            key={project.id} 
+            className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2"
+            onClick={() => handleProjectClick(project.id)}
+          >
             {/* Project Card with Image and Text Overlay */}
             <div className="relative overflow-hidden shadow-lg bg-white rounded-lg">
               <img
                 src={project.image}
-                alt={t(`home.section5.projects.project${project.id}.title`)}
+                alt={project.title}
                 className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
                 width={400}
                 height={256}
@@ -136,10 +119,10 @@ const ProjectsCarousel = () => {
               {/* Text Content Inside Card - Responsive */}
               <div className="absolute bottom-0 left-0 right-0 bg-white p-3 sm:p-4 lg:p-6 mx-1 sm:mx-2 mb-1 sm:mb-2">
                 <span className={`inline-block ${project.categoryColor} text-xs font-semibold px-2 sm:px-3 py-1 mb-2 sm:mb-3 uppercase tracking-wide rounded-full`}>
-                  {t(`home.section5.projects.project${project.id}.category`)}
+                  {project.category}
                 </span>
                 <h3 className="text-gray-900 font-bold text-base sm:text-lg lg:text-xl leading-tight group-hover:text-[#7B43D6] transition-colors duration-300">
-                  {t(`home.section5.projects.project${project.id}.title`)}
+                  {project.title}
                 </h3>
               </div>
 
@@ -171,7 +154,7 @@ const ProjectsCarousel = () => {
 
         {/* Page Indicator */}
         <div className="text-sm text-gray-500 font-medium">
-          Page {currentPage + 1} of 3
+          {t(`home.section5.page`)} {currentPage + 1}  {t(`home.section5.of`)} 3
         </div>
       </div>
     </div>

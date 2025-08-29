@@ -175,8 +175,123 @@
           "category": "Automation",
           "title": "Process optimization"
         }
+      },
+      "page": "Page",
+      "of": "of"
+    },
+    "projectDetails": {
+      "1": {
+        "title": "Deployment service",
+        "category": "Technology",
+        "client": "TechCorp Solutions",
+        "services": ["Cloud Infrastructure", "DevOps", "Automation"],
+        "shortDescription": "Automated cloud deployment service with continuous integration.",
+        "longDescription": "We developed a comprehensive automated deployment platform that enables development teams to implement their applications quickly and securely. The solution includes CI/CD pipelines, real-time monitoring, and automatic rollback in case of errors. We use technologies like Docker, Kubernetes, and AWS to ensure scalability and high availability.",
+        "results": "75% reduction in deployment time, 99.9% uptime, and complete elimination of manual errors in production."
+      },
+      "2": {
+        "title": "Technological Solution Platform",
+        "category": "Ideas",
+        "client": "InnovateCorp",
+        "services": ["Software Development", "System Integration", "Consulting"],
+        "shortDescription": "Comprehensive technological solutions platform for innovative companies.",
+        "longDescription": "We created a complete platform that integrates multiple technological solutions into a unified ecosystem. The solution allows companies to manage their innovation processes, from ideation to implementation, with collaboration tools, data analysis, and workflow automation.",
+        "results": "60% increase in innovation process efficiency and 40% reduction in new product development time."
+      },
+      "3": {
+        "title": "Platform Integration Suite",
+        "category": "Solutions",
+        "client": "Enterprise Systems Ltd",
+        "services": ["API Development", "System Integration", "Data Migration"],
+        "shortDescription": "Complete enterprise platform integration suite.",
+        "longDescription": "We developed an integration suite that connects heterogeneous enterprise systems, enabling real-time data flow between different platforms. The solution includes RESTful APIs, custom connectors, and monitoring tools to ensure data integrity.",
+        "results": "Successful integration of 15+ enterprise systems, 80% reduction in data synchronization errors."
+      },
+      "4": {
+        "title": "Cybersecurity Framework",
+        "category": "Technology",
+        "client": "SecureNet Corp",
+        "services": ["Security Assessment", "Penetration Testing", "Security Architecture"],
+        "shortDescription": "Comprehensive cybersecurity framework for enterprises.",
+        "longDescription": "We implemented a complete cybersecurity framework that includes vulnerability assessment, continuous monitoring, incident response, and staff training. The solution uses artificial intelligence to detect threats in real-time and automate security responses.",
+        "results": "95% reduction in security incidents, 300% improvement in threat response time."
+      },
+      "5": {
+        "title": "Cloud Migration Service",
+        "category": "Development",
+        "client": "CloudFirst Solutions",
+        "services": ["Cloud Architecture", "Data Migration", "Performance Optimization"],
+        "shortDescription": "Complete cloud migration service for enterprises.",
+        "longDescription": "We offer a comprehensive cloud migration service that includes current infrastructure assessment, cloud-native architecture design, data and application migration, and performance optimization. We use best practices from AWS, Azure, and Google Cloud.",
+        "results": "Successful migration of 100+ applications, 50% reduction in infrastructure costs."
+      },
+      "6": {
+        "title": "AI Integration Platform",
+        "category": "Innovation",
+        "client": "AI Innovations Inc",
+        "services": ["Machine Learning", "AI Development", "Data Science"],
+        "shortDescription": "Artificial intelligence integration platform for enterprises.",
+        "longDescription": "We developed a platform that facilitates the integration of artificial intelligence solutions into existing business processes. It includes pre-trained models, custom training tools, and APIs for integration with legacy systems.",
+        "results": "AI implementation in 20+ business processes, 45% increase in operational efficiency."
+      },
+      "7": {
+        "title": "Digital Transformation Suite",
+        "category": "Strategy",
+        "client": "Transform Digital Ltd",
+        "services": ["Digital Strategy", "Process Automation", "Change Management"],
+        "shortDescription": "Complete enterprise digital transformation suite.",
+        "longDescription": "We offer a comprehensive suite for digital transformation that includes analysis of current processes, digital strategy design, implementation of emerging technologies, and organizational change management. We accompany companies throughout the entire digitalization process.",
+        "results": "Complete digital transformation in 6 months, 70% increase in business productivity."
+      },
+      "8": {
+        "title": "Data Protection System",
+        "category": "Security",
+        "client": "DataSecure Corp",
+        "services": ["Data Encryption", "Privacy Compliance", "Security Auditing"],
+        "shortDescription": "Comprehensive enterprise data protection system.",
+        "longDescription": "We implemented a complete data protection system that complies with international regulations such as GDPR and CCPA. It includes advanced encryption, access management, security auditing, and regulatory compliance tools.",
+        "results": "100% regulatory compliance, 90% reduction in data breach risks."
+      },
+      "9": {
+        "title": "Business Intelligence Platform",
+        "category": "Analytics",
+        "client": "Analytics Pro",
+        "services": ["Data Analytics", "Business Intelligence", "Reporting Tools"],
+        "shortDescription": "Business intelligence and data analytics platform.",
+        "longDescription": "We developed a complete business intelligence platform that transforms business data into actionable insights. It includes interactive dashboards, predictive analytics, automated reports, and advanced data visualization tools.",
+        "results": "85% improvement in data-driven decision making, 60% reduction in report generation time."
+      },
+      "10": {
+        "title": "Mobile App Development Suite",
+        "category": "Mobile",
+        "client": "MobileFirst Tech",
+        "services": ["iOS Development", "Android Development", "Cross-platform Solutions"],
+        "shortDescription": "Complete mobile application development suite.",
+        "longDescription": "We offer a comprehensive mobile application development service that includes UX/UI design, native and hybrid development, automated testing, and store publishing. We use the latest technologies like React Native, Flutter, and Swift.",
+        "results": "Development of 50+ mobile applications, 4.8+ average rating in app stores."
+      },
+      "11": {
+        "title": "E-commerce Platform",
+        "category": "Web",
+        "client": "E-Shop Solutions",
+        "services": ["Web Development", "Payment Integration", "Inventory Management"],
+        "shortDescription": "Complete e-commerce platform.",
+        "longDescription": "We developed a robust and scalable e-commerce platform that includes product management, payment processing, inventory management, sales analytics, and digital marketing tools. Optimized for SEO and conversion.",
+        "results": "200% increase in online sales, 150% improvement in user conversion."
+      },
+      "12": {
+        "title": "Process Optimization System",
+        "category": "Automation",
+        "client": "AutoFlow Corp",
+        "services": ["Process Automation", "Workflow Design", "System Integration"],
+        "shortDescription": "Business process optimization and automation system.",
+        "longDescription": "We implemented a complete automation system that optimizes business processes through RPA, intelligent workflows, and system integration. It includes process analysis, automation design, and performance monitoring.",
+        "results": "Automation of 80+ processes, 65% reduction in repetitive task execution time."
       }
     },
+    "projectDetailGeneral": {
+      "description": "General project description"
+  },
     "section6": {
       "subtitle": "Technology growth",
       "title": "We're the stand out experts in tech business"

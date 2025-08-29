@@ -112,7 +112,7 @@ const TopHeaderContent = () => {
                         href="https://twitter.com/friendsoft"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-500 transition-colors"
+                        className="text-gray-600 hover:text-blue-500 transition-colors flex justify-center items-center"
                     >
                         <img src={xIcon} alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
@@ -120,7 +120,7 @@ const TopHeaderContent = () => {
                         href="https://facebook.com/friendsoft"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-blue-600 transition-colors"
+                        className="text-gray-600 hover:text-blue-600 transition-colors flex justify-center items-center"
                     >
                         <img src={facebookIcon} alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
@@ -128,7 +128,7 @@ const TopHeaderContent = () => {
                         href="https://instagram.com/friendsoft"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-600 hover:text-pink-600 transition-colors"
+                        className="text-gray-600 hover:text-pink-600 transition-colors flex justify-center items-center"
                     >
                         <img src={instagramIcon} alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
                     </a>
@@ -174,7 +174,7 @@ const TopHeader = () => {
                                 href="https://twitter.com/friendsoft"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-blue-500 transition-colors"
+                                className="text-gray-600 hover:text-blue-500 transition-colors flex justify-center items-center"
                             >
                                 <img src={xIcon} alt="X (Twitter)" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
@@ -182,7 +182,7 @@ const TopHeader = () => {
                                 href="https://facebook.com/friendsoft"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-blue-600 transition-colors"
+                                className="text-gray-600 hover:text-blue-600 transition-colors flex justify-center items-center"
                             >
                                 <img src={facebookIcon} alt="Facebook" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
@@ -190,7 +190,7 @@ const TopHeader = () => {
                                 href="https://instagram.com/friendsoft"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-pink-600 transition-colors"
+                                className="text-gray-600 hover:text-pink-600 transition-colors flex justify-center items-center"
                             >
                                 <img src={instagramIcon} alt="Instagram" className="w-3 sm:w-4 h-3 sm:h-4" />
                             </a>
