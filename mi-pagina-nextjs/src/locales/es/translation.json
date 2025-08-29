@@ -1,0 +1,365 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Bienvenido a Friendsoft",
+    "subtitle": "Soluciones tecnológicas a tu alcance",
+    "hero": {
+      "title": "Soluciones innovadoras para tus negocios",
+      "subtitle": "Innovative solutions for your businesses",
+      "button": "Descubrir más"
+    },
+    "section2": {
+      "subtitle": "Plataforma tecnológica",
+      "title": "Notech entregando soluciones TI con completa confianza",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. quis nostrud exercitation ullamco laboris.",
+      "cards": {
+        "card1": {
+          "title": "Solución perfecta que demanda cada negocio",
+          "description": "Soluciones tecnológicas innovadoras adaptadas para satisfacer las necesidades específicas de tu negocio e impulsar el crecimiento."
+        },
+        "card2": {
+          "title": "Ayudando a negocios alrededor del mundo",
+          "description": "Alcance global con experiencia local, apoyando empresas en diferentes industrias y mercados."
+        },
+        "card3": {
+          "title": "Qué está frenando la solución TI.",
+          "description": "Identificando y superando las barreras tecnológicas que impiden que tu negocio alcance su máximo potencial."
+        }
+      }
+    },
+    "section2_1": {
+      "subtitle": "Introducción de la empresa",
+      "title": "Notech es tu empresa de confianza de servicios TI",
+      "description": "Proin est lacus, sagittis lobortis iaculis eget.",
+      "content": "Hay muchas variaciones de pasajes de lorem libre mercado disponible, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias.",
+      "viewMore": "Ver más",
+      "imageOverlay": "Friendsoft is providing the best solution by our experts",
+      "features": {
+        "feature1": "Nsectetur cing elit.",
+        "feature2": "You're going passage.",
+        "feature3": "Suspe se suscipit leo.",
+        "feature4": "Lorem ipsum non tend."
+      },
+      "profile": {
+        "name": "Gerson Almeida",
+        "title": "Founder of friendsoft company"
+      }
+    },
+    "section3": {
+      "subtitle": "Qué ofrecemos",
+      "title": "Servicios que proporcionamos a nuestros clientes",
+      "services": {
+        "service1": {
+          "title": "Desarrollo de productos",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service2": {
+          "title": "Diseño UX/UI",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service3": {
+          "title": "Marketing digital",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        },
+        "service4": {
+          "title": "Gestión de contenido",
+          "description": "Lorem dolor sit amet do.",
+          "button": "Saber más"
+        }
+      }
+    },
+    "section4": {
+      "subtitle": "Beneficios de la empresa Notech",
+      "title": "¿Por qué deberías elegir nuestra empresa notech?",
+      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
+      "staticPoints": [
+        "Hacer de este primer generador verdadero",
+        "Lorem Ipsum no es simplemente",
+        "Si vas a usar un pasaje"
+      ],
+      "tabs": {
+        "mission": "Nuestra misión",
+        "vision": "Nuestra visión",
+        "history": "Nuestra historia"
+      },
+      "content": {
+        "mission": {
+          "description": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias que no se ven ni siquiera ligeramente creíbles.",
+          "points": [
+            "Hacer de este primer generador verdadero",
+            "Lorem Ipsum no es simplemente",
+            "Si vas a usar un pasaje"
+          ]
+        },
+        "vision": {
+          "description": "Nuestra visión es ser líderes en innovación tecnológica, proporcionando soluciones que transformen la manera en que las empresas operan y crecen en el mundo digital.",
+          "points": [
+            "Innovación constante en tecnología",
+            "Excelencia en servicio al cliente",
+            "Crecimiento sostenible y responsable"
+          ]
+        },
+        "history": {
+          "description": "Fundada con la misión de democratizar la tecnología, hemos crecido desde una startup hasta convertirnos en un referente en el sector tecnológico.",
+          "points": [
+            "Más de 10 años de experiencia",
+            "Cientos de proyectos exitosos",
+            "Equipo de expertos certificados"
+          ]
+        }
+      },
+      "image": {
+        "title": "Siempre entregando soluciones de calidad",
+        "subtitle": "Lorem Ipsum son muchas variaciones de pase.",
+        "button": "Descubrir más"
+      }
+    },
+    "section5": {
+      "subtitle": "Trabajo completado recientemente",
+      "title": "Nuestra lista de proyectos completados recientemente",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+      "projects": {
+        "project1": {
+          "category": "Diseño",
+          "title": "Servicio de implementación"
+        },
+        "project2": {
+          "category": "Ideas",
+          "title": "Solución tecnológica"
+        },
+        "project3": {
+          "category": "Soluciones",
+          "title": "Integración de plataforma"
+        },
+        "project4": {
+          "category": "Tecnología",
+          "title": "Ciberseguridad"
+        }
+      }
+    },
+    "section6": {
+      "subtitle": "Crecimiento tecnológico",
+      "title": "Somos los expertos destacados en negocios tecnológicos"
+    },
+    "section8": {
+      "subtitle": "Industrias que atendemos",
+      "title": "Servicios de TI personalizados para tu industria",
+      "industries": {
+        "banking": "Banca",
+        "healthcare": "Salud",
+        "education": "Educación",
+        "manufacturing": "Manufactura",
+        "markets": "Mercados"
+      }
+    },
+    "section9": {
+      "subtitle": "Comentarios de nuestros clientes",
+      "title": "Lo que están diciendo",
+      "testimonials": {
+        "testimonial1": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Jessica Brown",
+          "position": "Cliente"
+        },
+        "testimonial2": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Boby Robson",
+          "position": "Stakeholder"
+        },
+        "testimonial3": {
+          "comment": "Lorem ipsum es simplemente texto ficticio de la industria de la impresión y la composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el siglo XVI.",
+          "name": "Joa Hart",
+          "position": "Cliente"
+        }
+      }
+    }
+  },
+  "projects": {
+    "title": "Nuestros Proyectos",
+    "subtitle": "Conoce los proyectos en los que hemos trabajado",
+    "categories": {
+      "technology": "Tecnología",
+      "development": "Desarrollo",
+      "solution": "Solución",
+      "design": "Diseño",
+      "ideas": "Ideas"
+    },
+    "items": {
+      "project1": {
+        "title": "Migración a la nube ahorra dinero y protege",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project2": {
+        "title": "Solución perfecta que demanda tu negocio",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project3": {
+        "title": "Confiado por las mejores organizaciones del mundo",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project4": {
+        "title": "Ha sobrevivido no solo cinco sino también el salto",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project5": {
+        "title": "Echa un vistazo a nuestro resumen de lo mejor",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      },
+      "project6": {
+        "title": "Lorem Ipsum ha sido el estándar ficticio",
+        "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
+      }
+    },
+    "viewProject": "Ver nuestro proyecto"
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "Soluciones adaptadas a tus necesidades",
+    "manage_it": {
+      "title": "Gestión de servicios TI",
+      "description": "Administramos y optimizamos tu infraestructura tecnológica para garantizar el máximo rendimiento y disponibilidad."
+    },
+    "cyber_security": {
+      "title": "Ciberseguridad",
+      "description": "Protegemos tu información y sistemas con las mejores prácticas de seguridad digital y monitoreo continuo."
+    },
+    "digital_experience": {
+      "title": "Experiencia digital",
+      "description": "Creamos experiencias digitales excepcionales que conectan con tus usuarios y potencian tu negocio."
+    },
+    "section2": {
+      "title": "Qué ofrecemos",
+      "subtitle": "Servicios que proporcionamos a nuestros clientes",
+      "description": "Ofrecemos soluciones tecnológicas integrales diseñadas para impulsar tu negocio y optimizar tus operaciones diarias.",
+      "product_development": {
+        "title": "Desarrollo de productos",
+        "description": "Creamos soluciones de software a medida que resuelven problemas específicos de tu negocio."
+      },
+      "ui_ux": {
+        "title": "Diseño UI/UX",
+        "description": "Diseñamos interfaces intuitivas y experiencias de usuario que cautivan y retienen a tus clientes."
+      },
+      "digital_marketing": {
+        "title": "Marketing digital",
+        "description": "Estrategias de marketing digital efectivas para aumentar tu visibilidad y atraer nuevos clientes."
+      },
+      "content_management": {
+        "title": "Gestión de contenido",
+        "description": "Administramos y optimizamos tu contenido digital para maximizar su impacto y alcance."
+      },
+      "data_analysis": {
+        "title": "Análisis de datos",
+        "description": "Convertimos datos en insights accionables para tomar decisiones de negocio más inteligentes."
+      }
+    },
+    "section3": {
+      "subtitle": "Mantente protegido",
+      "title": "Servicios tecnológicos para tus ideas de negocio",
+      "description": "Donec suscipit ante ipsum. Donec convallis quam at tortor hendrerit, ut elementum augue suscipit. Morbi tincidunt risus vel neque convallis pretium non nec justo.",
+      "feature1": {
+        "title": "Entregamos soluciones perfectas",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "feature2": {
+        "title": "Trabajamos con marcas globales",
+        "description": "Lorem ipsum nibh vel velit auctor aliqu aenean sollic."
+      },
+      "button": "Saber más"
+    }
+  },
+  "seo": {
+    "title": "Friendsoft - Desarrollo de Software y Soluciones Tecnológicas",
+    "description": "Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia.",
+    "keywords": "desarrollo de software, desarrollo web, soluciones tecnológicas, transformación digital, consultoría",
+    "home": {
+      "title": "Friendsoft - Desarrollo de Software y Soluciones Tecnológicas",
+      "description": "Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia en Colombia.",
+      "keywords": "desarrollo de software, desarrollo web, aplicaciones móviles, consultoría tecnológica, transformación digital, Colombia, Bogotá"
+    },
+    "services": {
+      "title": "Servicios de Desarrollo de Software | Friendsoft",
+      "description": "Servicios profesionales de desarrollo web, aplicaciones móviles, UX/UI, marketing digital y consultoría tecnológica. Soluciones personalizadas para tu empresa.",
+      "keywords": "servicios desarrollo software, desarrollo web, aplicaciones móviles, UX/UI design, marketing digital, consultoría TI, gestión contenido, análisis datos"
+    },
+    "projects": {
+      "title": "Portfolio de Proyectos | Friendsoft",
+      "description": "Explora nuestro portfolio de proyectos exitosos en desarrollo de software, aplicaciones web y móviles. Casos de éxito y soluciones innovadoras.",
+      "keywords": "portfolio proyectos, casos éxito, desarrollo software, aplicaciones web, aplicaciones móviles, soluciones tecnológicas"
+    },
+    "contact": {
+      "title": "Contacto | Friendsoft",
+      "description": "Contáctanos para discutir tu proyecto de desarrollo de software. Estamos ubicados en Bogotá, Colombia y listos para ayudarte con soluciones tecnológicas.",
+      "keywords": "contacto, Friendsoft, desarrollo software, Bogotá Colombia, consultoría tecnológica, presupuesto proyecto"
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "subtitle": "Estamos aquí para ayudarte",
+    "form": {
+      "sendEmail": "Envíanos un email",
+      "feelFreeToWrite": "Siéntete libre de escribir",
+      "getInTouch": "Ponte en contacto con nosotros",
+      "description": "Lorem ipsum dolor sit amet, consectetur notted adipis not iciinglit sed do eiusmod tempor incididunt.",
+      "fields": {
+        "name": "Tu nombre*",
+        "email": "Dirección de email*",
+        "phone": "Número de teléfono*",
+        "subject": "Asunto*",
+        "message": "Escríbenos algunas líneas"
+      },
+      "placeholders": {
+        "name": "Ingresa tu nombre",
+        "email": "Ingresa tu email",
+        "phone": "Ingresa tu teléfono",
+        "subject": "Ingresa el asunto",
+        "message": "Escribe tu mensaje aquí..."
+      },
+      "button": "Enviar un mensaje",
+      "required": "Este campo es obligatorio.",
+      "invalidEmail": "Por favor ingresa un email válido.",
+      "success": "¡Mensaje enviado exitosamente! Te contactaremos pronto.",
+      "error": "Error al enviar el mensaje. Por favor intenta de nuevo."
+    },
+    "info": {
+      "phone": {
+        "label": "¿Tienes alguna pregunta?",
+        "number": "+57 (300)-351 9363"
+      },
+      "email": {
+        "label": "Escribe un email",
+        "address": "gerson.almeida@friendsoft.co"
+      },
+      "address": {
+        "label": "Visítanos en cualquier momento",
+        "location": "Trans 44 # 100 – 82, Colombia"
+      }
+    },
+    "map": {
+      "popup": {
+        "description": "Nuestra oficina principal en Colombia"
+      }
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "social": "Social"
+  },
+  "language": {
+    "en": "Inglés US",
+    "es": "Español",
+    "select": "Seleccionar idioma"
+  },
+  "contact_info": {
+    "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
+    "email": "gerson.almeida@friendsoft.co",
+    "phone": "+57 (300)-351 9363"
+  }
+}

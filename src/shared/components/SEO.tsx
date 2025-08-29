@@ -36,23 +36,23 @@ const SEO: React.FC<SEOProps> = ({
 }) => {
   const { t, i18n } = useTranslation()
   const location = useLocation()
-  
+
   // Dynamic defaults based on current language and route
   const currentLang = i18n.language || 'es'
   const defaultTitle = t('seo.title', 'Friendsoft - Desarrollo de Software y Soluciones Tecnológicas')
   const defaultDescription = t('seo.description', 'Desarrollo profesional de software, aplicaciones web y servicios de consultoría tecnológica. Transforma tu negocio con soluciones digitales de vanguardia.')
   const defaultKeywords = t('seo.keywords', 'desarrollo de software, desarrollo web, soluciones tecnológicas, transformación digital, consultoría')
-  
+
   const finalTitle = title || defaultTitle
   const finalDescription = description || defaultDescription
   const finalKeywords = keywords || defaultKeywords
   const finalLocale = locale || (currentLang === 'es' ? 'es_ES' : 'en_US')
   const currentUrl = url || `https://friendsoft.com${location.pathname}`
-  
+
   const fullTitle = finalTitle.includes('Friendsoft') ? finalTitle : `${finalTitle} | Friendsoft`
   const canonicalUrl = currentUrl.startsWith('http') ? currentUrl : `https://friendsoft.com${currentUrl}`
   const imageUrl = image.startsWith('http') ? image : `https://friendsoft.com${image}`
-  
+
   // Enhanced structured data
   const organizationData = {
     '@context': 'https://schema.org',
@@ -102,7 +102,7 @@ const SEO: React.FC<SEOProps> = ({
       'Technology Consulting'
     ]
   }
-  
+
   const websiteData = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
@@ -120,7 +120,7 @@ const SEO: React.FC<SEOProps> = ({
       'query-input': 'required name=search_term_string'
     }
   }
-  
+
   const breadcrumbData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -142,15 +142,15 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="keywords" content={finalKeywords} />
       <meta name="author" content={author} />
       <link rel="canonical" href={canonicalUrl} />
-      
+
       {/* Robots and indexing */}
       <meta name="robots" content={noIndex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
       <meta name="googlebot" content={noIndex ? 'noindex, nofollow' : 'index, follow'} />
-      
+
       {/* Language and locale */}
       <meta httpEquiv="Content-Language" content={finalLocale.replace('_', '-')} />
       <meta name="language" content={currentLang} />
-      
+
       {/* Alternate languages */}
       {alternateLanguages && Object.entries(alternateLanguages).map(([lang, url]) => (
         <link key={lang} rel="alternate" hrefLang={lang} href={url} />
@@ -188,7 +188,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="format-detection" content="telephone=no" />
       <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
       <meta name="revisit-after" content="7 days" />
-      
+
       {/* Article specific meta tags */}
       {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
@@ -219,12 +219,12 @@ const SEO: React.FC<SEOProps> = ({
       <link rel="dns-prefetch" href="https://connect.facebook.net" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      
+
       {/* Favicon and app icons */}
-      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      {/* <link rel="icon" type="image/x-icon" href="/public/images/logo.svg" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-      <link rel="manifest" href="/site.webmanifest" />
+      <link rel="manifest" href="/site.webmanifest" /> */}
     </SafeHelmet>
   )
 }
