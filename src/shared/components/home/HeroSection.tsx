@@ -128,7 +128,7 @@ const HeroSection = () => {
           animate="visible"
           variants={heroVariants.container}
         >
-          <div className="max-w-4xl mx-auto text-center sm:text-left">
+          <div className="">
             <motion.h1 
               className="text-2x max-w-96 sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
               variants={heroVariants.title}
