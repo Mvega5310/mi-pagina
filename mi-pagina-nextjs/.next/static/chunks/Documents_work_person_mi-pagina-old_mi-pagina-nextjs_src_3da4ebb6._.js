@@ -9,6 +9,8 @@ __turbopack_context__.s([
     ()=>generateProjectsData,
     "getProjectById",
     ()=>getProjectById,
+    "getProjectNavigation",
+    ()=>getProjectNavigation,
     "getSimilarProjects",
     ()=>getSimilarProjects
 ]);
@@ -185,6 +187,23 @@ const getSimilarProjects = (id, t)=>{
     const allProjects = generateProjectsData(t);
     const similarProjects = allProjects.filter((project)=>similarProjectIds.includes(project.id));
     return similarProjects;
+};
+const getProjectNavigation = (id, t)=>{
+    const numericId = +getNumericId(id);
+    const previousNumericId = numericId - 1;
+    const nextNumericId = numericId + 1;
+    const previousProject = getProjectById(getProjectId(previousNumericId === null || previousNumericId === void 0 ? void 0 : previousNumericId.toString()), t);
+    const nextProject = getProjectById(getProjectId(nextNumericId === null || nextNumericId === void 0 ? void 0 : nextNumericId.toString()), t);
+    return {
+        previous: {
+            id: (previousProject === null || previousProject === void 0 ? void 0 : previousProject.id) || "",
+            title: (previousProject === null || previousProject === void 0 ? void 0 : previousProject.title) || ""
+        },
+        next: {
+            id: (nextProject === null || nextProject === void 0 ? void 0 : nextProject.id) || "",
+            title: (nextProject === null || nextProject === void 0 ? void 0 : nextProject.title) || ""
+        }
+    };
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);

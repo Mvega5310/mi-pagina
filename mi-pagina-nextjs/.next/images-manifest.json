@@ -28,18 +28,12 @@
     "disableStaticImages": false,
     "minimumCacheTTL": 60,
     "formats": [
-      "image/webp",
-      "image/avif"
+      "image/webp"
     ],
     "dangerouslyAllowSVG": false,
     "contentSecurityPolicy": "script-src 'none'; frame-src 'none'; sandbox;",
     "contentDispositionType": "attachment",
     "remotePatterns": [],
-    "qualities": [
-      75,
-      90,
-      100
-    ],
     "unoptimized": true,
     "sizes": [
       640,

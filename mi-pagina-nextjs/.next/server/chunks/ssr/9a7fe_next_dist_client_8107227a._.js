@@ -117,11 +117,6 @@ const configEnv = ("TURBOPACK compile-time value", {
         ("TURBOPACK compile-time value", 256),
         ("TURBOPACK compile-time value", 384)
     ]),
-    "qualities": ("TURBOPACK compile-time value", [
-        ("TURBOPACK compile-time value", 75),
-        ("TURBOPACK compile-time value", 90),
-        ("TURBOPACK compile-time value", 100)
-    ]),
     "path": ("TURBOPACK compile-time value", "/_next/image/"),
     "loader": ("TURBOPACK compile-time value", "default"),
     "dangerouslyAllowSVG": ("TURBOPACK compile-time value", false),

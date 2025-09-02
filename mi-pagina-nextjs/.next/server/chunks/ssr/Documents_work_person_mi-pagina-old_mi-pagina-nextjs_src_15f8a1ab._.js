@@ -9,6 +9,8 @@ __turbopack_context__.s([
     ()=>generateProjectsData,
     "getProjectById",
     ()=>getProjectById,
+    "getProjectNavigation",
+    ()=>getProjectNavigation,
     "getSimilarProjects",
     ()=>getSimilarProjects
 ]);
@@ -185,6 +187,23 @@ const getSimilarProjects = (id, t)=>{
     const allProjects = generateProjectsData(t);
     const similarProjects = allProjects.filter((project)=>similarProjectIds.includes(project.id));
     return similarProjects;
+};
+const getProjectNavigation = (id, t)=>{
+    const numericId = +getNumericId(id);
+    const previousNumericId = numericId - 1;
+    const nextNumericId = numericId + 1;
+    const previousProject = getProjectById(getProjectId(previousNumericId?.toString()), t);
+    const nextProject = getProjectById(getProjectId(nextNumericId?.toString()), t);
+    return {
+        previous: {
+            id: previousProject?.id || "",
+            title: previousProject?.title || ""
+        },
+        next: {
+            id: nextProject?.id || "",
+            title: nextProject?.title || ""
+        }
+    };
 };
 }),
 "[project]/Documents/work/person/mi-pagina-old/mi-pagina-nextjs/src/components/home/ProjectsSection.tsx [app-ssr] (ecmascript)", ((__turbopack_context__) => {
