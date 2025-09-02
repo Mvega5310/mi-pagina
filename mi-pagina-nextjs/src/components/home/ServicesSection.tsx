@@ -50,7 +50,7 @@ const ServicesSection = () => {
           {services.map((service) => (
             <div 
               key={service.id}
-              className="bg-white p-4 sm:p-6 lg:p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group cursor-pointer"
+              className="bg-white p-4 sm:p-6 lg:p-8 text-center hover:shadow-xl hover:-translate-y-2 transition-all duration-500 group cursor-pointer flex flex-col h-full"
             >
               <div className="mb-4 sm:mb-6 flex justify-center">
                 <Image
@@ -64,12 +64,14 @@ const ServicesSection = () => {
               <h3 className="text-gray-900 text-base sm:text-lg lg:text-xl font-bold mb-2 sm:mb-3 group-hover:text-purple-800 transition-colors duration-300 leading-tight">
                 {t(`home.section3.services.service${service.id}.title`)}
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed">
+              <p className="text-gray-600 text-xs sm:text-sm lg:text-base mb-4 sm:mb-6 group-hover:text-gray-700 transition-colors duration-300 leading-relaxed flex-grow">
                 {t(`home.section3.services.service${service.id}.description`)}
               </p>
-              <button className="text-[#1F0951] text-xs sm:text-sm font-medium bg-[#F7F7F9] py-2 sm:py-3 px-3 sm:px-4 lg:px-6 hover:text-[#1F0951]/80 hover:scale-105 hover:bg-gray-100 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
-                {t(`home.section3.services.service${service.id}.button`)}
-              </button>
+              <div className="mt-auto">
+                <button className="text-[#1F0951] text-xs sm:text-sm font-medium bg-[#F7F7F9] py-2 sm:py-3 px-3 sm:px-4 lg:px-6 hover:text-[#1F0951]/80 hover:scale-105 hover:bg-gray-100 active:scale-95 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2">
+                  {t(`home.section3.services.service${service.id}.button`)}
+                </button>
+              </div>
             </div>
           ))}
         </div>

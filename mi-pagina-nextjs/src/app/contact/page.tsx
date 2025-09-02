@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import SEO from '@/components/SEO'
 import { contactService, ContactFormData } from '@/services/contactService'
 import Image from 'next/image'
+import GoogleMap from '@/components/GoogleMap'
 
 interface FormErrors {
   name?: string;
@@ -343,7 +344,11 @@ const ContactPage = () => {
         </section>
 
         {/* Map Section - Responsive */}
-        <section className="w-full">
+        <GoogleMap
+          latitude={10.370472}
+          longitude={-75.503502}
+        />
+       {/* <section className="w-full">
           <div className="bg-white rounded-xl shadow-sm overflow-hidden">
             <iframe
               title={t('contact.map.title', 'Location Map')}
@@ -358,7 +363,7 @@ const ContactPage = () => {
               aria-label={t('contact.map.description', 'Interactive map showing our location in Bogotá, Colombia')}
             />
           </div>
-        </section>
+        </section>*/}
       </div>
     </div>
   )

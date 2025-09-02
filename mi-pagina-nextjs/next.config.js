@@ -5,24 +5,20 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  // Deshabilitar Turbopack para evitar errores de build
+  // Configuración experimental válida
   experimental: {
-    missingSuspenseWithCSRBailout: false,
-    turbo: false,
+    optimizeCss: true,
   },
-  // Usar webpack en lugar de turbopack
+  // Configuración de webpack
   webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+      };
+    }
     return config;
   },
-  // Configuración para rutas dinámicas
-  generateStaticParams: async () => {
-    // Retorna los parámetros estáticos para las rutas dinámicas
-    return [
-      { id: 'proyecto-1' },
-      { id: 'proyecto-2' },
-      { id: 'proyecto-3' }
-    ];
-  }
 };
 
 module.exports = nextConfig;

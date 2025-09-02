@@ -41,7 +41,7 @@ const ProjectDetailsClient = ({ project, similarProjects, projectNavigation }: P
         </nav> */}
 
         {/* Project Header */}
-        <header className="relative mb-36">
+        <header className="relative mb-[18rem] md:mb-36">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
             {project.title}
           </h1>
@@ -59,7 +59,7 @@ const ProjectDetailsClient = ({ project, similarProjects, projectNavigation }: P
           </div>
 
           {/* Project Info Card */}
-          <div className="absolute top-4/6 w-full bg-transparent p-8 sm:p-4 mb-8">
+          <div className="absolute top-[62%] md:top-[78%] w-full bg-transparent p-4 md:p-8">
             <div className="bg-white shadow-lg  p-4 grid grid-cols-1 md:grid-cols-4 gap-6 items-center">
               <div className="relative md:pr-6 flex flex-col justify-center md:items-center">
                 <div className='flex flex-col'>
