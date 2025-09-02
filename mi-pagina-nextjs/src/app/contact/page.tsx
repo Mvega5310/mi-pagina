@@ -4,7 +4,7 @@ import React, { useState, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import SEO from '@/components/SEO'
 import { contactService, ContactFormData } from '@/services/contactService'
-
+import Image from 'next/image'
 
 interface FormErrors {
   name?: string;
@@ -295,7 +295,7 @@ const ContactPage = () => {
                   {/* Phone */}
                   <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" role="listitem">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
-                      <img src={'/images/contacts/section1-phone.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
+                      <Image src={'/images/contacts/section1-phone.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
@@ -310,7 +310,7 @@ const ContactPage = () => {
                   {/* Email */}
                   <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" role="listitem">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
-                      <img src={'/images/contacts/section1-email.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
+                      <Image src={'/images/contacts/section1-email.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">
@@ -325,7 +325,7 @@ const ContactPage = () => {
                   {/* Address */}
                   <div className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow" role="listitem">
                     <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-[#7B43D6]/10 rounded-lg flex items-center justify-center" aria-hidden="true">
-                      <img src={'/images/contacts/section1-mark.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
+                      <Image src={'/images/contacts/section1-mark.svg'} alt="" className="w-5 h-5 sm:w-6 sm:h-6" width="24" height="24" loading="eager" />
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">

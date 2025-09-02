@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
   // Configuración de compresión
   compress: true,
   
-  // Configuración de salida estática para mejor rendimiento
+  // Configuración de salida
   output: 'export',
   trailingSlash: true,
   

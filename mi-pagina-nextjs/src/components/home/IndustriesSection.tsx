@@ -57,13 +57,15 @@ const IndustriesSection: React.FC = () => {
             >
               {/* Icon Container */}
               <div className="flex-shrink-0 w-16 h-16 bg-gray-50 rounded-lg flex items-center justify-center">
-                <img 
-                  src={industry.icon} 
+                <Image
+                  src={industry.icon}
                   alt={industry.title}
                   className="w-12 h-12"
+                  width={48}
+                  height={48}
                 />
               </div>
-              
+
               {/* Title */}
               <h3 className="text-black text-lg font-semibold flex-grow">
                 {industry.title}
@@ -82,13 +84,15 @@ const IndustriesSection: React.FC = () => {
               >
                 {/* Icon */}
                 <div className="mb-2 md:mb-3 lg:mb-4">
-                  <img 
-                    src={industry.icon} 
+                  <Image
+                    src={industry.icon}
                     alt={industry.title}
                     className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24"
+                    width={96}
+                    height={96}
                   />
                 </div>
-                
+
                 {/* Title */}
                 <h3 className="text-black text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
                   {industry.title}

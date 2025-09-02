@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import { useTranslation } from 'react-i18next'
 
 interface SEOProps {
   title?: string
@@ -26,12 +25,9 @@ const SEO: React.FC<SEOProps> = ({
   locale = 'es_ES',
   alternateLocales = ['en_US']
 }) => {
-  const { t, i18n } = useTranslation()
-
-  const currentLocale = i18n.language === 'en' ? 'en_US' : 'es_ES'
-  const finalTitle = title || t('seo.default.title', 'Friendsoft - Desarrollo de Software')
-  const finalDescription = description || t('seo.default.description', 'Desarrollo profesional de software y soluciones tecnológicas')
-  const finalKeywords = keywords || t('seo.default.keywords', 'desarrollo de software, desarrollo web, aplicaciones móviles')
+  const finalTitle = title || 'Friendsoft - Desarrollo de Software'
+  const finalDescription = description || 'Desarrollo profesional de software y soluciones tecnológicas'
+  const finalKeywords = keywords || 'desarrollo de software, desarrollo web, aplicaciones móviles'
 
   return (
     <Head>
@@ -42,7 +38,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="author" content={author} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content="index, follow" />
-      <meta name="language" content={currentLocale} />
+      <meta name="language" content={locale} />
 
       {/* Open Graph Meta Tags */}
       <meta property="og:type" content={type} />
@@ -51,7 +47,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:image" content={image} />
       <meta property="og:url" content={url} />
       <meta property="og:site_name" content={siteName} />
-      <meta property="og:locale" content={currentLocale} />
+      <meta property="og:locale" content={locale} />
       {alternateLocales.map((altLocale) => (
         <meta key={altLocale} property="og:locale:alternate" content={altLocale} />
       ))}

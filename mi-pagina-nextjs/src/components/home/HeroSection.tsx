@@ -85,11 +85,9 @@ const HeroSection = () => {
         {heroSlides.map((slide, index) => (
           <div
             key={index}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            } ${
-              imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
-            }`}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              } ${imageLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-110'
+              }`}
             style={{
               backgroundImage: `url("${slide.image}")`,
               backgroundPosition: 'center center',
@@ -123,26 +121,26 @@ const HeroSection = () => {
 
       {/* Content - Improved responsive layout */}
       <div className="relative z-10 w-full top-20 md:top-16">
-        <motion.div 
+        <motion.div
           className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16"
           initial="hidden"
           animate="visible"
           variants={heroVariants.container}
         >
           <div className="">
-            <motion.h1 
+            <motion.h1
               className="!text-2xl max-w-96 sm:!text-3xl md:!text-4xl lg:!text-5xl xl:!text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white"
               variants={heroVariants.title}
             >
               {heroSlides[currentSlide].title}
             </motion.h1>
-            <motion.p 
+            <motion.p
               className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 opacity-90 max-w-3xl mx-auto sm:mx-0 text-white"
               variants={heroVariants.subtitle}
             >
               {heroSlides[currentSlide].subtitle}
             </motion.p>
-            <motion.button 
+            <motion.button
               className="group bg-white text-blue-600 px-6 sm:px-8 lg:px-10 py-3 sm:py-4 font-semibold text-base sm:text-lg lg:text-xl hover:bg-gray-100 active:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-white/50 overflow-hidden relative"
               variants={heroVariants.button}
               whileHover={{ scale: 1.05 }}
@@ -150,15 +148,15 @@ const HeroSection = () => {
             >
               {/* Hover animation overlay for button */}
               <div className="absolute inset-0 bg-blue-600 origin-top transform scale-y-0 transition-all duration-700 ease-out group-hover:scale-y-100 group-hover:opacity-100 opacity-0"></div>
-              
+
               {/* Button text with proper z-index */}
               <span className="relative z-10 transition-all duration-700 ease-out group-hover:text-white">
                 {heroSlides[currentSlide].button}
               </span>
             </motion.button>
-            
+
             {/* Slide Navigation Dots - Better responsive positioning */}
-            <motion.div 
+            <motion.div
               className="flex justify-center sm:justify-start space-x-3 sm:space-x-4 mt-10 sm:mt-12 lg:mt-16"
               variants={heroVariants.dots}
             >
@@ -166,11 +164,10 @@ const HeroSection = () => {
                 <button
                   key={index}
                   onClick={() => handleSlideChange(index)}
-                  className={`relative w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
-                    index === currentSlide
+                  className={`relative w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${index === currentSlide
                       ? 'bg-white scale-110'
                       : 'bg-white/50 hover:bg-white/75'
-                  }`}
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 >
                   {/* Progress indicator for current slide */}
@@ -193,11 +190,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll Down Indicator - Hidden on mobile for better UX */}
-      <motion.div 
+      <motion.div
         className="hidden sm:block absolute bottom-8 right-8 text-white"
         initial={{ opacity: 0, y: 20 }}
-        animate={{ 
-          opacity: 1, 
+        animate={{
+          opacity: 1,
           y: 0
         }}
         transition={{ delay: 1.5, duration: 0.8 }}
@@ -208,10 +205,10 @@ const HeroSection = () => {
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          animate={{ 
+          animate={{
             y: [0, 10, 0]
           }}
-          transition={{ 
+          transition={{
             duration: 2,
             repeat: Infinity,
             ease: easeOutConfig

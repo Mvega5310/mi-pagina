@@ -12,14 +12,14 @@ export interface ContactResponse {
 }
 
 class ContactService {
-  private baseUrl = 'https://api.friendsoft.co'; // Replace with your actual API endpoint
+  private baseUrl = "https://api.friendsoft.co"; // Replace with your actual API endpoint
 
   async submitContactForm(data: ContactFormData): Promise<ContactResponse> {
     try {
       const response = await fetch(`${this.baseUrl}/contact`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
@@ -31,12 +31,12 @@ class ContactService {
       const result = await response.json();
       return {
         success: true,
-        message: result.message || 'Message sent successfully!',
+        message: result.message || "Message sent successfully!",
       };
-    } catch (error) {
+    } catch (_) {
       return {
         success: false,
-        message: 'Failed to send message. Please try again later.',
+        message: "Failed to send message. Please try again later.",
       };
     }
   }
@@ -45,10 +45,10 @@ class ContactService {
   async submitContactFormMock(data: ContactFormData): Promise<ContactResponse> {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log('Contact form data:', JSON.stringify(data, null, 2));
+        console.log("Contact form data:", JSON.stringify(data, null, 2));
         resolve({
           success: true,
-          message: 'Message sent successfully! We will get back to you soon.',
+          message: "Message sent successfully! We will get back to you soon.",
         });
       }, 1000);
     });

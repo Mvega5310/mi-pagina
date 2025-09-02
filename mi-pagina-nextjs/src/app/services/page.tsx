@@ -3,6 +3,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import SEO from '@/components/SEO'
+import Image from 'next/image'
 
 const ServicesPage = () => {
   const { t } = useTranslation()
@@ -85,10 +86,12 @@ const ServicesPage = () => {
               >
                 {/* Imagen de fondo - Responsive height */}
                 <div className="relative h-64 sm:h-72 lg:h-80">
-                  <img
+                  <Image
                     src={service.image}
                     alt={t(service.titleKey)}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    width={500}
+                    height={300}
                   />
 
                   {/* Overlay con gradiente */}
@@ -131,10 +134,12 @@ const ServicesPage = () => {
             {serviceIcons.map((service) => (
               <div key={service.id} className="text-center group hover:transform hover:scale-105 transition-all duration-300">
                 <div className="flex justify-center mb-4 sm:mb-6">
-                  <img
+                  <Image
                     src={service.icon}
                     alt={t(service.titleKey)}
                     className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 group-hover:scale-110 transition-transform duration-300"
+                    width={50}
+                    height={50}
                   />
                 </div>
                 <h3 className="text-base sm:text-lg font-bold mb-2 sm:mb-3">
@@ -159,13 +164,15 @@ const ServicesPage = () => {
               <div className="flex flex-col lg:relative">
                 {/* Imagen principal - Responsive */}
                 <div className="overflow-hidden">
-                  <img 
+                  <Image
                     src="/images/services/section3-imagen1.jpg"
                     alt={t('services.section3.title')}
                     className="w-full h-64 sm:h-80 md:h-96 lg:h-[450px] xl:h-[500px] object-cover"
+                    width={500}
+                    height={300}
                   />
                 </div>
-                
+
                 {/* Overlay azul con contenido - Completamente responsive */}
                 <div className="lg:absolute 
                   bottom-4 left-4 right-4 
@@ -175,14 +182,14 @@ const ServicesPage = () => {
                   xl:-right-16 xl:w-72 
                   z-10 bg-[#6366F1] text-white p-4 sm:p-5 lg:p-6 shadow-xl 
                   flex flex-col justify-between min-h-[200px] sm:min-h-[240px] lg:min-h-[280px]">
-                  
+
                   {/* Contenido principal */}
                   <div className="flex-1">
                     <p className="text-sm sm:text-base lg:text-lg font-medium leading-relaxed">
                       {t('services.section3.description')}
                     </p>
                   </div>
-                  
+
                   {/* Botón siempre visible en la parte inferior */}
                   <div className="mt-4 sm:mt-6 flex-shrink-0">
                     <button className="text-white font-medium hover:underline flex items-center group transition-all duration-200 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-white/50">

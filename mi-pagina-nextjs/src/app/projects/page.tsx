@@ -119,12 +119,12 @@ const ProjectsPage = () => {
 
   // Map images to projects data
   const imageMap = {
-    '1': { webp: "/images/projects/section1-imagen1.webp", jpg: "/images/projects/section1-imagen1.jpg" },
-    '2': { webp: "/images/projects/section1-imagen2.webp", jpg: "/images/projects/section1-imagen2.jpg" },
-    '3': { webp: "/images/projects/section1-imagen3.webp", jpg: "/images/projects/section1-imagen3.jpg" },
-    '4': { webp: "/images/projects/section1-imagen4.webp", jpg: "/images/projects/section1-imagen4.jpg" },
-    '5': { webp: "/images/projects/section1-imagen5.webp", jpg: "/images/projects/section1-imagen5.jpg" },
-    '6': { webp: "/images/projects/section1-imagen6.webp", jpg: "/images/projects/section1-imagen6.jpg" }
+    'proyecto-1': { webp: "/images/projects/section1-imagen1.webp", jpg: "/images/projects/section1-imagen1.jpg" },
+    'proyecto-2': { webp: "/images/projects/section1-imagen2.webp", jpg: "/images/projects/section1-imagen2.jpg" },
+    'proyecto-3': { webp: "/images/projects/section1-imagen3.webp", jpg: "/images/projects/section1-imagen3.jpg" },
+    'proyecto-4': { webp: "/images/projects/section1-imagen4.webp", jpg: "/images/projects/section1-imagen4.jpg" },
+    'proyecto-5': { webp: "/images/projects/section1-imagen5.webp", jpg: "/images/projects/section1-imagen5.jpg" },
+    'proyecto-6': { webp: "/images/projects/section1-imagen6.webp", jpg: "/images/projects/section1-imagen6.jpg" }
   }
 
   // Combine projects data with images

@@ -5,20 +5,21 @@ import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/navigation'
 import { generateProjectsData } from '@/utils/projectsDataGenerator';
 import { TFunction } from 'i18next';
+import Image from 'next/image'
 
 // Image mapping for projects
 const projectImages = ["/images/home/section5-image1.jpg", "/images/home/section5-image2.jpg", "/images/home/section5-image3.jpg", "/images/home/section5-image4.jpg"];
 // Transform translation data to component format - showing project data
 const transformProjectsData = (t: TFunction) => {
   const projectsData = generateProjectsData(t);
-  
+
   return projectsData.map((project, index) => {
     return {
       id: project.id,
       title: project.title,
       category: project.category,
       image: project.image || projectImages[index % projectImages.length],
-      categoryColor: project?.color|| 'bg-gray-100 text-gray-600'
+      categoryColor: project?.color || 'bg-gray-100 text-gray-600'
     };
   });
 };
@@ -38,6 +39,7 @@ const ProjectsCarousel = () => {
   // Handle project click navigation
   const handleProjectClick = (projectId: string) => {
     // Navigate to project detail page using Next.js router
+    console.log('projectId', projectId)
     router.push(`/projects/${projectId}`);
   };
 
@@ -79,7 +81,7 @@ const ProjectsCarousel = () => {
   };
 
   return (
-        <div 
+    <div
       className="relative"
       onMouseEnter={() => setIsAutoPlaying(false)}
       onMouseLeave={() => setIsAutoPlaying(true)}
@@ -92,11 +94,10 @@ const ProjectsCarousel = () => {
             <button
               key={project.id}
               onClick={() => handleMobileTabClick(index)}
-              className={`flex-1 py-2 px-3 text-xs font-medium rounded-md transition-all duration-200 ${
-                mobileActiveTab === index
-                  ? 'bg-white text-[#7B43D6] shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900'
-              }`}
+              className={`flex-1 py-2 px-3 text-xs font-medium rounded-md transition-all duration-200 ${mobileActiveTab === index
+                ? 'bg-white text-[#7B43D6] shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
+                }`}
             >
               {project.category}
             </button>
@@ -106,12 +107,12 @@ const ProjectsCarousel = () => {
         {/* Mobile Single Project Display */}
         {getCurrentPageProjects()[mobileActiveTab] && (
           <div className="px-4">
-            <div 
+            <div
               className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1"
               onClick={() => handleProjectClick(getCurrentPageProjects()[mobileActiveTab].id)}
             >
               <div className="relative overflow-hidden shadow-lg bg-white rounded-lg">
-                <img
+                <Image
                   src={getCurrentPageProjects()[mobileActiveTab].image}
                   alt={getCurrentPageProjects()[mobileActiveTab].title}
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -119,7 +120,7 @@ const ProjectsCarousel = () => {
                   height={256}
                   loading="lazy"
                 />
-                
+
                 <div className="absolute bottom-0 left-0 right-0 bg-white p-4 mx-2 mb-2">
                   <span className={`inline-block ${getCurrentPageProjects()[mobileActiveTab].categoryColor} text-xs font-semibold px-3 py-1 mb-3 uppercase tracking-wide rounded-full`}>
                     {getCurrentPageProjects()[mobileActiveTab].category}
@@ -137,18 +138,17 @@ const ProjectsCarousel = () => {
       </div>
 
       {/* Tablet and Desktop View - Original Grid */}
-      <div className={`hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 transition-all duration-300 ${
-        isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
-      }`}>
+      <div className={`hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 transition-all duration-300 ${isTransitioning ? 'opacity-75 scale-95' : 'opacity-100 scale-100'
+        }`}>
         {getCurrentPageProjects().map((project) => (
-          <div 
-            key={project.id} 
+          <div
+            key={project.id}
             className="group cursor-pointer transform transition-all duration-300 hover:-translate-y-1 sm:hover:-translate-y-2"
             onClick={() => handleProjectClick(project.id)}
           >
             {/* Project Card with Image and Text Overlay */}
             <div className="relative overflow-hidden shadow-lg bg-white rounded-lg">
-              <img
+              <Image
                 src={project.image}
                 alt={project.title}
                 className="w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-105 transition-transform duration-500"
@@ -156,7 +156,7 @@ const ProjectsCarousel = () => {
                 height={256}
                 loading="lazy"
               />
-              
+
               {/* Text Content Inside Card - Responsive */}
               <div className="absolute bottom-0 left-0 right-0 bg-white p-3 sm:p-4 lg:p-6 mx-1 sm:mx-2 mb-1 sm:mb-2">
                 <span className={`inline-block ${project.categoryColor} text-xs font-semibold px-2 sm:px-3 py-1 mb-2 sm:mb-3 uppercase tracking-wide rounded-full`}>
@@ -187,11 +187,10 @@ const ProjectsCarousel = () => {
                 setMobileActiveTab(0);
               }}
               disabled={isTransitioning}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                pageIndex === currentPage 
-                  ? 'bg-[#7B43D6] scale-125' 
-                  : 'bg-[#A8A8B8] hover:bg-[#8B8B9A] hover:scale-110'
-              } disabled:opacity-50 disabled:cursor-not-allowed`}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${pageIndex === currentPage
+                ? 'bg-[#7B43D6] scale-125'
+                : 'bg-[#A8A8B8] hover:bg-[#8B8B9A] hover:scale-110'
+                } disabled:opacity-50 disabled:cursor-not-allowed`}
               aria-label={`Go to page ${pageIndex + 1}`}
             />
           ))}

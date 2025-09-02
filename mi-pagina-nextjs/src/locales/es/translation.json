@@ -209,11 +209,13 @@
         "category": "Technology",
         "color": "bg-orange-100 text-orange-600",
         "client": "TechCorp Solutions",
-        "services": [
-          "Cloud Infrastructure",
-          "DevOps",
-          "Automation"
+        "services": ["Cloud Infrastructure", "DevOps", "Automation"],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
         ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Servicio automatizado de despliegue en la nube con integración continua.",
         "longDescription": "Desarrollamos una plataforma completa de despliegue automatizado que permite a los equipos de desarrollo implementar sus aplicaciones de manera rápida y segura. La solución incluye pipelines de CI/CD, monitoreo en tiempo real, y rollback automático en caso de errores. Utilizamos tecnologías como Docker, Kubernetes, y AWS para garantizar escalabilidad y alta disponibilidad.",
         "results": "Reducción del 75% en tiempo de despliegue, 99.9% de uptime, y eliminación completa de errores manuales en producción."
@@ -228,6 +230,12 @@
           "System Integration",
           "Consulting"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Plataforma integral de soluciones tecnológicas para empresas innovadoras.",
         "longDescription": "Creamos una plataforma completa que integra múltiples soluciones tecnológicas en un ecosistema unificado. La solución permite a las empresas gestionar sus procesos de innovación, desde la ideación hasta la implementación, con herramientas de colaboración, análisis de datos y automatización de flujos de trabajo.",
         "results": "Incremento del 60% en la eficiencia de procesos de innovación y reducción del 40% en tiempo de desarrollo de nuevos productos."
@@ -237,11 +245,13 @@
         "category": "Soluciones",
         "color": "bg-purple-100 text-purple-600",
         "client": "Enterprise Systems Ltd",
-        "services": [
-          "API Development",
-          "System Integration",
-          "Data Migration"
+        "services": ["API Development", "System Integration", "Data Migration"],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
         ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Suite completa de integración de plataformas empresariales.",
         "longDescription": "Desarrollamos una suite de integración que conecta sistemas empresariales heterogéneos, permitiendo el flujo de datos en tiempo real entre diferentes plataformas. La solución incluye APIs RESTful, conectores personalizados y herramientas de monitoreo para garantizar la integridad de los datos.",
         "results": "Integración exitosa de 15+ sistemas empresariales, reducción del 80% en errores de sincronización de datos."
@@ -256,6 +266,12 @@
           "Penetration Testing",
           "Security Architecture"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Framework integral de ciberseguridad para empresas.",
         "longDescription": "Implementamos un framework completo de ciberseguridad que incluye evaluación de vulnerabilidades, monitoreo continuo, respuesta a incidentes y capacitación del personal. La solución utiliza inteligencia artificial para detectar amenazas en tiempo real y automatizar respuestas de seguridad.",
         "results": "Reducción del 95% en incidentes de seguridad, mejora del 300% en tiempo de respuesta a amenazas."
@@ -270,6 +286,12 @@
           "Data Migration",
           "Performance Optimization"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Servicio completo de migración a la nube para empresas.",
         "longDescription": "Ofrecemos un servicio integral de migración a la nube que incluye evaluación de infraestructura actual, diseño de arquitectura cloud-native, migración de datos y aplicaciones, y optimización de rendimiento. Utilizamos las mejores prácticas de AWS, Azure y Google Cloud.",
         "results": "Migración exitosa de 100+ aplicaciones, reducción del 50% en costos de infraestructura."
@@ -279,11 +301,13 @@
         "category": "Innovación",
         "color": "bg-indigo-100 text-indigo-600",
         "client": "AI Innovations Inc",
-        "services": [
-          "Machine Learning",
-          "AI Development",
-          "Data Science"
+        "services": ["Machine Learning", "AI Development", "Data Science"],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
         ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Plataforma de integración de inteligencia artificial para empresas.",
         "longDescription": "Desarrollamos una plataforma que facilita la integración de soluciones de inteligencia artificial en procesos empresariales existentes. Incluye modelos pre-entrenados, herramientas de entrenamiento personalizado y APIs para integración con sistemas legacy.",
         "results": "Implementación de IA en 20+ procesos empresariales, incremento del 45% en eficiencia operativa."
@@ -298,6 +322,12 @@
           "Process Automation",
           "Change Management"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Suite completa de transformación digital empresarial.",
         "longDescription": "Ofrecemos una suite integral para la transformación digital que incluye análisis de procesos actuales, diseño de estrategia digital, implementación de tecnologías emergentes y gestión del cambio organizacional. Acompañamos a las empresas en todo el proceso de digitalización.",
         "results": "Transformación digital completa en 6 meses, incremento del 70% en productividad empresarial."
@@ -312,6 +342,12 @@
           "Privacy Compliance",
           "Security Auditing"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Sistema integral de protección de datos empresariales.",
         "longDescription": "Implementamos un sistema completo de protección de datos que cumple con regulaciones internacionales como GDPR y CCPA. Incluye encriptación avanzada, gestión de accesos, auditoría de seguridad y herramientas de cumplimiento normativo.",
         "results": "100% de cumplimiento normativo, reducción del 90% en riesgos de filtración de datos."
@@ -326,6 +362,12 @@
           "Business Intelligence",
           "Reporting Tools"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Plataforma de inteligencia empresarial y análisis de datos.",
         "longDescription": "Desarrollamos una plataforma completa de business intelligence que transforma datos empresariales en insights accionables. Incluye dashboards interactivos, análisis predictivo, reportes automatizados y herramientas de visualización de datos avanzadas.",
         "results": "Mejora del 85% en toma de decisiones basada en datos, reducción del 60% en tiempo de generación de reportes."
@@ -340,6 +382,12 @@
           "Android Development",
           "Cross-platform Solutions"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Suite completa de desarrollo de aplicaciones móviles.",
         "longDescription": "Ofrecemos un servicio integral de desarrollo de aplicaciones móviles que incluye diseño UX/UI, desarrollo nativo e híbrido, testing automatizado y publicación en stores. Utilizamos las últimas tecnologías como React Native, Flutter y Swift.",
         "results": "Desarrollo de 50+ aplicaciones móviles, 4.8+ rating promedio en app stores."
@@ -354,6 +402,12 @@
           "Payment Integration",
           "Inventory Management"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Plataforma completa de comercio electrónico.",
         "longDescription": "Desarrollamos una plataforma de e-commerce robusta y escalable que incluye gestión de productos, procesamiento de pagos, gestión de inventario, analytics de ventas y herramientas de marketing digital. Optimizada para SEO y conversión.",
         "results": "Incremento del 200% en ventas online, mejora del 150% en conversión de usuarios."
@@ -368,13 +422,25 @@
           "Workflow Design",
           "System Integration"
         ],
+        "scopes": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "web": "www.friendSoft.com",
         "shortDescription": "Sistema de optimización y automatización de procesos empresariales.",
         "longDescription": "Implementamos un sistema completo de automatización que optimiza procesos empresariales mediante RPA, workflows inteligentes y integración de sistemas. Incluye análisis de procesos, diseño de automatizaciones y monitoreo de rendimiento.",
         "results": "Automatización de 80+ procesos, reducción del 65% en tiempo de ejecución de tareas repetitivas."
       }
     },
     "projectDetailGeneral": {
-      "description": "Descripción general del proyecto"
+      "description": "Descripción general del proyecto",
+      "client": "Client",
+      "category": "Category",
+      "services": "Services",
+      "web": "Web",
+      "previous": "Anterior",
+      "next": "Siguiente"
     }
   },
   "services": {
@@ -518,5 +584,8 @@
     "address": "Trans 44 # 100 - 82 Cartagena, Colombia",
     "email": "gerson.almeida@friendsoft.co",
     "phone": "+57 (300)-351 9363"
+  },
+  "common": {
+    "loading": "Cargando..."
   }
 }

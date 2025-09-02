@@ -1,24 +1,22 @@
 {
   "pages": {
     "/projects/[id]/page": [
-      "static/chunks/node_modules_next_dist_8db7fb1f._.js",
-      "static/chunks/src_app_favicon_ico_mjs_243aa161._.js",
-      "static/chunks/[root-of-the-server]__0f0ba101._.css",
-      "static/chunks/src_c3447c00._.js",
-      "static/chunks/node_modules_b8abf83c._.js",
-      "static/chunks/src_app_layout_tsx_0a548d63._.js",
-      "static/chunks/node_modules_next_dist_client_components_builtin_global-error_e0bccac1.js",
-      "static/chunks/src_app_projects_[id]_ProjectDetailsClient_tsx_a7537615._.js",
-      "static/chunks/src_app_projects_[id]_page_tsx_e0bccac1._.js",
-      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_57d40746._.js",
-      "static/chunks/node_modules_next_dist_compiled_react-dom_1e674e59._.js",
-      "static/chunks/node_modules_next_dist_compiled_next-devtools_index_a9cb0712.js",
-      "static/chunks/node_modules_next_dist_compiled_5150ccfd._.js",
-      "static/chunks/node_modules_next_dist_client_cf1d9188._.js",
-      "static/chunks/node_modules_next_dist_b0daae9a._.js",
-      "static/chunks/node_modules_@swc_helpers_cjs_b3dc30d6._.js",
-      "static/chunks/_a0ff3932._.js",
-      "static/chunks/turbopack-_cdba956c._.js"
+      "static/chunks/[root-of-the-server]__9127e77e._.css",
+      "static/chunks/Documents_work_person_mi-pagina-old_mi-pagina-nextjs_src_abdb9f5c._.js",
+      "static/chunks/9a7fe_0ce62cb2._.js",
+      "static/chunks/Documents_work_person_mi-pagina-old_mi-pagina-nextjs_src_app_layout_tsx_e84e8985._.js",
+      "static/chunks/9a7fe_next_dist_client_components_builtin_global-error_5ceb98c0.js",
+      "static/chunks/Documents_work_person_mi-pagina-old_mi-pagina-nextjs_f42fcc7b._.js",
+      "static/chunks/e655a_person_mi-pagina-old_mi-pagina-nextjs_src_app_projects_[id]_page_tsx_5ceb98c0._.js",
+      "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_3ffcbc70._.js",
+      "static/chunks/9a7fe_next_dist_compiled_react-dom_cf526a03._.js",
+      "static/chunks/9a7fe_next_dist_compiled_next-devtools_index_846c2fbc.js",
+      "static/chunks/9a7fe_next_dist_compiled_18e65994._.js",
+      "static/chunks/9a7fe_next_dist_client_e3fc099c._.js",
+      "static/chunks/9a7fe_next_dist_9a5e42e7._.js",
+      "static/chunks/9a7fe_@swc_helpers_cjs_bf6df4ec._.js",
+      "static/chunks/Documents_work_person_mi-pagina-old_mi-pagina-nextjs_a0ff3932._.js",
+      "static/chunks/turbopack-Documents_work_person_mi-pagina-old_mi-pagina-nextjs_83db7c51._.js"
     ]
   }
 }

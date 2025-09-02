@@ -15,66 +15,46 @@ const Header = () => {
   const [isHydrated, setIsHydrated] = useState(false)
   const isHomePage = pathname === '/'
 
-
   useEffect(() => {
     setIsHydrated(true)
   }, [])
 
-  // Function to get page title based on current route
-  const getPageTitle = () => {
-    if (!isHydrated) {
-      switch (pathname) {
-        case '/services/':
-          return 'Servicios'
-        case '/projects/':
-          return 'Proyectos'
-        case '/contact/':
-          return 'Contacto'
-        default:
-          return ''
-      }
-    }
-    switch (pathname) {
-      case '/services/':
-        return t('nav.services')
-      case '/projects/':
-        return t('nav.projects')
-      case '/contact/':
-        return t('nav.contact')
-      default:
-        return ''
-    }
+  // Helper function to check if current path is projects related
+  const isProjectsPath = (path: string) => {
+    return path === '/projects/' || path.startsWith('/projects/')
   }
 
-  // Function to get current page name for breadcrumb
-  const getCurrentPageName = () => {
-    if (!isHydrated) {
-      switch (pathname) {
-        case '/services/':
-          return 'Servicios'
-        case '/projects/':
-          return 'Proyectos'
-        case '/contact/':
-          return 'Contacto'
-        default:
-          return ''
-      }
+  // Helper function to get route info
+  const getRouteInfo = (useTranslation: boolean = true) => {
+    if (pathname === '/services/') {
+      return useTranslation && isHydrated ? t('nav.services') : 'Servicios'
     }
-    switch (pathname) {
-      case '/services/':
-        return t('nav.services')
-      case '/projects/':
-        return t('nav.projects')
-      case '/contact/':
-        return t('nav.contact')
-      default:
-        return ''
+    if (isProjectsPath(pathname)) {
+      return useTranslation && isHydrated ? t('nav.projects') : 'Proyectos'
     }
+    if (pathname === '/contact/') {
+      return useTranslation && isHydrated ? t('nav.contact') : 'Contacto'
+    }
+    return ''
   }
+
+  // Function to get page title based on current route
+  const getPageTitle = () => getRouteInfo(true)
+
+  // Function to get current page name for breadcrumb
+  const getCurrentPageName = () => getRouteInfo(true)
 
   // Close mobile menu when clicking on a link
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false)
+  }
+
+  // Helper function to check if navigation item is active
+  const isNavItemActive = (itemPath: string) => {
+    if (itemPath === '/projects/') {
+      return isProjectsPath(pathname)
+    }
+    return pathname === itemPath
   }
 
   // Navigation items
@@ -112,12 +92,12 @@ const Header = () => {
                 <Link
                   key={item.path}
                   href={item.path}
-                  className={`relative pb-2 transition-colors ${pathname === item.path ? 'text-white font-medium' : 'text-white hover:text-white/50'
+                  className={`relative pb-2 transition-colors ${isNavItemActive(item.path) ? 'text-white font-medium' : 'text-white hover:text-white/50'
                     }`}
-                  aria-current={pathname === item.path ? 'page' : undefined}
+                  aria-current={isNavItemActive(item.path) ? 'page' : undefined}
                 >
                   {item.label}
-                  {pathname === item.path && (
+                  {isNavItemActive(item.path) && (
                     <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#70A8FF]" aria-hidden="true"></div>
                   )}
                 </Link>
@@ -154,11 +134,11 @@ const Header = () => {
                     key={item.path}
                     href={item.path}
                     onClick={closeMobileMenu}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === item.path
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isNavItemActive(item.path)
                       ? 'text-white bg-white/10'
                       : 'text-white hover:text-white/70 hover:bg-white/5'
                       }`}
-                    aria-current={pathname === item.path ? 'page' : undefined}
+                    aria-current={isNavItemActive(item.path) ? 'page' : undefined}
                   >
                     {item.label}
                   </Link>
@@ -169,7 +149,7 @@ const Header = () => {
         </header>
       ) : (
         <>
-        {/* Other pages header with different styling */}
+          {/* Other pages header with different styling */}
           <header className="fixed top-7 md:top-9 left-0 right-0 z-[60] bg-white shadow-sm border-b border-gray-200">
             <div className="container mx-auto px-4 py-4 lg:px-8 flex justify-between items-center">
               <Link href="/" className="flex items-center space-x-2">
@@ -189,14 +169,14 @@ const Header = () => {
                   <Link
                     key={item.path}
                     href={item.path}
-                    className={`relative pb-2 transition-colors ${pathname === item.path
+                    className={`relative pb-2 transition-colors ${isNavItemActive(item.path)
                       ? 'text-blue-600 font-medium'
                       : 'text-gray-700 hover:text-blue-600'
                       }`}
-                    aria-current={pathname === item.path ? 'page' : undefined}
+                    aria-current={isNavItemActive(item.path) ? 'page' : undefined}
                   >
                     {item.label}
-                    {pathname === item.path && (
+                    {isNavItemActive(item.path) && (
                       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" aria-hidden="true"></div>
                     )}
                   </Link>
@@ -233,11 +213,11 @@ const Header = () => {
                       key={item.path}
                       href={item.path}
                       onClick={closeMobileMenu}
-                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${pathname === item.path
+                      className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${isNavItemActive(item.path)
                         ? 'text-blue-600 bg-purple-50'
                         : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                         }`}
-                      aria-current={pathname === item.path ? 'page' : undefined}
+                      aria-current={isNavItemActive(item.path) ? 'page' : undefined}
                     >
                       {item.label}
                     </Link>
