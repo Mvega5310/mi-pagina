@@ -79,9 +79,9 @@
     "section4": {
       "subtitle": "Beneficios de la empresa Notech",
       "title": "¿Por qué deberías elegir nuestra empresa notech?",
-      "staticDescription": "Existen numerosas variaciones del texto Lorem Ipsum disponibles en la actualidad; sin embargo, la mayoría han sido modificadas respecto a la versión original, ya sea mediante la inclusión de fragmentos libres con fines humorísticos o por procesos de aleatorización que generan secuencias de palabras con apariencia latina pero sin coherencia semántica.",
+      "staticDescription": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, simplemente texto libre por humor inyectado, o aleatorizado.",
       "staticPoints": [
-         "Hacer de este primer generador verdadero",
+        "Hacer de este primer generador verdadero",
         "Lorem Ipsum no es simplemente",
         "Si vas a usar un pasaje"
       ],
@@ -92,7 +92,7 @@
       },
       "content": {
         "mission": {
-          "description": "Nuestra misión es impulsar la transformación digital de las empresas a través del desarrollo de páginas web innovadoras, aplicaciones a la medida y la automatización de sistemas empresariales mediante el uso estratégico de herramientas de inteligencia artificial. Buscamos ofrecer soluciones tecnológicas eficientes, seguras y escalables que optimicen procesos, potencien la productividad y generen valor sostenible para nuestros clientes.",
+          "description": "Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría han sufrido alteración en alguna forma, por humor inyectado, o palabras aleatorias que no se ven ni siquiera ligeramente creíbles.",
           "points": [
             "Hacer de este primer generador verdadero",
             "Lorem Ipsum no es simplemente",
@@ -100,7 +100,7 @@
           ]
         },
         "vision": {
-          "description": "Ser una empresa líder en soluciones tecnológicas innovadoras, reconocida a nivel nacional e internacional por transformar la manera en que las organizaciones operan, a través de páginas web inteligentes, aplicaciones de alto impacto y sistemas empresariales automatizados con inteligencia artificial, contribuyendo al crecimiento sostenible y a la competitividad global de nuestros clientes.",
+          "description": "Nuestra visión es ser líderes en innovación tecnológica, proporcionando soluciones que transformen la manera en que las empresas operan y crecen en el mundo digital.",
           "points": [
             "Innovación constante en tecnología",
             "Excelencia en servicio al cliente",
@@ -108,7 +108,7 @@
           ]
         },
         "history": {
-          "description": "Nuestra empresa nació con la visión de ofrecer soluciones tecnológicas que realmente transformen la manera en que las organizaciones trabajan. Iniciamos creando páginas web personalizadas para pequeñas y medianas empresas, ayudándolas a posicionarse en el mundo digital. Con el tiempo, fuimos ampliando nuestros servicios hacia el desarrollo de aplicaciones móviles, sistemas empresariales y automatizaciones que integran inteligencia artificial, con el propósito de hacer más eficientes los procesos y potenciar la productividad. Hoy somos un equipo multidisciplinario apasionado por la innovación, comprometido en brindar tecnología de vanguardia que impulse el crecimiento sostenible de nuestros clientes, adaptándonos a sus necesidades y a las exigencias de un mercado en constante evolución.",
+          "description": "Fundada con la misión de democratizar la tecnología, hemos crecido desde una startup hasta convertirnos en un referente en el sector tecnológico.",
           "points": [
             "Más de 10 años de experiencia",
             "Cientos de proyectos exitosos",
@@ -118,7 +118,7 @@
       },
       "image": {
         "title": "Siempre entregando soluciones de calidad",
-        "subtitle": "Lorem Ipsum tiene muchas variaciones de pasajes.",
+        "subtitle": "Lorem Ipsum son muchas variaciones de pase.",
         "button": "Descubrir más"
       }
     },
@@ -126,171 +126,8 @@
       "subtitle": "Trabajo completado recientemente",
       "title": "Nuestra lista de proyectos completados recientemente",
       "description": "Cada uno de nuestros proyectos refleja la aplicación práctica de nuestra misión: impulsar la transformación digital de las empresas mediante soluciones web, aplicaciones inteligentes y automatización empresarial con herramientas de inteligencia artificial.",
-      "projects": {
-        "project1": {
-          "category": "Diseño",
-          "title": "Servicio de implementación"
-        },
-        "project2": {
-          "category": "Ideas",
-          "title": "Solución tecnológica"
-        },
-        "project3": {
-          "category": "Soluciones",
-          "title": "Integración de plataforma"
-        },
-        "project4": {
-          "category": "Tecnología",
-          "title": "Ciberseguridad"
-        },
-        "project5": {
-          "category": "Desarrollo",
-          "title": "Migración a la nube"
-        },
-        "project6": {
-          "category": "Innovación",
-          "title": "Integración de IA"
-        },
-        "project7": {
-          "category": "Estrategia",
-          "title": "Transformación digital"
-        },
-        "project8": {
-          "category": "Seguridad",
-          "title": "Protección de datos"
-        },
-        "project9": {
-          "category": "Análisis",
-          "title": "Inteligencia empresarial"
-        },
-        "project10": {
-          "category": "Móvil",
-          "title": "Desarrollo de apps"
-        },
-        "project11": {
-          "category": "Web",
-          "title": "Plataforma e-commerce"
-        },
-        "project12": {
-          "category": "Automatización",
-          "title": "Optimización de procesos"
-        }
-      },
       "page": "Pagina",
       "of": "de"
-    },
-    "projectDetails": {
-      "1": {
-        "title": "Deployment service",
-        "category": "Technology",
-        "client": "TechCorp Solutions",
-        "services": ["Cloud Infrastructure", "DevOps", "Automation"],
-        "shortDescription": "Servicio automatizado de despliegue en la nube con integración continua.",
-        "longDescription": "Desarrollamos una plataforma completa de despliegue automatizado que permite a los equipos de desarrollo implementar sus aplicaciones de manera rápida y segura. La solución incluye pipelines de CI/CD, monitoreo en tiempo real, y rollback automático en caso de errores. Utilizamos tecnologías como Docker, Kubernetes, y AWS para garantizar escalabilidad y alta disponibilidad.",
-        "results": "Reducción del 75% en tiempo de despliegue, 99.9% de uptime, y eliminación completa de errores manuales en producción."
-      },
-      "2": {
-        "title": "Technological Solution Platform",
-        "category": "Ideas",
-        "client": "InnovateCorp",
-        "services": ["Software Development", "System Integration", "Consulting"],
-        "shortDescription": "Plataforma integral de soluciones tecnológicas para empresas innovadoras.",
-        "longDescription": "Creamos una plataforma completa que integra múltiples soluciones tecnológicas en un ecosistema unificado. La solución permite a las empresas gestionar sus procesos de innovación, desde la ideación hasta la implementación, con herramientas de colaboración, análisis de datos y automatización de flujos de trabajo.",
-        "results": "Incremento del 60% en la eficiencia de procesos de innovación y reducción del 40% en tiempo de desarrollo de nuevos productos."
-      },
-      "3": {
-        "title": "Platform Integration Suite",
-        "category": "Soluciones",
-        "client": "Enterprise Systems Ltd",
-        "services": ["API Development", "System Integration", "Data Migration"],
-        "shortDescription": "Suite completa de integración de plataformas empresariales.",
-        "longDescription": "Desarrollamos una suite de integración que conecta sistemas empresariales heterogéneos, permitiendo el flujo de datos en tiempo real entre diferentes plataformas. La solución incluye APIs RESTful, conectores personalizados y herramientas de monitoreo para garantizar la integridad de los datos.",
-        "results": "Integración exitosa de 15+ sistemas empresariales, reducción del 80% en errores de sincronización de datos."
-      },
-      "4": {
-        "title": "Cybersecurity Framework",
-        "category": "Tecnología",
-        "client": "SecureNet Corp",
-        "services": ["Security Assessment", "Penetration Testing", "Security Architecture"],
-        "shortDescription": "Framework integral de ciberseguridad para empresas.",
-        "longDescription": "Implementamos un framework completo de ciberseguridad que incluye evaluación de vulnerabilidades, monitoreo continuo, respuesta a incidentes y capacitación del personal. La solución utiliza inteligencia artificial para detectar amenazas en tiempo real y automatizar respuestas de seguridad.",
-        "results": "Reducción del 95% en incidentes de seguridad, mejora del 300% en tiempo de respuesta a amenazas."
-      },
-      "5": {
-        "title": "Cloud Migration Service",
-        "category": "Desarrollo",
-        "client": "CloudFirst Solutions",
-        "services": ["Cloud Architecture", "Data Migration", "Performance Optimization"],
-        "shortDescription": "Servicio completo de migración a la nube para empresas.",
-        "longDescription": "Ofrecemos un servicio integral de migración a la nube que incluye evaluación de infraestructura actual, diseño de arquitectura cloud-native, migración de datos y aplicaciones, y optimización de rendimiento. Utilizamos las mejores prácticas de AWS, Azure y Google Cloud.",
-        "results": "Migración exitosa de 100+ aplicaciones, reducción del 50% en costos de infraestructura."
-      },
-      "6": {
-        "title": "AI Integration Platform",
-        "category": "Innovación",
-        "client": "AI Innovations Inc",
-        "services": ["Machine Learning", "AI Development", "Data Science"],
-        "shortDescription": "Plataforma de integración de inteligencia artificial para empresas.",
-        "longDescription": "Desarrollamos una plataforma que facilita la integración de soluciones de inteligencia artificial en procesos empresariales existentes. Incluye modelos pre-entrenados, herramientas de entrenamiento personalizado y APIs para integración con sistemas legacy.",
-        "results": "Implementación de IA en 20+ procesos empresariales, incremento del 45% en eficiencia operativa."
-      },
-      "7": {
-        "title": "Digital Transformation Suite",
-        "category": "Estrategia",
-        "client": "Transform Digital Ltd",
-        "services": ["Digital Strategy", "Process Automation", "Change Management"],
-        "shortDescription": "Suite completa de transformación digital empresarial.",
-        "longDescription": "Ofrecemos una suite integral para la transformación digital que incluye análisis de procesos actuales, diseño de estrategia digital, implementación de tecnologías emergentes y gestión del cambio organizacional. Acompañamos a las empresas en todo el proceso de digitalización.",
-        "results": "Transformación digital completa en 6 meses, incremento del 70% en productividad empresarial."
-      },
-      "8": {
-        "title": "Data Protection System",
-        "category": "Seguridad",
-        "client": "DataSecure Corp",
-        "services": ["Data Encryption", "Privacy Compliance", "Security Auditing"],
-        "shortDescription": "Sistema integral de protección de datos empresariales.",
-        "longDescription": "Implementamos un sistema completo de protección de datos que cumple con regulaciones internacionales como GDPR y CCPA. Incluye encriptación avanzada, gestión de accesos, auditoría de seguridad y herramientas de cumplimiento normativo.",
-        "results": "100% de cumplimiento normativo, reducción del 90% en riesgos de filtración de datos."
-      },
-      "9": {
-        "title": "Business Intelligence Platform",
-        "category": "Análisis",
-        "client": "Analytics Pro",
-        "services": ["Data Analytics", "Business Intelligence", "Reporting Tools"],
-        "shortDescription": "Plataforma de inteligencia empresarial y análisis de datos.",
-        "longDescription": "Desarrollamos una plataforma completa de business intelligence que transforma datos empresariales en insights accionables. Incluye dashboards interactivos, análisis predictivo, reportes automatizados y herramientas de visualización de datos avanzadas.",
-        "results": "Mejora del 85% en toma de decisiones basada en datos, reducción del 60% en tiempo de generación de reportes."
-      },
-      "10": {
-        "title": "Mobile App Development Suite",
-        "category": "Móvil",
-        "client": "MobileFirst Tech",
-        "services": ["iOS Development", "Android Development", "Cross-platform Solutions"],
-        "shortDescription": "Suite completa de desarrollo de aplicaciones móviles.",
-        "longDescription": "Ofrecemos un servicio integral de desarrollo de aplicaciones móviles que incluye diseño UX/UI, desarrollo nativo e híbrido, testing automatizado y publicación en stores. Utilizamos las últimas tecnologías como React Native, Flutter y Swift.",
-        "results": "Desarrollo de 50+ aplicaciones móviles, 4.8+ rating promedio en app stores."
-      },
-      "11": {
-        "title": "E-commerce Platform",
-        "category": "Web",
-        "client": "E-Shop Solutions",
-        "services": ["Web Development", "Payment Integration", "Inventory Management"],
-        "shortDescription": "Plataforma completa de comercio electrónico.",
-        "longDescription": "Desarrollamos una plataforma de e-commerce robusta y escalable que incluye gestión de productos, procesamiento de pagos, gestión de inventario, analytics de ventas y herramientas de marketing digital. Optimizada para SEO y conversión.",
-        "results": "Incremento del 200% en ventas online, mejora del 150% en conversión de usuarios."
-      },
-      "12": {
-        "title": "Process Optimization System",
-        "category": "Automatización",
-        "client": "AutoFlow Corp",
-        "services": ["Process Automation", "Workflow Design", "System Integration"],
-        "shortDescription": "Sistema de optimización y automatización de procesos empresariales.",
-        "longDescription": "Implementamos un sistema completo de automatización que optimiza procesos empresariales mediante RPA, workflows inteligentes y integración de sistemas. Incluye análisis de procesos, diseño de automatizaciones y monitoreo de rendimiento.",
-        "results": "Automatización de 80+ procesos, reducción del 65% en tiempo de ejecución de tareas repetitivas."
-      }
-    },
-    "projectDetailGeneral": {
-      "description": "Descripción general del proyecto"
     },
     "section6": {
       "subtitle": "Crecimiento tecnológico",
@@ -365,7 +202,180 @@
         "description": "Cuando una impresora desconocida tomó una galera de tipos y la mezcló para hacer un libro de muestras tipográficas."
       }
     },
-    "viewProject": "Ver nuestro proyecto"
+    "viewProject": "Ver nuestro proyecto",
+    "projectDetails": {
+      "1": {
+        "title": "Deployment service",
+        "category": "Technology",
+        "color": "bg-orange-100 text-orange-600",
+        "client": "TechCorp Solutions",
+        "services": [
+          "Cloud Infrastructure",
+          "DevOps",
+          "Automation"
+        ],
+        "shortDescription": "Servicio automatizado de despliegue en la nube con integración continua.",
+        "longDescription": "Desarrollamos una plataforma completa de despliegue automatizado que permite a los equipos de desarrollo implementar sus aplicaciones de manera rápida y segura. La solución incluye pipelines de CI/CD, monitoreo en tiempo real, y rollback automático en caso de errores. Utilizamos tecnologías como Docker, Kubernetes, y AWS para garantizar escalabilidad y alta disponibilidad.",
+        "results": "Reducción del 75% en tiempo de despliegue, 99.9% de uptime, y eliminación completa de errores manuales en producción."
+      },
+      "2": {
+        "title": "Technological Solution Platform",
+        "category": "Ideas",
+        "color": "bg-green-100 text-green-600",
+        "client": "InnovateCorp",
+        "services": [
+          "Software Development",
+          "System Integration",
+          "Consulting"
+        ],
+        "shortDescription": "Plataforma integral de soluciones tecnológicas para empresas innovadoras.",
+        "longDescription": "Creamos una plataforma completa que integra múltiples soluciones tecnológicas en un ecosistema unificado. La solución permite a las empresas gestionar sus procesos de innovación, desde la ideación hasta la implementación, con herramientas de colaboración, análisis de datos y automatización de flujos de trabajo.",
+        "results": "Incremento del 60% en la eficiencia de procesos de innovación y reducción del 40% en tiempo de desarrollo de nuevos productos."
+      },
+      "3": {
+        "title": "Platform Integration Suite",
+        "category": "Soluciones",
+        "color": "bg-purple-100 text-purple-600",
+        "client": "Enterprise Systems Ltd",
+        "services": [
+          "API Development",
+          "System Integration",
+          "Data Migration"
+        ],
+        "shortDescription": "Suite completa de integración de plataformas empresariales.",
+        "longDescription": "Desarrollamos una suite de integración que conecta sistemas empresariales heterogéneos, permitiendo el flujo de datos en tiempo real entre diferentes plataformas. La solución incluye APIs RESTful, conectores personalizados y herramientas de monitoreo para garantizar la integridad de los datos.",
+        "results": "Integración exitosa de 15+ sistemas empresariales, reducción del 80% en errores de sincronización de datos."
+      },
+      "4": {
+        "title": "Cybersecurity Framework",
+        "category": "Tecnología",
+        "color": "bg-orange-100 text-orange-600",
+        "client": "SecureNet Corp",
+        "services": [
+          "Security Assessment",
+          "Penetration Testing",
+          "Security Architecture"
+        ],
+        "shortDescription": "Framework integral de ciberseguridad para empresas.",
+        "longDescription": "Implementamos un framework completo de ciberseguridad que incluye evaluación de vulnerabilidades, monitoreo continuo, respuesta a incidentes y capacitación del personal. La solución utiliza inteligencia artificial para detectar amenazas en tiempo real y automatizar respuestas de seguridad.",
+        "results": "Reducción del 95% en incidentes de seguridad, mejora del 300% en tiempo de respuesta a amenazas."
+      },
+      "5": {
+        "title": "Cloud Migration Service",
+        "category": "Desarrollo",
+        "color": "bg-red-100 text-red-600",
+        "client": "CloudFirst Solutions",
+        "services": [
+          "Cloud Architecture",
+          "Data Migration",
+          "Performance Optimization"
+        ],
+        "shortDescription": "Servicio completo de migración a la nube para empresas.",
+        "longDescription": "Ofrecemos un servicio integral de migración a la nube que incluye evaluación de infraestructura actual, diseño de arquitectura cloud-native, migración de datos y aplicaciones, y optimización de rendimiento. Utilizamos las mejores prácticas de AWS, Azure y Google Cloud.",
+        "results": "Migración exitosa de 100+ aplicaciones, reducción del 50% en costos de infraestructura."
+      },
+      "6": {
+        "title": "AI Integration Platform",
+        "category": "Innovación",
+        "color": "bg-indigo-100 text-indigo-600",
+        "client": "AI Innovations Inc",
+        "services": [
+          "Machine Learning",
+          "AI Development",
+          "Data Science"
+        ],
+        "shortDescription": "Plataforma de integración de inteligencia artificial para empresas.",
+        "longDescription": "Desarrollamos una plataforma que facilita la integración de soluciones de inteligencia artificial en procesos empresariales existentes. Incluye modelos pre-entrenados, herramientas de entrenamiento personalizado y APIs para integración con sistemas legacy.",
+        "results": "Implementación de IA en 20+ procesos empresariales, incremento del 45% en eficiencia operativa."
+      },
+      "7": {
+        "title": "Digital Transformation Suite",
+        "category": "Estrategia",
+        "color": "bg-pink-100 text-pink-600",
+        "client": "Transform Digital Ltd",
+        "services": [
+          "Digital Strategy",
+          "Process Automation",
+          "Change Management"
+        ],
+        "shortDescription": "Suite completa de transformación digital empresarial.",
+        "longDescription": "Ofrecemos una suite integral para la transformación digital que incluye análisis de procesos actuales, diseño de estrategia digital, implementación de tecnologías emergentes y gestión del cambio organizacional. Acompañamos a las empresas en todo el proceso de digitalización.",
+        "results": "Transformación digital completa en 6 meses, incremento del 70% en productividad empresarial."
+      },
+      "8": {
+        "title": "Data Protection System",
+        "category": "Seguridad",
+        "color": "bg-yellow-100 text-yellow-600",
+        "client": "DataSecure Corp",
+        "services": [
+          "Data Encryption",
+          "Privacy Compliance",
+          "Security Auditing"
+        ],
+        "shortDescription": "Sistema integral de protección de datos empresariales.",
+        "longDescription": "Implementamos un sistema completo de protección de datos que cumple con regulaciones internacionales como GDPR y CCPA. Incluye encriptación avanzada, gestión de accesos, auditoría de seguridad y herramientas de cumplimiento normativo.",
+        "results": "100% de cumplimiento normativo, reducción del 90% en riesgos de filtración de datos."
+      },
+      "9": {
+        "title": "Business Intelligence Platform",
+        "category": "Análisis",
+        "color": "bg-teal-100 text-teal-600",
+        "client": "Analytics Pro",
+        "services": [
+          "Data Analytics",
+          "Business Intelligence",
+          "Reporting Tools"
+        ],
+        "shortDescription": "Plataforma de inteligencia empresarial y análisis de datos.",
+        "longDescription": "Desarrollamos una plataforma completa de business intelligence que transforma datos empresariales en insights accionables. Incluye dashboards interactivos, análisis predictivo, reportes automatizados y herramientas de visualización de datos avanzadas.",
+        "results": "Mejora del 85% en toma de decisiones basada en datos, reducción del 60% en tiempo de generación de reportes."
+      },
+      "10": {
+        "title": "Mobile App Development Suite",
+        "category": "Móvil",
+        "color": "bg-cyan-100 text-cyan-600",
+        "client": "MobileFirst Tech",
+        "services": [
+          "iOS Development",
+          "Android Development",
+          "Cross-platform Solutions"
+        ],
+        "shortDescription": "Suite completa de desarrollo de aplicaciones móviles.",
+        "longDescription": "Ofrecemos un servicio integral de desarrollo de aplicaciones móviles que incluye diseño UX/UI, desarrollo nativo e híbrido, testing automatizado y publicación en stores. Utilizamos las últimas tecnologías como React Native, Flutter y Swift.",
+        "results": "Desarrollo de 50+ aplicaciones móviles, 4.8+ rating promedio en app stores."
+      },
+      "11": {
+        "title": "E-commerce Platform",
+        "category": "Web",
+        "color": "bg-emerald-100 text-emerald-600",
+        "client": "E-Shop Solutions",
+        "services": [
+          "Web Development",
+          "Payment Integration",
+          "Inventory Management"
+        ],
+        "shortDescription": "Plataforma completa de comercio electrónico.",
+        "longDescription": "Desarrollamos una plataforma de e-commerce robusta y escalable que incluye gestión de productos, procesamiento de pagos, gestión de inventario, analytics de ventas y herramientas de marketing digital. Optimizada para SEO y conversión.",
+        "results": "Incremento del 200% en ventas online, mejora del 150% en conversión de usuarios."
+      },
+      "12": {
+        "title": "Process Optimization System",
+        "category": "Automatización",
+        "color": "bg-rose-100 text-rose-600",
+        "client": "AutoFlow Corp",
+        "services": [
+          "Process Automation",
+          "Workflow Design",
+          "System Integration"
+        ],
+        "shortDescription": "Sistema de optimización y automatización de procesos empresariales.",
+        "longDescription": "Implementamos un sistema completo de automatización que optimiza procesos empresariales mediante RPA, workflows inteligentes y integración de sistemas. Incluye análisis de procesos, diseño de automatizaciones y monitoreo de rendimiento.",
+        "results": "Automatización de 80+ procesos, reducción del 65% en tiempo de ejecución de tareas repetitivas."
+      }
+    },
+    "projectDetailGeneral": {
+      "description": "Descripción general del proyecto"
+    }
   },
   "services": {
     "title": "Nuestros Servicios",
